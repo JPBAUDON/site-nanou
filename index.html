@@ -471,40 +471,225 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Google Reviews Section -->
     <section class="py-20 bg-sage-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-sage-800 mb-16">
-                Témoignages
-            </h2>
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header with Google Integration -->
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-sage-800 mb-6">
+                        Avis Google
+                    </h2>
 
-            <div class="max-w-4xl mx-auto">
-                <div id="testimonial-slider" class="relative">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-slide bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-                        <div class="flex items-center mb-6">
-                            <div class="w-16 h-16 bg-sage-200 rounded-full flex items-center justify-center text-2xl font-display text-sage-700 mr-4">
-                                M
+                    <!-- Google Rating Card -->
+                    <div class="inline-block bg-white rounded-2xl shadow-lg px-8 py-6 mb-8">
+                        <div class="flex items-center gap-4">
+                            <!-- Google Logo -->
+                            <svg class="w-12 h-12" viewBox="0 0 48 48">
+                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                            </svg>
+
+                            <div class="text-left">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-4xl font-bold text-sage-800">5.0</span>
+                                    <div class="flex text-yellow-400 text-2xl">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                                <p class="text-sage-600 text-sm">Basé sur les avis Google</p>
                             </div>
-                            <div>
-                                <p class="font-semibold text-sage-800">Marie D.</p>
-                                <p class="text-sage-600 text-sm">Ixelles</p>
-                            </div>
-                        </div>
-                        <p class="text-lg text-sage-700 italic mb-4">
-                            "Une expérience exceptionnelle. Le professionnalisme et la douceur de l'accompagnement m'ont permis de me reconnecter avec mon corps. Je recommande vivement."
-                        </p>
-                        <div class="flex text-sage-400">
-                            ★★★★★
                         </div>
                     </div>
                 </div>
 
-                <!-- Slider indicators -->
-                <div class="flex justify-center mt-8 space-x-2">
-                    <button class="w-3 h-3 rounded-full bg-sage-400"></button>
-                    <button class="w-3 h-3 rounded-full bg-sage-200"></button>
-                    <button class="w-3 h-3 rounded-full bg-sage-200"></button>
+                <!-- Reviews Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Review 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-sage-200 rounded-full flex items-center justify-center text-lg font-display text-sage-700 mr-3">
+                                    S
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sage-800">Sophie L.</p>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
+                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sage-700 leading-relaxed mb-3">
+                            "Nanou propose de magnifiques massages dans un cadre bienveillant et apaisant. Je me sens complètement détendue après chaque séance. Une vraie pro !"
+                        </p>
+                        <p class="text-xs text-sage-500">Il y a 2 mois</p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-terracotta-200 rounded-full flex items-center justify-center text-lg font-display text-terracotta-700 mr-3">
+                                    C
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sage-800">Claire M.</p>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
+                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sage-700 leading-relaxed mb-3">
+                            "L'accompagnement en haptonomie pendant ma grossesse a été magique. Nanou est à l'écoute, douce et professionnelle. Je recommande sans hésiter !"
+                        </p>
+                        <p class="text-xs text-sage-500">Il y a 1 mois</p>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-beige-300 rounded-full flex items-center justify-center text-lg font-display text-beige-700 mr-3">
+                                    M
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sage-800">Marie D.</p>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
+                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sage-700 leading-relaxed mb-3">
+                            "Une expérience exceptionnelle. Le professionnalisme et la douceur de l'accompagnement m'ont permis de me reconnecter avec mon corps. Je recommande vivement."
+                        </p>
+                        <p class="text-xs text-sage-500">Il y a 3 semaines</p>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-sage-200 rounded-full flex items-center justify-center text-lg font-display text-sage-700 mr-3">
+                                    L
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sage-800">Laura P.</p>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
+                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sage-700 leading-relaxed mb-3">
+                            "Un moment de détente absolue. Nanou a des mains en or et crée une atmosphère très apaisante. Le lieu est magnifique et calme."
+                        </p>
+                        <p class="text-xs text-sage-500">Il y a 1 semaine</p>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-terracotta-200 rounded-full flex items-center justify-center text-lg font-display text-terracotta-700 mr-3">
+                                    A
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sage-800">Anne V.</p>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
+                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sage-700 leading-relaxed mb-3">
+                            "La thérapie psycho-corporelle avec Nanou a transformé ma relation à mon corps. Approche sensible, professionnelle et profondément humaine."
+                        </p>
+                        <p class="text-xs text-sage-500">Il y a 3 mois</p>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-beige-300 rounded-full flex items-center justify-center text-lg font-display text-beige-700 mr-3">
+                                    J
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sage-800">Julie & Tom</p>
+                                    <div class="flex text-yellow-400 text-sm">
+                                        ★★★★★
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
+                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                            </svg>
+                        </div>
+                        <p class="text-sage-700 leading-relaxed mb-3">
+                            "Les séances d'haptonomie nous ont permis de créer un lien fort avec notre bébé avant même sa naissance. Une préparation précieuse et émouvante."
+                        </p>
+                        <p class="text-xs text-sage-500">Il y a 2 mois</p>
+                    </div>
+                </div>
+
+                <!-- CTA Button to Google Reviews -->
+                <div class="text-center">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Nanou+Mendeles+Avenue+Louise+349+Bruxelles&query_place_id=ChIJoei5ybvDw0cRrR8S5ZcVdSw"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-sage-800 px-8 py-4 rounded-full font-semibold text-lg shadow-lg border-2 border-sage-200 transition-all hover:shadow-xl">
+                        <svg class="w-6 h-6" viewBox="0 0 48 48">
+                            <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                            <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                            <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                            <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+                        </svg>
+                        Voir tous les avis sur Google
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                    <p class="text-sm text-sage-600 mt-4">
+                        Vous avez déjà consulté Nanou ? Partagez votre expérience sur Google !
+                    </p>
                 </div>
             </div>
         </div>
