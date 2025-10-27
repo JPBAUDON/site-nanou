@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Politique de confidentialité du site Massages & Naissance">
+    <title>Politique de Confidentialité - Massages & Naissance</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f6f4', 100: '#e6ebe6', 200: '#cfd8cf', 300: '#adbdad',
+                            400: '#8BA888', 500: '#6d8f6d', 600: '#577358', 700: '#475d47',
+                            800: '#3a4d3b', 900: '#324032',
+                        },
+                        beige: {
+                            50: '#fdfbf7', 100: '#f9f4eb', 200: '#f3eadb', 300: '#E8DCC4',
+                            400: '#dcc9a8', 500: '#cfb58c', 600: '#c0a172', 700: '#a88760',
+                            800: '#896d4f', 900: '#6f5941',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        .nav-shadow { box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-beige-50 text-sage-900">
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
+                        <span class="text-white text-xl font-display">M</span>
+                    </div>
+                    <span class="text-xl font-display font-semibold text-sage-800">Massages & Naissance</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sage-700 hover:text-sage-500 font-medium">Accueil</a>
+                    <a href="prestations.html" class="text-sage-700 hover:text-sage-500 font-medium">Prestations</a>
+                    <a href="a-propos.html" class="text-sage-700 hover:text-sage-500 font-medium">À propos</a>
+                    <a href="tarifs.html" class="text-sage-700 hover:text-sage-500 font-medium">Tarifs</a>
+                    <a href="contact.html" class="bg-sage-400 text-white px-6 py-2 rounded-full hover:bg-sage-500 font-medium">Contact</a>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden text-sage-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">Accueil</a>
+                <a href="prestations.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">Prestations</a>
+                <a href="a-propos.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">À propos</a>
+                <a href="tarifs.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">Tarifs</a>
+                <a href="contact.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <section class="pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+                <h1 class="text-4xl md:text-5xl font-display font-bold text-sage-800 mb-8">
+                    Politique de Confidentialité
+                </h1>
+
+                <div class="prose prose-lg max-w-none space-y-8 text-sage-700">
+
+                    <section>
+                        <p class="text-lg font-semibold text-sage-800">
+                            Votre vie privée est importante pour nous. Cette politique de confidentialité explique quelles données personnelles nous collectons, pourquoi nous les collectons et comment nous les utilisons.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">1. Responsable du traitement</h2>
+                        <p>
+                            Le responsable du traitement des données personnelles collectées sur le site <strong>massages-et-naissance.com</strong> est :
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Nom</strong> : [À compléter]</li>
+                            <li><strong>Email</strong> : contact@massages-naissance.be</li>
+                            <li><strong>Adresse</strong> : Bruxelles, Belgique</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">2. Données collectées</h2>
+                        <p>
+                            Nous pouvons collecter les données personnelles suivantes :
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Données d'identité</strong> : nom, prénom</li>
+                            <li><strong>Données de contact</strong> : adresse email, numéro de téléphone</li>
+                            <li><strong>Données relatives à votre demande</strong> : type de prestation souhaitée, message</li>
+                            <li><strong>Données de navigation</strong> : adresse IP, type de navigateur, pages consultées (via les logs du serveur)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">3. Finalités du traitement</h2>
+                        <p>
+                            Vos données personnelles sont collectées et traitées pour les finalités suivantes :
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Répondre à vos demandes de contact et de prise de rendez-vous</li>
+                            <li>Vous fournir les services demandés</li>
+                            <li>Assurer le suivi de votre accompagnement</li>
+                            <li>Respecter nos obligations légales (facturation, comptabilité)</li>
+                            <li>Améliorer nos services et notre site web</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">4. Base légale du traitement</h2>
+                        <p>
+                            Le traitement de vos données personnelles repose sur :
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Votre consentement</strong> : lorsque vous remplissez le formulaire de contact</li>
+                            <li><strong>L'exécution d'un contrat</strong> : pour la fourniture des prestations de service</li>
+                            <li><strong>Une obligation légale</strong> : conservation des données comptables</li>
+                            <li><strong>Notre intérêt légitime</strong> : amélioration de nos services</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">5. Destinataires des données</h2>
+                        <p>
+                            Vos données personnelles sont destinées exclusivement à :
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>L'équipe de Massages & Naissance</li>
+                            <li>Nos prestataires techniques (hébergement web) dans le cadre strict de leurs fonctions</li>
+                        </ul>
+                        <p class="mt-4">
+                            <strong>Nous ne vendons, ne louons ni ne partageons vos données personnelles avec des tiers à des fins commerciales.</strong>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">6. Durée de conservation</h2>
+                        <p>
+                            Vos données personnelles sont conservées pendant :
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Données de contact</strong> : jusqu'à votre demande de suppression ou 3 ans après votre dernier contact</li>
+                            <li><strong>Données comptables</strong> : 7 ans (obligation légale belge)</li>
+                            <li><strong>Dossiers patients</strong> : conformément aux obligations déontologiques (30 ans)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">7. Vos droits</h2>
+                        <p>
+                            Conformément au RGPD et à la législation belge, vous disposez des droits suivants :
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Droit d'accès</strong> : obtenir une copie de vos données personnelles</li>
+                            <li><strong>Droit de rectification</strong> : corriger vos données inexactes ou incomplètes</li>
+                            <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
+                            <li><strong>Droit à la limitation</strong> : limiter le traitement de vos données</li>
+                            <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
+                            <li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données</li>
+                            <li><strong>Droit de retirer votre consentement</strong> : à tout moment</li>
+                        </ul>
+                        <p class="mt-4">
+                            Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@massages-naissance.be" class="text-sage-600 underline hover:text-sage-800">contact@massages-naissance.be</a>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">8. Sécurité des données</h2>
+                        <p>
+                            Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre :
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>L'accès non autorisé</li>
+                            <li>La divulgation</li>
+                            <li>La modification</li>
+                            <li>La destruction illicite</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">9. Cookies</h2>
+                        <p>
+                            Ce site n'utilise actuellement pas de cookies de suivi publicitaire. Seuls des cookies techniques strictement nécessaires au fonctionnement du site peuvent être utilisés.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">10. Modifications de la politique</h2>
+                        <p>
+                            Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. La version mise à jour sera publiée sur cette page avec la date de dernière modification.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-display font-bold text-sage-800 mb-4">11. Réclamation</h2>
+                        <p>
+                            Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de l'Autorité de Protection des Données (APD) belge :
+                        </p>
+                        <ul class="list-none pl-0 space-y-1 mt-4">
+                            <li><strong>Autorité de Protection des Données</strong></li>
+                            <li>Rue de la Presse, 35</li>
+                            <li>1000 Bruxelles</li>
+                            <li>Belgique</li>
+                            <li>Site web : <a href="https://www.autoriteprotectiondonnees.be" target="_blank" class="text-sage-600 underline hover:text-sage-800">www.autoriteprotectiondonnees.be</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="bg-sage-50 p-6 rounded-xl mt-8">
+                        <p class="text-sm text-sage-600">
+                            <strong>Dernière mise à jour :</strong> [Date - À compléter]
+                        </p>
+                        <p class="text-sm text-sage-600 mt-2">
+                            Pour toute question concernant cette politique de confidentialité, veuillez nous contacter à : <a href="mailto:contact@massages-naissance.be" class="text-sage-700 underline">contact@massages-naissance.be</a>
+                        </p>
+                    </section>
+
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="index.html" class="inline-block bg-sage-400 text-white px-8 py-3 rounded-full font-semibold hover:bg-sage-500">
+                        Retour à l'accueil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sage-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
+                            <span class="text-white text-xl font-display">M</span>
+                        </div>
+                        <span class="text-xl font-display font-semibold">Massages & Naissance</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-sage-200">
+                        <li><a href="index.html" class="hover:text-white">Accueil</a></li>
+                        <li><a href="prestations.html" class="hover:text-white">Prestations</a></li>
+                        <li><a href="a-propos.html" class="hover:text-white">À propos</a></li>
+                        <li><a href="tarifs.html" class="hover:text-white">Tarifs</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Légal</h3>
+                    <ul class="space-y-2 text-sage-200">
+                        <li><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a></li>
+                        <li><a href="confidentialite.html" class="hover:text-white">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-sage-700 pt-6 text-center text-sage-300">
+                <p>&copy; 2025 Massages & Naissance - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('nav-shadow');
+            } else {
+                header.classList.remove('nav-shadow');
+            }
+        });
+    </script>
+</body>
+</html>

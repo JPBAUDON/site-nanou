@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Massages thérapeutiques, haptonomie et thérapie psycho-corporelle à Bruxelles. Approche humaniste et bienveillante pour adultes, bébés et futurs parents.">
+    <meta name="keywords" content="massage, haptonomie, thérapie psycho-corporelle, relaxation, Bruxelles, bien-être, préparation naissance">
+    <title>Massages & Naissance - Bien-être et Haptonomie à Bruxelles</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Massages & Naissance - Bien-être à Bruxelles">
+    <meta property="og:description" content="Approche psycho-corporelle bienveillante : massage, haptonomie, thérapie.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f6f4',
+                            100: '#e6ebe6',
+                            200: '#cfd8cf',
+                            300: '#adbdad',
+                            400: '#8BA888',
+                            500: '#6d8f6d',
+                            600: '#577358',
+                            700: '#475d47',
+                            800: '#3a4d3b',
+                            900: '#324032',
+                        },
+                        beige: {
+                            50: '#fdfbf7',
+                            100: '#f9f4eb',
+                            200: '#f3eadb',
+                            300: '#E8DCC4',
+                            400: '#dcc9a8',
+                            500: '#cfb58c',
+                            600: '#c0a172',
+                            700: '#a88760',
+                            800: '#896d4f',
+                            900: '#6f5941',
+                        },
+                        terracotta: {
+                            50: '#faf6f5',
+                            100: '#f5ebe9',
+                            200: '#ead9d6',
+                            300: '#D4A59A',
+                            400: '#c88b7d',
+                            500: '#b97163',
+                            600: '#a65c4f',
+                            700: '#8a4d43',
+                            800: '#73433b',
+                            900: '#5f3a35',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(139, 168, 136, 0.9) 0%, rgba(232, 220, 196, 0.9) 100%);
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .nav-shadow {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Smooth transitions */
+        * {
+            transition: all 0.3s ease;
+        }
+
+        button, a {
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body class="smooth-scroll bg-beige-50 text-sage-900">
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
+                        <span class="text-white text-xl font-display">M</span>
+                    </div>
+                    <span class="text-xl font-display font-semibold text-sage-800">Massages & Naissance</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sage-700 hover:text-sage-500 font-medium">Accueil</a>
+                    <a href="prestations.html" class="text-sage-700 hover:text-sage-500 font-medium">Prestations</a>
+                    <a href="a-propos.html" class="text-sage-700 hover:text-sage-500 font-medium">À propos</a>
+                    <a href="tarifs.html" class="text-sage-700 hover:text-sage-500 font-medium">Tarifs</a>
+                    <a href="contact.html" class="bg-sage-400 text-white px-6 py-2 rounded-full hover:bg-sage-500 font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-sage-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">Accueil</a>
+                <a href="prestations.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">Prestations</a>
+                <a href="a-propos.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">À propos</a>
+                <a href="tarifs.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">Tarifs</a>
+                <a href="contact.html" class="block py-2 text-sage-700 hover:text-sage-500 font-medium">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto fade-in-up">
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6">
+                    Bienvenue dans votre espace<br>de bien-être
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-4 font-light">
+                    Massage • Haptonomie • Thérapie psycho-corporelle
+                </p>
+                <p class="text-lg md:text-xl text-white/80 mb-10">
+                    à Bruxelles
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="contact.html" class="bg-white text-sage-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-lg">
+                        Prendre rendez-vous
+                    </a>
+                    <a href="#intro" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10">
+                        Découvrir
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="intro" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-sage-800 mb-8">
+                    L'approche psycho-corporelle :<br>une invitation au lâcher-prise
+                </h2>
+
+                <div class="space-y-6 text-lg text-sage-700 leading-relaxed">
+                    <p class="text-xl font-semibold text-sage-800">
+                        Le toucher : notre premier langage
+                    </p>
+
+                    <p>
+                        Avant même de naître, le toucher est notre première connexion au monde. C'est par lui que nous apprenons la confiance, la sécurité, l'apaisement. L'approche psycho-corporelle nous invite à renouer avec cette dimension essentielle : celle de notre corps vécu, ressenti, habité.
+                    </p>
+
+                    <p>
+                        Le toucher est le premier sens qui se développe in-utero et le dernier à s'éteindre avant notre dernier voyage. Il est notre première approche palpable au monde en début de vie. Une approche accueillante envers le nouveau-né lui donnera confiance en lui-même et en ce qui l'entoure. Un toucher accueillant envers un adulte lui permettra de se réconcilier avec son corps.
+                    </p>
+
+                    <p>
+                        Nos sensations corporelles nous accompagnent partout et sont le reflet de nos états de conscience. Notre enveloppe corporelle et énergétique constitue notre protection et notre force. <strong>En prendre soin est essentiel pour un équilibre physique et mental.</strong>
+                    </p>
+
+                    <p class="text-sage-800 font-medium pt-4">
+                        Mon approche humaniste et affective est destinée à tous : bébés, enfants, adultes, futurs parents. Les bienfaits sont puissants et durables.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-beige-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-sage-800 mb-16">
+                Mes Prestations
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Service 1: Massage -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-display font-semibold text-sage-800 mb-4 text-center">
+                        Massage & Relaxation
+                    </h3>
+                    <p class="text-sage-700 text-center mb-6">
+                        Relaxation profonde et libération des tensions. Pour retrouver équilibre et sérénité.
+                    </p>
+                    <div class="text-center">
+                        <a href="prestations.html#massage" class="text-sage-600 hover:text-sage-800 font-semibold inline-flex items-center">
+                            En savoir plus
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Haptonomie -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-terracotta-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-terracotta-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-display font-semibold text-sage-800 mb-4 text-center">
+                        Haptonomie
+                    </h3>
+                    <p class="text-sage-700 text-center mb-6">
+                        Préparation à la naissance. Créer le lien avec bébé et vivre une grossesse en conscience.
+                    </p>
+                    <div class="text-center">
+                        <a href="prestations.html#haptonomie" class="text-terracotta-400 hover:text-terracotta-500 font-semibold inline-flex items-center">
+                            En savoir plus
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Thérapie -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl">
+                    <div class="w-16 h-16 bg-beige-200 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-beige-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-display font-semibold text-sage-800 mb-4 text-center">
+                        Thérapie Psycho-corporelle
+                    </h3>
+                    <p class="text-sage-700 text-center mb-6">
+                        Accompagnement en profondeur. Réconcilier corps et esprit pour un mieux-être durable.
+                    </p>
+                    <div class="text-center">
+                        <a href="prestations.html#therapie" class="text-beige-600 hover:text-beige-700 font-semibold inline-flex items-center">
+                            En savoir plus
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-sage-800 mb-16">
+                Pourquoi me choisir ?
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-sage-800 mb-2">
+                        Approche humaniste
+                    </h3>
+                    <p class="text-sage-600">
+                        Bienveillance et écoute au cœur de chaque séance
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-sage-800 mb-2">
+                        Tous publics
+                    </h3>
+                    <p class="text-sage-600">
+                        Bébés, enfants, adultes, futurs parents
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-sage-800 mb-2">
+                        Expérience confirmée
+                    </h3>
+                    <p class="text-sage-600">
+                        Formation solide et pratique régulière
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-sage-800 mb-2">
+                        Cadre bienveillant
+                    </h3>
+                    <p class="text-sage-600">
+                        Espace sécurisant et apaisant à Bruxelles
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-sage-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-sage-800 mb-16">
+                Témoignages
+            </h2>
+
+            <div class="max-w-4xl mx-auto">
+                <div id="testimonial-slider" class="relative">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-sage-200 rounded-full flex items-center justify-center text-2xl font-display text-sage-700 mr-4">
+                                M
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sage-800">Marie D.</p>
+                                <p class="text-sage-600 text-sm">Ixelles</p>
+                            </div>
+                        </div>
+                        <p class="text-lg text-sage-700 italic mb-4">
+                            "Une expérience exceptionnelle. Le professionnalisme et la douceur de l'accompagnement m'ont permis de me reconnecter avec mon corps. Je recommande vivement."
+                        </p>
+                        <div class="flex text-sage-400">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider indicators -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="w-3 h-3 rounded-full bg-sage-400"></button>
+                    <button class="w-3 h-3 rounded-full bg-sage-200"></button>
+                    <button class="w-3 h-3 rounded-full bg-sage-200"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 hero-gradient">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+                Prêt(e) à prendre soin de vous ?
+            </h2>
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+                Offrez-vous un moment de détente et de reconnexion avec vous-même. Je serai ravie de vous accompagner.
+            </p>
+            <a href="contact.html" class="inline-block bg-white text-sage-700 px-10 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-lg">
+                Contactez-moi
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sage-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Column 1: Logo & Contact -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-sage-400 rounded-full flex items-center justify-center">
+                            <span class="text-white text-xl font-display">M</span>
+                        </div>
+                        <span class="text-xl font-display font-semibold">Massages & Naissance</span>
+                    </div>
+                    <div class="space-y-2 text-sage-200">
+                        <p class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Bruxelles, Belgique
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            contact@massages-naissance.be
+                        </p>
+                        <p class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            +32 XXX XX XX XX
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Navigation</h3>
+                    <ul class="space-y-2 text-sage-200">
+                        <li><a href="index.html" class="hover:text-white">Accueil</a></li>
+                        <li><a href="prestations.html" class="hover:text-white">Prestations</a></li>
+                        <li><a href="a-propos.html" class="hover:text-white">À propos</a></li>
+                        <li><a href="tarifs.html" class="hover:text-white">Tarifs</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Legal -->
+                <div>
+                    <h3 class="text-lg font-display font-semibold mb-4">Légal</h3>
+                    <ul class="space-y-2 text-sage-200">
+                        <li><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a></li>
+                        <li><a href="confidentialite.html" class="hover:text-white">Politique de confidentialité</a></li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <h3 class="text-lg font-display font-semibold mb-4">Suivez-moi</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-sage-700 rounded-full flex items-center justify-center hover:bg-sage-600">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-sage-700 rounded-full flex items-center justify-center hover:bg-sage-600">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-sage-700 pt-6 text-center text-sage-300">
+                <p>&copy; 2025 Massages & Naissance - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/32XXXXXXXXX" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 z-50">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Header shadow on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('nav-shadow');
+            } else {
+                header.classList.remove('nav-shadow');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
