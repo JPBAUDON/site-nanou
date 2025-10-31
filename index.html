@@ -164,23 +164,31 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient">
-        <div class="container mx-auto px-6 text-center">
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/hero/hero-silhouette-nanou.jpg"
+                 alt="Nanou Mendeles pratiquant un massage dans une atmosphère apaisante"
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-sage-800/80 via-sage-700/70 to-beige-600/60"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
             <div class="max-w-4xl mx-auto fade-in-up">
-                <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6">
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 drop-shadow-lg">
                     Bienvenue dans votre espace<br>de bien-être
                 </h1>
-                <p class="text-xl md:text-2xl text-white/90 mb-4 font-light">
+                <p class="text-xl md:text-2xl text-white/95 mb-4 font-light drop-shadow-md">
                     Massage • Haptonomie • Thérapie psycho-corporelle
                 </p>
-                <p class="text-lg md:text-xl text-white/80 mb-10">
+                <p class="text-lg md:text-xl text-white/90 mb-10 drop-shadow-md">
                     à Bruxelles
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="bg-white text-sage-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-lg">
+                    <a href="contact.html" class="bg-white text-sage-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-xl transition-all hover:scale-105">
                         Prendre rendez-vous
                     </a>
-                    <a href="#intro" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10">
+                    <a href="#intro" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 shadow-lg transition-all">
                         Découvrir
                     </a>
                 </div>
@@ -188,8 +196,8 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <svg class="w-6 h-6 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
         </div>
@@ -237,71 +245,77 @@
 
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Service 1: Massage -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl">
-                    <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <svg class="w-8 h-8 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                    <div class="h-64 overflow-hidden">
+                        <img src="assets/images/massage-adulte/massage-dos-huile.jpg"
+                             alt="Massage relaxant et thérapeutique"
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="text-2xl font-display font-semibold text-sage-800 mb-4 text-center">
-                        Massage & Relaxation
-                    </h3>
-                    <p class="text-sage-700 text-center mb-6">
-                        Relaxation profonde et libération des tensions. Pour retrouver équilibre et sérénité.
-                    </p>
-                    <div class="text-center">
-                        <a href="prestations.html#massage" class="text-sage-600 hover:text-sage-800 font-semibold inline-flex items-center">
-                            En savoir plus
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-semibold text-sage-800 mb-4 text-center">
+                            Massage & Relaxation
+                        </h3>
+                        <p class="text-sage-700 text-center mb-6">
+                            Relaxation profonde et libération des tensions. Pour retrouver équilibre et sérénité.
+                        </p>
+                        <div class="text-center">
+                            <a href="prestations.html#massage" class="text-sage-600 hover:text-sage-800 font-semibold inline-flex items-center">
+                                En savoir plus
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 2: Haptonomie -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl">
-                    <div class="w-16 h-16 bg-terracotta-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <svg class="w-8 h-8 text-terracotta-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                    <div class="h-64 overflow-hidden">
+                        <img src="assets/images/prenatal/prenatal-01-massage-ventre.jpg"
+                             alt="Massage prénatal et haptonomie pour femme enceinte"
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="text-2xl font-display font-semibold text-sage-800 mb-4 text-center">
-                        Haptonomie
-                    </h3>
-                    <p class="text-sage-700 text-center mb-6">
-                        Préparation à la naissance. Créer le lien avec bébé et vivre une grossesse en conscience.
-                    </p>
-                    <div class="text-center">
-                        <a href="prestations.html#haptonomie" class="text-terracotta-400 hover:text-terracotta-500 font-semibold inline-flex items-center">
-                            En savoir plus
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-semibold text-sage-800 mb-4 text-center">
+                            Haptonomie
+                        </h3>
+                        <p class="text-sage-700 text-center mb-6">
+                            Préparation à la naissance. Créer le lien avec bébé et vivre une grossesse en conscience.
+                        </p>
+                        <div class="text-center">
+                            <a href="prestations.html#haptonomie" class="text-terracotta-400 hover:text-terracotta-500 font-semibold inline-flex items-center">
+                                En savoir plus
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 3: Thérapie -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl">
-                    <div class="w-16 h-16 bg-beige-200 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <svg class="w-8 h-8 text-beige-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                        </svg>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                    <div class="h-64 overflow-hidden">
+                        <img src="assets/images/therapie/massage-tete-delicat.jpg"
+                             alt="Thérapie psycho-corporelle et massage crânien"
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="text-2xl font-display font-semibold text-sage-800 mb-4 text-center">
-                        Thérapie Psycho-corporelle
-                    </h3>
-                    <p class="text-sage-700 text-center mb-6">
-                        Accompagnement en profondeur. Réconcilier corps et esprit pour un mieux-être durable.
-                    </p>
-                    <div class="text-center">
-                        <a href="prestations.html#therapie" class="text-beige-600 hover:text-beige-700 font-semibold inline-flex items-center">
-                            En savoir plus
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-semibold text-sage-800 mb-4 text-center">
+                            Thérapie Psycho-corporelle
+                        </h3>
+                        <p class="text-sage-700 text-center mb-6">
+                            Accompagnement en profondeur. Réconcilier corps et esprit pour un mieux-être durable.
+                        </p>
+                        <div class="text-center">
+                            <a href="prestations.html#therapie" class="text-beige-600 hover:text-beige-700 font-semibold inline-flex items-center">
+                                En savoir plus
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
