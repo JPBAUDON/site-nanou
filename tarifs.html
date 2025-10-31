@@ -90,12 +90,20 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-sage-100 to-beige-100">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-display font-bold text-sage-800 mb-4">
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/ambiance/tarifs-massage-jambes.jpg"
+                 alt="Massage relaxant dans une atmosphère chaleureuse"
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-br from-sage-800/75 via-beige-700/70 to-sage-600/75"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-display font-bold text-white mb-4 drop-shadow-lg">
                 Tarifs
             </h1>
-            <p class="text-xl text-sage-600 max-w-2xl mx-auto">
+            <p class="text-xl text-white/95 max-w-2xl mx-auto drop-shadow-md">
                 Des accompagnements accessibles pour votre bien-être
             </p>
         </div>
