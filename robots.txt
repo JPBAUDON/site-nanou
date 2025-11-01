@@ -1,0 +1,10 @@
+# robots.txt pour Massages & Naissance
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.massages-naissance.be/sitemap.xml
+
+# Interdire certains répertoires (si besoin futur)
+# Disallow: /admin/
+# Disallow: /private/
