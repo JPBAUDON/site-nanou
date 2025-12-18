@@ -25,7 +25,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -82,8 +85,30 @@
     </script>
 
     <style>
+        /* Lenis smooth scroll - remove default */
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
         body {
             font-family: 'Work Sans', sans-serif;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -94,14 +119,11 @@
             background: linear-gradient(135deg, rgba(184, 149, 106, 0.9) 0%, rgba(232, 220, 196, 0.9) 100%);
         }
 
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-
+        /* Premium animations with custom easing */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -109,21 +131,161 @@
             }
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Scroll reveal elements */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger effect for children */
+        .stagger-container .reveal:nth-child(1) { transition-delay: 0ms; }
+        .stagger-container .reveal:nth-child(2) { transition-delay: 100ms; }
+        .stagger-container .reveal:nth-child(3) { transition-delay: 200ms; }
+        .stagger-container .reveal:nth-child(4) { transition-delay: 300ms; }
+        .stagger-container .reveal:nth-child(5) { transition-delay: 400ms; }
+        .stagger-container .reveal:nth-child(6) { transition-delay: 500ms; }
+
         .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .nav-shadow {
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
 
-        /* Smooth transitions */
-        * {
-            transition: all 0.3s ease;
+        /* Premium hover states */
+        .card-hover {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        button, a {
-            transition: all 0.2s ease;
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-hover img {
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-hover:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Image overlay on hover */
+        .image-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0) 0%, rgba(184, 149, 106, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .image-overlay:hover::after {
+            opacity: 1;
+        }
+
+        /* Link underline animation */
+        .link-underline {
+            position: relative;
+        }
+
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .link-underline:hover::after {
+            width: 100%;
+        }
+
+        /* Button premium effect */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+            transform: translateX(-100%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-premium:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Parallax hero */
+        .parallax-hero {
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+        }
+
+        /* Remove default transitions except where specified */
+        * {
+            transition: none;
+        }
+
+        /* Only specific elements get transitions */
+        a, button, input, textarea, select {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .parallax-hero {
+                transform: none !important;
+            }
         }
     </style>
 
@@ -228,30 +390,32 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Background Image -->
+        <!-- Background Image with Parallax -->
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/hero/hero-silhouette-nanou.jpg"
+            <img id="hero-image"
+                 src="assets/images/hero/hero-silhouette-nanou.jpg"
                  alt="Nanou Mendeles pratiquant un massage dans une atmosphère apaisante"
-                 class="w-full h-full object-cover">
+                 class="parallax-hero w-full h-full object-cover"
+                 loading="eager">
             <div class="absolute inset-0 bg-gradient-to-r from-copper-800/80 via-copper-700/70 to-beige-600/60"></div>
         </div>
 
         <div class="container mx-auto px-6 text-center relative z-10">
             <div class="max-w-4xl mx-auto fade-in-up">
-                <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 drop-shadow-lg">
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-8 drop-shadow-lg leading-tight">
                     Bienvenue dans votre espace<br>de bien-être
                 </h1>
-                <p class="text-xl md:text-2xl text-white/95 mb-4 font-light drop-shadow-md">
+                <p class="text-xl md:text-2xl text-white/95 mb-6 font-light drop-shadow-md">
                     Massage • Haptonomie • Thérapie psycho-corporelle
                 </p>
-                <p class="text-lg md:text-xl text-white/90 mb-10 drop-shadow-md">
+                <p class="text-lg md:text-xl text-white/90 mb-12 drop-shadow-md">
                     à Bruxelles
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="bg-white text-copper-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-xl transition-all hover:scale-105">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="contact.html" class="btn-premium bg-white text-copper-700 px-10 py-5 rounded-full font-semibold text-lg shadow-xl">
                         Prendre rendez-vous
                     </a>
-                    <a href="#intro" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 shadow-lg transition-all">
+                    <a href="#intro" class="btn-premium bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-semibold text-lg shadow-lg">
                         Découvrir
                     </a>
                 </div>
@@ -267,31 +431,31 @@
     </section>
 
     <!-- Introduction Section -->
-    <section id="intro" class="py-20 bg-white">
+    <section id="intro" class="py-28 bg-white">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-copper-800 mb-8">
+                <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-copper-800 mb-12 leading-tight">
                     L'approche psycho-corporelle :<br>une invitation au lâcher-prise
                 </h2>
 
-                <div class="space-y-6 text-lg text-copper-700 leading-relaxed">
-                    <p class="text-xl font-semibold text-copper-800">
+                <div class="space-y-8 text-lg text-copper-700 leading-relaxed">
+                    <p class="reveal text-2xl font-semibold text-copper-800">
                         Le toucher : notre premier langage
                     </p>
 
-                    <p class="font-accent italic text-xl leading-relaxed text-copper-700">
+                    <p class="reveal font-accent italic text-xl leading-relaxed text-copper-700">
                         Avant même de naître, le toucher est notre première connexion au monde. C'est par lui que nous apprenons la confiance, la sécurité, l'apaisement. L'approche psycho-corporelle nous invite à renouer avec cette dimension essentielle : celle de notre corps vécu, ressenti, habité.
                     </p>
 
-                    <p class="font-accent italic text-xl leading-relaxed text-copper-700 mt-4">
+                    <p class="reveal font-accent italic text-xl leading-relaxed text-copper-700">
                         Le toucher est le premier sens qui se développe in-utero et le dernier à s'éteindre avant notre dernier voyage. Il est notre première approche palpable au monde en début de vie. Une approche accueillante envers le nouveau-né lui donnera confiance en lui-même et en ce qui l'entoure. Un toucher accueillant envers un adulte lui permettra de se réconcilier avec son corps.
                     </p>
 
-                    <p class="font-accent italic text-xl leading-relaxed text-copper-700 mt-4">
+                    <p class="reveal font-accent italic text-xl leading-relaxed text-copper-700">
                         Nos sensations corporelles nous accompagnent partout et sont le reflet de nos états de conscience. Notre enveloppe corporelle et énergétique constitue notre protection et notre force. <strong class="font-semibold">En prendre soin est essentiel pour un équilibre physique et mental.</strong>
                     </p>
 
-                    <p class="text-lg text-copper-800 pt-4 leading-relaxed font-medium">
+                    <p class="reveal text-lg text-copper-800 pt-6 leading-relaxed font-medium">
                         Mon approche humaniste et affective est destinée à tous : bébés, enfants, adultes, futurs parents. Les bienfaits sont puissants et durables.
                     </p>
                 </div>
@@ -300,31 +464,31 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-20 bg-beige-50">
+    <section class="py-28 bg-beige-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-16">
+            <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-20">
                 Mes Prestations
             </h2>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto stagger-container">
                 <!-- Service 1: Massage -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-                    <div class="h-64 overflow-hidden">
+                <div class="reveal card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-72 overflow-hidden relative image-overlay">
                         <img src="assets/images/massage-adulte/massage-dos-huile.jpg"
                              alt="Massage relaxant et thérapeutique"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                             class="w-full h-full object-cover" loading="lazy">
                     </div>
-                    <div class="p-8">
+                    <div class="p-10">
                         <h3 class="text-2xl font-display font-semibold text-copper-800 mb-4 text-center">
                             Massage & Relaxation
                         </h3>
-                        <p class="text-copper-700 text-center mb-6">
+                        <p class="text-copper-700 text-center mb-8 leading-relaxed">
                             Relaxation profonde et libération des tensions. Pour retrouver équilibre et sérénité.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#massage" class="text-copper-600 hover:text-copper-800 font-semibold inline-flex items-center">
+                            <a href="prestations.html#massage" class="link-underline text-copper-600 font-semibold inline-flex items-center gap-2">
                                 En savoir plus
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </a>
@@ -333,23 +497,23 @@
                 </div>
 
                 <!-- Service 2: Haptonomie -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-                    <div class="h-64 overflow-hidden">
+                <div class="reveal card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-72 overflow-hidden relative image-overlay">
                         <img src="assets/images/prenatal/prenatal-01-massage-ventre.jpg"
                              alt="Massage prénatal et haptonomie pour femme enceinte"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                             class="w-full h-full object-cover" loading="lazy">
                     </div>
-                    <div class="p-8">
+                    <div class="p-10">
                         <h3 class="text-2xl font-display font-semibold text-copper-800 mb-4 text-center">
                             Haptonomie
                         </h3>
-                        <p class="text-copper-700 text-center mb-6">
+                        <p class="text-copper-700 text-center mb-8 leading-relaxed">
                             Préparation à la naissance. Créer le lien avec bébé et vivre une grossesse en conscience.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#haptonomie" class="text-terracotta-400 hover:text-terracotta-500 font-semibold inline-flex items-center">
+                            <a href="prestations.html#haptonomie" class="link-underline text-terracotta-400 font-semibold inline-flex items-center gap-2">
                                 En savoir plus
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </a>
@@ -358,23 +522,23 @@
                 </div>
 
                 <!-- Service 3: Thérapie -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-                    <div class="h-64 overflow-hidden">
+                <div class="reveal card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-72 overflow-hidden relative image-overlay">
                         <img src="assets/images/therapie/massage-tete-delicat.jpg"
                              alt="Thérapie psycho-corporelle et massage crânien"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                             class="w-full h-full object-cover" loading="lazy">
                     </div>
-                    <div class="p-8">
+                    <div class="p-10">
                         <h3 class="text-2xl font-display font-semibold text-copper-800 mb-4 text-center">
                             Thérapie Psycho-corporelle
                         </h3>
-                        <p class="text-copper-700 text-center mb-6">
+                        <p class="text-copper-700 text-center mb-8 leading-relaxed">
                             Accompagnement en profondeur. Réconcilier corps et esprit pour un mieux-être durable.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#therapie" class="text-beige-600 hover:text-beige-700 font-semibold inline-flex items-center">
+                            <a href="prestations.html#therapie" class="link-underline text-beige-600 font-semibold inline-flex items-center gap-2">
                                 En savoir plus
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </a>
@@ -386,65 +550,65 @@
     </section>
 
     <!-- Why Choose Me Section -->
-    <section class="py-20 bg-white">
+    <section class="py-28 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-16">
+            <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-20">
                 Pourquoi me choisir ?
             </h2>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <div class="text-center">
-                    <div class="w-12 h-12 bg-copper-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto stagger-container">
+                <div class="reveal text-center">
+                    <div class="w-16 h-16 bg-copper-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-2">
+                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-3">
                         Approche humaniste
                     </h3>
-                    <p class="text-copper-600">
+                    <p class="text-copper-600 leading-relaxed">
                         Bienveillance et écoute au cœur de chaque séance
                     </p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-12 h-12 bg-copper-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="reveal text-center">
+                    <div class="w-16 h-16 bg-copper-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-2">
+                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-3">
                         Tous publics
                     </h3>
-                    <p class="text-copper-600">
+                    <p class="text-copper-600 leading-relaxed">
                         Bébés, enfants, adultes, futurs parents
                     </p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-12 h-12 bg-copper-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="reveal text-center">
+                    <div class="w-16 h-16 bg-copper-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-2">
+                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-3">
                         Expérience confirmée
                     </h3>
-                    <p class="text-copper-600">
+                    <p class="text-copper-600 leading-relaxed">
                         Formation solide et pratique régulière
                     </p>
                 </div>
 
-                <div class="text-center">
-                    <div class="w-12 h-12 bg-copper-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="reveal text-center">
+                    <div class="w-16 h-16 bg-copper-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-2">
+                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-3">
                         Cadre bienveillant
                     </h3>
-                    <p class="text-copper-600">
+                    <p class="text-copper-600 leading-relaxed">
                         Espace sécurisant et apaisant à Bruxelles
                     </p>
                 </div>
@@ -453,19 +617,19 @@
     </section>
 
     <!-- Insurance & Packages Section -->
-    <section class="py-20 bg-gradient-to-br from-terracotta-50 to-beige-50">
+    <section class="py-28 bg-gradient-to-br from-terracotta-50 to-beige-50">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-4">
+                <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-6">
                     Des accompagnements accessibles
                 </h2>
-                <p class="text-xl text-center text-copper-600 mb-16 max-w-3xl mx-auto">
+                <p class="reveal text-xl text-center text-copper-600 mb-20 max-w-3xl mx-auto leading-relaxed">
                     Profitez de forfaits avantageux et d'un remboursement possible par votre mutuelle
                 </p>
 
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="grid md:grid-cols-2 gap-10 mb-16 stagger-container">
                     <!-- Insurance Info -->
-                    <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-copper-100">
+                    <div class="reveal bg-white rounded-3xl p-10 shadow-lg border-2 border-copper-100">
                         <div class="flex items-start mb-6">
                             <div class="w-16 h-16 bg-copper-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <svg class="w-8 h-8 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -504,7 +668,7 @@
                     </div>
 
                     <!-- Packages -->
-                    <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-terracotta-100">
+                    <div class="reveal bg-white rounded-3xl p-10 shadow-lg border-2 border-terracotta-100">
                         <div class="flex items-start mb-6">
                             <div class="w-16 h-16 bg-terracotta-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <svg class="w-8 h-8 text-terracotta-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -539,8 +703,8 @@
                     </div>
                 </div>
 
-                <div class="text-center">
-                    <a href="tarifs.html" class="inline-block bg-copper-400 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-copper-500 shadow-lg">
+                <div class="reveal text-center">
+                    <a href="tarifs.html" class="btn-premium inline-block bg-copper-400 text-white px-12 py-5 rounded-full font-semibold text-lg shadow-lg">
                         Voir tous les tarifs
                     </a>
                 </div>
@@ -549,17 +713,17 @@
     </section>
 
     <!-- Google Reviews Section -->
-    <section class="py-20 bg-copper-50">
+    <section class="py-28 bg-copper-50">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
                 <!-- Section Header with Google Integration -->
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-display font-bold text-copper-800 mb-6">
+                <div class="text-center mb-16">
+                    <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-copper-800 mb-8">
                         Avis Google
                     </h2>
 
                     <!-- Google Rating Card -->
-                    <div class="inline-block bg-white rounded-2xl shadow-lg px-8 py-6 mb-8">
+                    <div class="reveal inline-block bg-white rounded-2xl shadow-lg px-10 py-8 mb-8">
                         <div class="flex items-center gap-4">
                             <!-- Google Logo -->
                             <svg class="w-12 h-12" viewBox="0 0 48 48">
@@ -583,9 +747,9 @@
                 </div>
 
                 <!-- Reviews Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 stagger-container">
                     <!-- Review 1 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="reveal bg-white rounded-2xl p-8 shadow-lg">
                         <div class="flex items-start justify-between mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 bg-copper-200 rounded-full flex items-center justify-center text-lg font-display text-copper-700 mr-3">
@@ -612,7 +776,7 @@
                     </div>
 
                     <!-- Review 2 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="reveal bg-white rounded-2xl p-8 shadow-lg">
                         <div class="flex items-start justify-between mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 bg-terracotta-200 rounded-full flex items-center justify-center text-lg font-display text-terracotta-700 mr-3">
@@ -639,7 +803,7 @@
                     </div>
 
                     <!-- Review 3 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="reveal bg-white rounded-2xl p-8 shadow-lg">
                         <div class="flex items-start justify-between mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 bg-beige-300 rounded-full flex items-center justify-center text-lg font-display text-beige-700 mr-3">
@@ -666,7 +830,7 @@
                     </div>
 
                     <!-- Review 4 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="reveal bg-white rounded-2xl p-8 shadow-lg">
                         <div class="flex items-start justify-between mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 bg-copper-200 rounded-full flex items-center justify-center text-lg font-display text-copper-700 mr-3">
@@ -693,7 +857,7 @@
                     </div>
 
                     <!-- Review 5 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="reveal bg-white rounded-2xl p-8 shadow-lg">
                         <div class="flex items-start justify-between mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 bg-terracotta-200 rounded-full flex items-center justify-center text-lg font-display text-terracotta-700 mr-3">
@@ -720,7 +884,7 @@
                     </div>
 
                     <!-- Review 6 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="reveal bg-white rounded-2xl p-8 shadow-lg">
                         <div class="flex items-start justify-between mb-4">
                             <div class="flex items-center">
                                 <div class="w-12 h-12 bg-beige-300 rounded-full flex items-center justify-center text-lg font-display text-beige-700 mr-3">
@@ -748,11 +912,11 @@
                 </div>
 
                 <!-- CTA Button to Google Reviews -->
-                <div class="text-center">
+                <div class="reveal text-center">
                     <a href="https://www.google.com/maps/search/?api=1&query=Nanou+Mendeles+Avenue+Louise+349+Bruxelles&query_place_id=ChIJoei5ybvDw0cRrR8S5ZcVdSw"
                        target="_blank"
                        rel="noopener noreferrer"
-                       class="inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-copper-800 px-8 py-4 rounded-full font-semibold text-lg shadow-lg border-2 border-copper-200 transition-all hover:shadow-xl">
+                       class="btn-premium inline-flex items-center gap-3 bg-white text-copper-800 px-10 py-5 rounded-full font-semibold text-lg shadow-lg border-2 border-copper-200">
                         <svg class="w-6 h-6" viewBox="0 0 48 48">
                             <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
                             <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
@@ -773,15 +937,15 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 hero-gradient">
+    <section class="py-32 hero-gradient">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+            <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-white mb-8 leading-tight">
                 Prêt(e) à prendre soin de vous ?
             </h2>
-            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            <p class="reveal text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
                 Offrez-vous un moment de détente et de reconnexion avec vous-même. Je serai ravie de vous accompagner.
             </p>
-            <a href="contact.html" class="inline-block bg-white text-copper-700 px-10 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-lg">
+            <a href="contact.html" class="reveal btn-premium inline-block bg-white text-copper-700 px-12 py-5 rounded-full font-semibold text-lg shadow-xl">
                 Contactez-moi
             </a>
         </div>
@@ -875,6 +1039,55 @@
 
     <!-- JavaScript -->
     <script>
+        // Check if user prefers reduced motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Initialize Lenis Smooth Scroll (only if user doesn't prefer reduced motion)
+        if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true,
+                smoothTouch: false,
+                touchMultiplier: 2
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+
+            // Lenis scroll event for parallax
+            lenis.on('scroll', ({ scroll }) => {
+                // Parallax hero image (subtle 3% movement)
+                const heroImage = document.getElementById('hero-image');
+                if (heroImage) {
+                    const parallaxOffset = scroll * 0.03;
+                    heroImage.style.transform = `translateY(${parallaxOffset}px)`;
+                }
+
+                // Header shadow
+                const header = document.getElementById('header');
+                if (scroll > 20) {
+                    header.classList.add('nav-shadow');
+                } else {
+                    header.classList.remove('nav-shadow');
+                }
+            });
+        } else {
+            // Fallback for header shadow without Lenis
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('nav-shadow');
+                } else {
+                    header.classList.remove('nav-shadow');
+                }
+            });
+        }
+
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -883,26 +1096,53 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Header shadow on scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('nav-shadow');
-            } else {
-                header.classList.remove('nav-shadow');
-            }
-        });
+        // Intersection Observer for reveal animations
+        if (!prefersReducedMotion) {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        // Smooth scroll for anchor links
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: stop observing after animation
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with .reveal class
+            document.querySelectorAll('.reveal').forEach(element => {
+                observer.observe(element);
+            });
+        } else {
+            // If reduced motion, show all elements immediately
+            document.querySelectorAll('.reveal').forEach(element => {
+                element.classList.add('active');
+            });
+        }
+
+        // Smooth scroll for anchor links (works with Lenis)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    if (typeof lenis !== 'undefined') {
+                        lenis.scrollTo(target, {
+                            offset: -80,
+                            duration: 1.5
+                        });
+                    } else {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
