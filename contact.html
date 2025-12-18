@@ -9,7 +9,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,13 +47,10 @@
         }
     </script>
 
-    <style>
-        body { font-family: 'Work Sans', sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; }
-        .nav-shadow { box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); }
-        * { transition: all 0.3s ease; }
-        button, a { transition: all 0.2s ease; }
+    <!-- Premium Styles -->
+    <link rel="stylesheet" href="assets/css/premium.css">
 
+    <style>
         .input-field:focus {
             outline: none;
             border-color: #B8956A;
@@ -522,26 +522,11 @@
         </svg>
     </a>
 
-    <!-- JavaScript -->
+    <!-- Premium JavaScript -->
+    <script src="assets/js/premium.js"></script>
+
+    <!-- Page-specific JavaScript -->
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Header shadow on scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('nav-shadow');
-            } else {
-                header.classList.remove('nav-shadow');
-            }
-        });
-
         // Form Submission with Formspree
         const contactForm = document.getElementById('contact-form');
         const successMessage = document.getElementById('success-message');
