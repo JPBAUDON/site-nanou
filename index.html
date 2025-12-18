@@ -25,7 +25,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
@@ -37,6 +37,52 @@
             theme: {
                 extend: {
                     colors: {
+                        // Nouvelle palette organique terre & sauge
+                        sand: {
+                            50: '#faf8f5',
+                            100: '#f5f1ea',
+                            200: '#ebe3d5',
+                            300: '#dfd0b8',
+                            400: '#cfb894',
+                            500: '#c1a076',
+                            600: '#b58e6a',
+                            700: '#9d7d5c',
+                            800: '#7d6449',
+                            900: '#64513b',
+                        },
+                        terra: {
+                            50: '#fdf6f4',
+                            100: '#fbeae6',
+                            200: '#f7d5cd',
+                            300: '#f0b5a7',
+                            400: '#d4826f',
+                            500: '#c87057',
+                            600: '#b85e45',
+                            700: '#9a4d39',
+                            800: '#7f4232',
+                            900: '#6a3a2e',
+                        },
+                        sage: {
+                            50: '#f5f7f4',
+                            100: '#e8ede6',
+                            200: '#d2dccf',
+                            300: '#b0c2ab',
+                            400: '#9fb89f',
+                            500: '#7a9a7a',
+                            600: '#5e7d5e',
+                            700: '#4d654d',
+                            800: '#405240',
+                            900: '#374537',
+                        },
+                        cream: {
+                            DEFAULT: '#faf8f5',
+                            dark: '#f5f1ea',
+                        },
+                        charcoal: {
+                            DEFAULT: '#2d2d2d',
+                            light: '#4a4a4a',
+                        },
+                        // Anciennes couleurs conservées pour compatibilité
                         copper: {
                             50: '#faf8f5',
                             100: '#f2ebe4',
@@ -76,7 +122,7 @@
                     },
                     fontFamily: {
                         'display': ['Cormorant Garamond', 'serif'],
-                        'body': ['Work Sans', 'sans-serif'],
+                        'body': ['Crimson Text', 'serif'],
                         'accent': ['Cormorant Garamond', 'serif'],
                     }
                 }
@@ -140,38 +186,38 @@
     }
     </script>
 </head>
-<body class="smooth-scroll bg-beige-50 text-copper-900">
+<body class="smooth-scroll bg-cream text-charcoal">
 
     <!-- Header Navigation -->
-    <header id="header" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm">
+    <header id="header" class="fixed w-full top-0 z-50 blur-backdrop transition-all duration-300">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-copper-400 rounded-full flex items-center justify-center ring-2 ring-yellow-500 shadow-lg">
+                <a href="index.html" class="flex items-center space-x-2 hover-lift">
+                    <div class="w-10 h-10 bg-terra-500 rounded-full flex items-center justify-center ring-2 ring-sage-400 shadow-soft-md">
                         <span class="text-white text-xl font-display font-bold">M</span>
                     </div>
-                    <span class="text-xl font-display font-semibold text-copper-800">Massages & Naissance</span>
+                    <span class="text-xl font-display font-semibold text-charcoal">Massages & Naissance</span>
                 </a>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-copper-700 hover:text-copper-500 font-medium">Accueil</a>
-                    <a href="prestations.html" class="text-copper-700 hover:text-copper-500 font-medium">Prestations</a>
-                    <a href="a-propos.html" class="text-copper-700 hover:text-copper-500 font-medium">À propos</a>
-                    <a href="tarifs.html" class="text-copper-700 hover:text-copper-500 font-medium">Tarifs</a>
-                    <a href="contact.html" class="text-copper-700 hover:text-copper-500 font-medium">Contact</a>
-                    <a href="demo-1.html" class="text-purple-600 hover:text-purple-700 font-medium">✨ Demo 1</a>
-                    <a href="demo-2.html" class="text-green-700 hover:text-green-800 font-medium">🌿 Demo 2</a>
-                    <a href="contact.html" class="bg-terracotta-400 text-white px-6 py-2 rounded-full hover:bg-terracotta-500 font-semibold shadow-lg flex items-center gap-2">
+                    <a href="index.html" class="link-underline text-charcoal hover:text-terra-500 font-medium transition-colors">Accueil</a>
+                    <a href="prestations.html" class="link-underline text-charcoal hover:text-terra-500 font-medium transition-colors">Prestations</a>
+                    <a href="a-propos.html" class="link-underline text-charcoal hover:text-terra-500 font-medium transition-colors">À propos</a>
+                    <a href="tarifs.html" class="link-underline text-charcoal hover:text-terra-500 font-medium transition-colors">Tarifs</a>
+                    <a href="contact.html" class="link-underline text-charcoal hover:text-terra-500 font-medium transition-colors">Contact</a>
+                    <a href="demo-1.html" class="text-purple-600 hover:text-purple-700 font-medium transition-colors text-sm">✨ Demo 1</a>
+                    <a href="demo-2.html" class="text-green-700 hover:text-green-800 font-medium transition-colors text-sm">🌿 Demo 2</a>
+                    <a href="contact.html" class="btn-premium bg-terra-500 text-white px-6 py-2 rounded-full hover:bg-terra-600 font-semibold shadow-soft-lg flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
-                        Réserver en ligne
+                        Réserver
                     </a>
                 </div>
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-copper-700 focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-charcoal focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -180,13 +226,13 @@
 
             <!-- Mobile Navigation -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="index.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">Accueil</a>
-                <a href="prestations.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">Prestations</a>
-                <a href="a-propos.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">À propos</a>
-                <a href="tarifs.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">Tarifs</a>
-                <a href="contact.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">Contact</a>
-                <a href="demo-1.html" class="block py-2 text-purple-600 font-medium">✨ Demo 1</a>
-                <a href="demo-2.html" class="block py-2 text-green-700 font-medium">🌿 Demo 2</a>
+                <a href="index.html" class="block py-2 text-charcoal hover:text-terra-500 font-medium">Accueil</a>
+                <a href="prestations.html" class="block py-2 text-charcoal hover:text-terra-500 font-medium">Prestations</a>
+                <a href="a-propos.html" class="block py-2 text-charcoal hover:text-terra-500 font-medium">À propos</a>
+                <a href="tarifs.html" class="block py-2 text-charcoal hover:text-terra-500 font-medium">Tarifs</a>
+                <a href="contact.html" class="block py-2 text-charcoal hover:text-terra-500 font-medium">Contact</a>
+                <a href="demo-1.html" class="block py-2 text-purple-600 font-medium text-sm">✨ Demo 1</a>
+                <a href="demo-2.html" class="block py-2 text-green-700 font-medium text-sm">🌿 Demo 2</a>
             </div>
         </nav>
     </header>
@@ -200,25 +246,25 @@
                  alt="Nanou Mendeles pratiquant un massage dans une atmosphère apaisante"
                  class="parallax-hero w-full h-full object-cover"
                  loading="eager">
-            <div class="absolute inset-0 bg-gradient-to-r from-copper-800/80 via-copper-700/70 to-beige-600/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-terra-700/85 via-sand-600/75 to-sage-600/70"></div>
         </div>
 
         <div class="container mx-auto px-6 text-center relative z-10">
             <div class="max-w-4xl mx-auto fade-in-up">
-                <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                    Bienvenue dans votre espace<br>de bien-être
+                <h1 class="text-5xl md:text-7xl font-display font-black text-white mb-8 drop-shadow-2xl leading-tight tracking-tight">
+                    Votre espace de bien-être<br>au cœur de Bruxelles
                 </h1>
-                <p class="text-xl md:text-2xl text-white/95 mb-6 font-light drop-shadow-md">
+                <p class="text-xl md:text-2xl text-white/95 mb-6 font-body drop-shadow-md">
                     Massage • Haptonomie • Thérapie psycho-corporelle
                 </p>
-                <p class="text-lg md:text-xl text-white/90 mb-12 drop-shadow-md">
-                    à Bruxelles
+                <p class="text-lg md:text-xl text-white/90 mb-12 drop-shadow-md font-body italic">
+                    Une approche humaniste et bienveillante
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <a href="contact.html" class="btn-premium bg-white text-copper-700 px-10 py-5 rounded-full font-semibold text-lg shadow-xl">
+                    <a href="contact.html" class="btn-premium hover-lift bg-white text-terra-700 px-10 py-5 rounded-full font-semibold text-lg shadow-soft-xl">
                         Prendre rendez-vous
                     </a>
-                    <a href="#intro" class="btn-premium bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-semibold text-lg shadow-lg">
+                    <a href="#intro" class="btn-premium hover-lift bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-semibold text-lg shadow-soft-lg hover:bg-white/10">
                         Découvrir
                     </a>
                 </div>
@@ -234,31 +280,41 @@
     </section>
 
     <!-- Introduction Section -->
-    <section id="intro" class="py-28 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-copper-800 mb-12 leading-tight">
-                    L'approche psycho-corporelle :<br>une invitation au lâcher-prise
-                </h2>
+    <section id="intro" class="py-32 bg-white relative">
+        <div class="absolute inset-0 opacity-30 pointer-events-none">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-sage-200 rounded-full blur-3xl organic-shape-1"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 bg-terra-200 rounded-full blur-3xl organic-shape-2"></div>
+        </div>
 
-                <div class="space-y-8 text-lg text-copper-700 leading-relaxed">
-                    <p class="reveal text-2xl font-semibold text-copper-800">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-charcoal mb-4 leading-tight">
+                    L'approche psycho-corporelle
+                </h2>
+                <p class="reveal text-2xl font-body italic text-terra-600 mb-16">
+                    Une invitation au lâcher-prise
+                </p>
+
+                <div class="space-y-8 text-lg text-charcoal-light leading-relaxed">
+                    <p class="reveal text-2xl font-semibold text-charcoal">
                         Le toucher : notre premier langage
                     </p>
 
-                    <p class="reveal font-accent italic text-xl leading-relaxed text-copper-700">
+                    <p class="reveal font-body italic text-xl leading-relaxed">
                         Avant même de naître, le toucher est notre première connexion au monde. C'est par lui que nous apprenons la confiance, la sécurité, l'apaisement. L'approche psycho-corporelle nous invite à renouer avec cette dimension essentielle : celle de notre corps vécu, ressenti, habité.
                     </p>
 
-                    <p class="reveal font-accent italic text-xl leading-relaxed text-copper-700">
+                    <p class="reveal font-body italic text-xl leading-relaxed">
                         Le toucher est le premier sens qui se développe in-utero et le dernier à s'éteindre avant notre dernier voyage. Il est notre première approche palpable au monde en début de vie. Une approche accueillante envers le nouveau-né lui donnera confiance en lui-même et en ce qui l'entoure. Un toucher accueillant envers un adulte lui permettra de se réconcilier avec son corps.
                     </p>
 
-                    <p class="reveal font-accent italic text-xl leading-relaxed text-copper-700">
-                        Nos sensations corporelles nous accompagnent partout et sont le reflet de nos états de conscience. Notre enveloppe corporelle et énergétique constitue notre protection et notre force. <strong class="font-semibold">En prendre soin est essentiel pour un équilibre physique et mental.</strong>
+                    <p class="reveal font-body italic text-xl leading-relaxed">
+                        Nos sensations corporelles nous accompagnent partout et sont le reflet de nos états de conscience. Notre enveloppe corporelle et énergétique constitue notre protection et notre force. <strong class="font-semibold text-terra-600">En prendre soin est essentiel pour un équilibre physique et mental.</strong>
                     </p>
 
-                    <p class="reveal text-lg text-copper-800 pt-6 leading-relaxed font-medium">
+                    <div class="divider-organic my-12"></div>
+
+                    <p class="reveal text-lg text-charcoal pt-6 leading-relaxed font-medium">
                         Mon approche humaniste et affective est destinée à tous : bébés, enfants, adultes, futurs parents. Les bienfaits sont puissants et durables.
                     </p>
                 </div>
@@ -267,30 +323,39 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-28 bg-beige-50">
+    <section class="py-32 bg-cream-dark relative">
         <div class="container mx-auto px-6">
-            <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-20">
-                Mes Prestations
-            </h2>
+            <div class="text-center mb-20">
+                <h2 class="reveal text-4xl md:text-5xl font-display font-bold text-charcoal mb-4">
+                    Mes Prestations
+                </h2>
+                <p class="reveal text-xl text-charcoal-light font-body italic">
+                    Des approches complémentaires pour votre bien-être
+                </p>
+            </div>
 
             <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto stagger-container">
                 <!-- Service 1: Massage -->
-                <div class="reveal card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="h-72 overflow-hidden relative image-overlay">
+                <div class="reveal card-premium bg-white hover-reveal group">
+                    <div class="h-80 overflow-hidden relative">
                         <img src="assets/images/massage-adulte/massage-dos-huile.jpg"
                              alt="Massage relaxant et thérapeutique"
-                             class="w-full h-full object-cover" loading="lazy">
+                             class="w-full h-full object-cover hover-scale" loading="lazy">
+                        <div class="reveal-text">
+                            <h3 class="text-2xl font-display font-bold mb-2">Massages</h3>
+                            <p class="text-sm opacity-90">Thaï, Suédois, Sensitif, Shiatsu</p>
+                        </div>
                     </div>
-                    <div class="p-10">
-                        <h3 class="text-2xl font-display font-semibold text-copper-800 mb-4 text-center">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-semibold text-charcoal mb-4 text-gradient-terra">
                             Massage & Relaxation
                         </h3>
-                        <p class="text-copper-700 text-center mb-8 leading-relaxed">
-                            Relaxation profonde et libération des tensions. Pour retrouver équilibre et sérénité.
+                        <p class="text-charcoal-light text-center mb-6 leading-relaxed font-body">
+                            Relaxation profonde et libération des tensions. Pour retrouver équilibre et sérénité dans un cadre apaisant.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#massage" class="link-underline text-copper-600 font-semibold inline-flex items-center gap-2">
-                                En savoir plus
+                            <a href="prestations.html#massage" class="link-underline text-terra-600 font-semibold inline-flex items-center gap-2">
+                                Découvrir les massages
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
@@ -300,21 +365,25 @@
                 </div>
 
                 <!-- Service 2: Haptonomie -->
-                <div class="reveal card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="h-72 overflow-hidden relative image-overlay">
+                <div class="reveal card-premium bg-white hover-reveal group">
+                    <div class="h-80 overflow-hidden relative">
                         <img src="assets/images/prenatal/prenatal-01-massage-ventre.jpg"
                              alt="Massage prénatal et haptonomie pour femme enceinte"
-                             class="w-full h-full object-cover" loading="lazy">
+                             class="w-full h-full object-cover hover-scale" loading="lazy">
+                        <div class="reveal-text">
+                            <h3 class="text-2xl font-display font-bold mb-2">Haptonomie</h3>
+                            <p class="text-sm opacity-90">Accompagnement pré & post-natal</p>
+                        </div>
                     </div>
-                    <div class="p-10">
-                        <h3 class="text-2xl font-display font-semibold text-copper-800 mb-4 text-center">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-semibold text-charcoal mb-4 text-gradient-sage">
                             Haptonomie
                         </h3>
-                        <p class="text-copper-700 text-center mb-8 leading-relaxed">
-                            Préparation à la naissance. Créer le lien avec bébé et vivre une grossesse en conscience.
+                        <p class="text-charcoal-light text-center mb-6 leading-relaxed font-body">
+                            Préparation affective à la naissance. Créer le lien avec bébé et vivre une grossesse en pleine conscience.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#haptonomie" class="link-underline text-terracotta-400 font-semibold inline-flex items-center gap-2">
+                            <a href="prestations.html#haptonomie" class="link-underline text-sage-600 font-semibold inline-flex items-center gap-2">
                                 En savoir plus
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -325,21 +394,25 @@
                 </div>
 
                 <!-- Service 3: Thérapie -->
-                <div class="reveal card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="h-72 overflow-hidden relative image-overlay">
+                <div class="reveal card-premium bg-white hover-reveal group">
+                    <div class="h-80 overflow-hidden relative">
                         <img src="assets/images/therapie/massage-tete-delicat.jpg"
                              alt="Thérapie psycho-corporelle et massage crânien"
-                             class="w-full h-full object-cover" loading="lazy">
+                             class="w-full h-full object-cover hover-scale" loading="lazy">
+                        <div class="reveal-text">
+                            <h3 class="text-2xl font-display font-bold mb-2">Thérapie</h3>
+                            <p class="text-sm opacity-90">Approche psycho-corporelle</p>
+                        </div>
                     </div>
-                    <div class="p-10">
-                        <h3 class="text-2xl font-display font-semibold text-copper-800 mb-4 text-center">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-display font-semibold text-charcoal mb-4">
                             Thérapie Psycho-corporelle
                         </h3>
-                        <p class="text-copper-700 text-center mb-8 leading-relaxed">
-                            Accompagnement en profondeur. Réconcilier corps et esprit pour un mieux-être durable.
+                        <p class="text-charcoal-light text-center mb-6 leading-relaxed font-body">
+                            Accompagnement en profondeur. Réconcilier corps et esprit pour un mieux-être durable et authentique.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#therapie" class="link-underline text-beige-600 font-semibold inline-flex items-center gap-2">
+                            <a href="prestations.html#therapie" class="link-underline text-sand-700 font-semibold inline-flex items-center gap-2">
                                 En savoir plus
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
