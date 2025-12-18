@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Design alternatif - Massages & Naissance - Approche zen et moderne">
+    <title>Demo 1 - Design Alternatif - Massages & Naissance</title>
+
+    <!-- Fonts - Alternative Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Nouvelle palette : Violet profond / Lavande / Rose poudré
+                        amethyst: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        },
+                        lavender: {
+                            50: '#faf5ff',
+                            100: '#f3ebff',
+                            200: '#e6d5ff',
+                            300: '#d4b4ff',
+                            400: '#b888ff',
+                            500: '#9b59ff',
+                            600: '#8833ff',
+                            700: '#7722cc',
+                            800: '#5c1a99',
+                            900: '#3d1166',
+                        },
+                        powder: {
+                            50: '#fff5f7',
+                            100: '#ffe4eb',
+                            200: '#ffc9d9',
+                            300: '#ff9eb8',
+                            400: '#ff6b9d',
+                            500: '#ff3d7f',
+                            600: '#e01c68',
+                            700: '#b80d52',
+                            800: '#8f0540',
+                            900: '#6b0330',
+                        },
+                        cream: {
+                            50: '#fdfcfa',
+                            100: '#faf7f2',
+                            200: '#f5f0e6',
+                            300: '#ebe3d3',
+                            400: '#ddd0b8',
+                            500: '#c9b89a',
+                            600: '#b3a085',
+                            700: '#9a876d',
+                            800: '#7d6d58',
+                            900: '#645746',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Outfit', 'sans-serif'],
+                        'script': ['Dancing Script', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Glassmorphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-dark {
+            background: rgba(88, 28, 135, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        /* Video background */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Gradient animations */
+        @keyframes gradient-shift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .animated-gradient {
+            background: linear-gradient(270deg, #a855f7, #9b59ff, #ff6b9d, #c9b89a);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        /* Blob shapes */
+        .blob {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: blob-animation 8s ease-in-out infinite;
+        }
+
+        @keyframes blob-animation {
+            0%, 100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+            25% {
+                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+            }
+            50% {
+                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+            }
+            75% {
+                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+            }
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Magnetic button effect */
+        .magnetic-btn {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .magnetic-btn::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #a855f7, #9b59ff, #ff6b9d);
+            border-radius: 9999px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            filter: blur(8px);
+        }
+
+        .magnetic-btn:hover::before {
+            opacity: 1;
+        }
+
+        .magnetic-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #faf5ff;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #a855f7, #9b59ff);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #9333ea, #8833ff);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-amethyst-50 via-lavender-50 to-powder-50">
+
+    <!-- Navigation -->
+    <header id="header" class="fixed w-full top-0 z-50 glass">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amethyst-500 to-lavender-500 rounded-full flex items-center justify-center shadow-xl">
+                        <span class="text-white text-2xl font-display font-bold">M</span>
+                    </div>
+                    <div>
+                        <span class="text-xl font-display font-semibold text-amethyst-900 block">Massages & Naissance</span>
+                        <span class="text-xs font-script text-lavender-600">Design Alternatif</span>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-amethyst-700 hover:text-amethyst-900 font-medium">Site Principal</a>
+                    <a href="#services" class="text-amethyst-700 hover:text-amethyst-900 font-medium">Services</a>
+                    <a href="#about" class="text-amethyst-700 hover:text-amethyst-900 font-medium">À propos</a>
+                    <a href="contact.html" class="magnetic-btn bg-gradient-to-r from-amethyst-500 to-lavender-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg">
+                        Contact
+                    </a>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden text-amethyst-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="index.html" class="block py-2 text-amethyst-700 hover:text-amethyst-900 font-medium">Site Principal</a>
+                <a href="#services" class="block py-2 text-amethyst-700 hover:text-amethyst-900 font-medium">Services</a>
+                <a href="#about" class="block py-2 text-amethyst-700 hover:text-amethyst-900 font-medium">À propos</a>
+                <a href="contact.html" class="block py-2 text-amethyst-900 font-semibold">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Video Background -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Animated Gradient Background -->
+        <div class="absolute inset-0 animated-gradient opacity-30"></div>
+
+        <!-- Floating Blobs -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-lavender-400 opacity-20 blob float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-powder-400 opacity-20 blob" style="animation-delay: -3s;"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-amethyst-400 opacity-15 blob" style="animation-delay: -6s;"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="mb-6">
+                    <span class="inline-block px-6 py-2 glass-dark text-lavender-200 rounded-full text-sm font-semibold mb-6">
+                        ✨ Design Alternatif - Expérience Zen Moderne
+                    </span>
+                </div>
+
+                <h1 class="text-6xl md:text-8xl font-display font-bold mb-8 leading-tight">
+                    <span class="bg-gradient-to-r from-amethyst-600 via-lavender-600 to-powder-500 bg-clip-text text-transparent">
+                        L'Art du Toucher
+                    </span>
+                    <br>
+                    <span class="text-amethyst-900">Réinventé</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-amethyst-700 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                    Une approche contemporaine du bien-être,
+                    <span class="font-script text-3xl text-lavender-600"> alliant tradition et modernité </span>
+                    pour votre équilibre corps-esprit
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="contact.html" class="magnetic-btn bg-gradient-to-r from-amethyst-600 to-lavender-600 text-white px-12 py-5 rounded-full font-semibold text-lg shadow-2xl">
+                        Découvrir l'expérience
+                    </a>
+                    <a href="#services" class="glass-dark text-white px-12 py-5 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all">
+                        Voir les approches
+                    </a>
+                </div>
+
+                <!-- Floating elements -->
+                <div class="mt-20 flex justify-center gap-12">
+                    <div class="glass-dark p-6 rounded-2xl transform hover:scale-105 transition-all">
+                        <div class="text-4xl font-display font-bold text-white mb-2">10+</div>
+                        <div class="text-lavender-200 text-sm">Années d'expérience</div>
+                    </div>
+                    <div class="glass-dark p-6 rounded-2xl transform hover:scale-105 transition-all">
+                        <div class="text-4xl font-display font-bold text-white mb-2">500+</div>
+                        <div class="text-lavender-200 text-sm">Clients accompagnés</div>
+                    </div>
+                    <div class="glass-dark p-6 rounded-2xl transform hover:scale-105 transition-all">
+                        <div class="text-4xl font-display font-bold text-white mb-2">5.0</div>
+                        <div class="text-lavender-200 text-sm">Note Google</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-8 h-8 text-amethyst-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section with Cards -->
+    <section id="services" class="py-32 bg-white relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-amethyst-50 to-transparent opacity-50"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-lavender-600 font-script text-2xl mb-4 block">Nos approches</span>
+                    <h2 class="reveal text-5xl md:text-6xl font-display font-bold text-amethyst-900 mb-6">
+                        Un voyage sensoriel unique
+                    </h2>
+                    <p class="reveal text-xl text-amethyst-600 max-w-2xl mx-auto">
+                        Explorez nos différentes pratiques, chacune conçue pour répondre à vos besoins spécifiques
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="reveal group">
+                        <div class="relative overflow-hidden rounded-3xl h-full">
+                            <div class="absolute inset-0 bg-gradient-to-br from-amethyst-600 to-lavender-600 transform group-hover:scale-110 transition-transform duration-700"></div>
+                            <div class="relative p-10 text-white">
+                                <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-display font-bold mb-4">Massage Holistique</h3>
+                                <p class="text-white/90 mb-6 leading-relaxed">
+                                    Une approche globale qui harmonise corps, esprit et émotions pour un bien-être profond et durable.
+                                </p>
+                                <a href="prestations.html#massage" class="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-4 transition-all">
+                                    Découvrir
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="reveal group" style="transition-delay: 100ms;">
+                        <div class="relative overflow-hidden rounded-3xl h-full">
+                            <div class="absolute inset-0 bg-gradient-to-br from-lavender-500 to-powder-500 transform group-hover:scale-110 transition-transform duration-700"></div>
+                            <div class="relative p-10 text-white">
+                                <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-display font-bold mb-4">Haptonomie Consciente</h3>
+                                <p class="text-white/90 mb-6 leading-relaxed">
+                                    Créez un lien profond avec votre bébé dès la grossesse, dans une approche moderne et bienveillante.
+                                </p>
+                                <a href="prestations.html#haptonomie" class="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-4 transition-all">
+                                    Découvrir
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="reveal group" style="transition-delay: 200ms;">
+                        <div class="relative overflow-hidden rounded-3xl h-full">
+                            <div class="absolute inset-0 bg-gradient-to-br from-powder-500 to-cream-600 transform group-hover:scale-110 transition-transform duration-700"></div>
+                            <div class="relative p-10 text-white">
+                                <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-display font-bold mb-4">Thérapie Énergétique</h3>
+                                <p class="text-white/90 mb-6 leading-relaxed">
+                                    Libérez les blocages émotionnels et retrouvez votre équilibre intérieur grâce à une approche douce.
+                                </p>
+                                <a href="prestations.html#therapie" class="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-4 transition-all">
+                                    Découvrir
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="py-32 bg-gradient-to-br from-amethyst-900 via-lavender-900 to-powder-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-lavender-400 rounded-full filter blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="reveal font-script text-3xl text-lavender-300 mb-6 block">Notre philosophie</span>
+                <h2 class="reveal text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">
+                    Le bien-être est un <span class="italic">art de vivre</span>
+                </h2>
+                <p class="reveal text-xl text-white/80 leading-relaxed mb-12">
+                    Dans notre espace zen et moderne, chaque séance est une invitation à ralentir,
+                    à vous reconnecter à vous-même et à redécouvrir la beauté de l'instant présent.
+                    Nous croyons que le véritable bien-être naît de l'harmonie entre le corps et l'esprit.
+                </p>
+
+                <div class="reveal grid md:grid-cols-3 gap-8 mt-16">
+                    <div class="glass-dark p-8 rounded-2xl">
+                        <div class="text-5xl mb-4">🧘‍♀️</div>
+                        <h3 class="text-xl font-display font-semibold mb-3">Approche Holistique</h3>
+                        <p class="text-white/70">Vision globale de votre bien-être</p>
+                    </div>
+                    <div class="glass-dark p-8 rounded-2xl">
+                        <div class="text-5xl mb-4">💫</div>
+                        <h3 class="text-xl font-display font-semibold mb-3">Écoute Profonde</h3>
+                        <p class="text-white/70">Chaque séance est unique</p>
+                    </div>
+                    <div class="glass-dark p-8 rounded-2xl">
+                        <div class="text-5xl mb-4">🌸</div>
+                        <h3 class="text-xl font-display font-semibold mb-3">Espace Zen</h3>
+                        <p class="text-white/70">Cadre apaisant et moderne</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="reveal glass-dark p-16 rounded-3xl">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+                        Prêt·e pour une expérience transformante ?
+                    </h2>
+                    <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+                        Offrez-vous un moment de détente profonde et découvrez comment le toucher conscient peut transformer votre quotidien.
+                    </p>
+                    <a href="contact.html" class="magnetic-btn inline-block bg-white text-amethyst-900 px-12 py-5 rounded-full font-semibold text-lg shadow-2xl">
+                        Réserver votre séance
+                    </a>
+                </div>
+
+                <div class="mt-16 flex justify-center items-center gap-6 text-amethyst-600">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span class="font-semibold">5.0 sur Google</span>
+                    </div>
+                    <div class="w-px h-6 bg-amethyst-300"></div>
+                    <div>
+                        <span class="font-semibold">+500 clients satisfaits</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amethyst-950 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amethyst-500 to-lavender-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-2xl font-display font-bold">M</span>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-xl font-display font-semibold">Massages & Naissance</div>
+                        <div class="text-xs font-script text-lavender-400">Design Alternatif</div>
+                    </div>
+                </div>
+
+                <p class="text-amethyst-300 mb-6">
+                    Ceci est une page de démonstration pour explorer un design alternatif
+                </p>
+
+                <div class="flex justify-center gap-4 mb-8">
+                    <a href="index.html" class="px-6 py-2 glass-dark rounded-full hover:bg-white/20 transition-all">
+                        Retour au site principal
+                    </a>
+                </div>
+
+                <div class="border-t border-amethyst-800 pt-6 text-amethyst-400 text-sm">
+                    <p>&copy; 2025 Massages & Naissance - Design Alternatif par Claude</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Premium JavaScript -->
+    <script src="assets/js/premium.js"></script>
+
+    <!-- Page-specific animations -->
+    <script>
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Magnetic button effect
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+    </script>
+</body>
+</html>
