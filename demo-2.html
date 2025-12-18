@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Design éditorial organique - Massages & Naissance">
+    <title>Demo 2 - Design Éditorial - Massages & Naissance</title>
+
+    <!-- Fonts - Editorial Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Palette naturelle : Terre / Forêt / Sable
+                        earth: {
+                            50: '#f7f4f0',
+                            100: '#ede7dc',
+                            200: '#dcd0ba',
+                            300: '#c5b193',
+                            400: '#b09370',
+                            500: '#9d7d5c',
+                            600: '#8b6a4a',
+                            700: '#72533c',
+                            800: '#5e4532',
+                            900: '#4d382a',
+                        },
+                        forest: {
+                            50: '#f3f6f3',
+                            100: '#e3e9e3',
+                            200: '#c7d3c8',
+                            300: '#a1b5a3',
+                            400: '#7a937d',
+                            500: '#5d7860',
+                            600: '#4a604d',
+                            700: '#3d4e40',
+                            800: '#334035',
+                            900: '#2b352d',
+                        },
+                        sand: {
+                            50: '#faf9f7',
+                            100: '#f3f1ec',
+                            200: '#e8e3d9',
+                            300: '#d6cdbf',
+                            400: '#c2b5a3',
+                            500: '#ad9985',
+                            600: '#978170',
+                            700: '#7d6a5d',
+                            800: '#68594e',
+                            900: '#564a42',
+                        },
+                        moss: {
+                            50: '#f5f7f4',
+                            100: '#e8ece6',
+                            200: '#d2dad0',
+                            300: '#adbdaa',
+                            400: '#879d84',
+                            500: '#6a8267',
+                            600: '#546952',
+                            700: '#445543',
+                            800: '#3a4639',
+                            900: '#323b31',
+                        },
+                        clay: {
+                            50: '#f9f5f3',
+                            100: '#f1e9e3',
+                            200: '#e3d1c6',
+                            300: '#d1b3a2',
+                            400: '#bc9079',
+                            500: '#a9765c',
+                            600: '#8f6350',
+                            700: '#765244',
+                            800: '#62453b',
+                            900: '#523c33',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Libre Baskerville', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'hand': ['Caveat', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: #faf9f7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        /* Asymmetric grid layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Handwritten underline */
+        .hand-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hand-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: -5%;
+            width: 110%;
+            height: 3px;
+            background: url("data:image/svg+xml,%3Csvg width='200' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5 Q50 2, 100 5 T200 5' stroke='%235d7860' stroke-width='2' fill='none'/%3E%3C/svg%3E") repeat-x;
+            background-size: 100px 10px;
+        }
+
+        /* Organic shapes */
+        .organic-blob {
+            clip-path: polygon(
+                30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%
+            );
+        }
+
+        /* Tear/Rip effect */
+        .tear-bottom {
+            position: relative;
+        }
+
+        .tear-bottom::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: inherit;
+            clip-path: polygon(
+                0 0, 5% 30%, 10% 10%, 15% 30%, 20% 0, 25% 30%, 30% 10%, 35% 30%,
+                40% 0, 45% 30%, 50% 10%, 55% 30%, 60% 0, 65% 30%, 70% 10%, 75% 30%,
+                80% 0, 85% 30%, 90% 10%, 95% 30%, 100% 0, 100% 100%, 0 100%
+            );
+        }
+
+        /* Sketch/hand-drawn border */
+        .sketch-border {
+            position: relative;
+            border: 3px solid transparent;
+        }
+
+        .sketch-border::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border: 3px solid currentColor;
+            border-radius: 20px;
+            clip-path: polygon(
+                0% 0%, 2% 0.5%, 4% 0%, 6% 0.5%, 8% 0%, 10% 0.5%, 12% 0%, 14% 0.5%,
+                16% 0%, 18% 0.5%, 20% 0%, 22% 0.5%, 24% 0%, 26% 0.5%, 28% 0%, 30% 0.5%,
+                32% 0%, 34% 0.5%, 36% 0%, 38% 0.5%, 40% 0%, 42% 0.5%, 44% 0%, 46% 0.5%,
+                48% 0%, 50% 0.5%, 52% 0%, 54% 0.5%, 56% 0%, 58% 0.5%, 60% 0%, 62% 0.5%,
+                64% 0%, 66% 0.5%, 68% 0%, 70% 0.5%, 72% 0%, 74% 0.5%, 76% 0%, 78% 0.5%,
+                80% 0%, 82% 0.5%, 84% 0%, 86% 0.5%, 88% 0%, 90% 0.5%, 92% 0%, 94% 0.5%,
+                96% 0%, 98% 0.5%, 100% 0%,
+                100% 2%, 99.5% 4%, 100% 6%, 99.5% 8%, 100% 10%, 99.5% 12%, 100% 14%,
+                99.5% 16%, 100% 18%, 99.5% 20%, 100% 22%, 99.5% 24%, 100% 26%,
+                99.5% 28%, 100% 30%, 99.5% 32%, 100% 34%, 99.5% 36%, 100% 38%,
+                99.5% 40%, 100% 42%, 99.5% 44%, 100% 46%, 99.5% 48%, 100% 50%,
+                99.5% 52%, 100% 54%, 99.5% 56%, 100% 58%, 99.5% 60%, 100% 62%,
+                99.5% 64%, 100% 66%, 99.5% 68%, 100% 70%, 99.5% 72%, 100% 74%,
+                99.5% 76%, 100% 78%, 99.5% 80%, 100% 82%, 99.5% 84%, 100% 86%,
+                99.5% 88%, 100% 90%, 99.5% 92%, 100% 94%, 99.5% 96%, 100% 98%, 100% 100%,
+                98% 99.5%, 96% 100%, 94% 99.5%, 92% 100%, 90% 99.5%, 88% 100%,
+                86% 99.5%, 84% 100%, 82% 99.5%, 80% 100%, 78% 99.5%, 76% 100%,
+                74% 99.5%, 72% 100%, 70% 99.5%, 68% 100%, 66% 99.5%, 64% 100%,
+                62% 99.5%, 60% 100%, 58% 99.5%, 56% 100%, 54% 99.5%, 52% 100%,
+                50% 99.5%, 48% 100%, 46% 99.5%, 44% 100%, 42% 99.5%, 40% 100%,
+                38% 99.5%, 36% 100%, 34% 99.5%, 32% 100%, 30% 99.5%, 28% 100%,
+                26% 99.5%, 24% 100%, 22% 99.5%, 20% 100%, 18% 99.5%, 16% 100%,
+                14% 99.5%, 12% 100%, 10% 99.5%, 8% 100%, 6% 99.5%, 4% 100%,
+                2% 99.5%, 0% 100%,
+                0.5% 98%, 0% 96%, 0.5% 94%, 0% 92%, 0.5% 90%, 0% 88%, 0.5% 86%,
+                0% 84%, 0.5% 82%, 0% 80%, 0.5% 78%, 0% 76%, 0.5% 74%, 0% 72%,
+                0.5% 70%, 0% 68%, 0.5% 66%, 0% 64%, 0.5% 62%, 0% 60%, 0.5% 58%,
+                0% 56%, 0.5% 54%, 0% 52%, 0.5% 50%, 0% 48%, 0.5% 46%, 0% 44%,
+                0.5% 42%, 0% 40%, 0.5% 38%, 0% 36%, 0.5% 34%, 0% 32%, 0.5% 30%,
+                0% 28%, 0.5% 26%, 0% 24%, 0.5% 22%, 0% 20%, 0.5% 18%, 0% 16%,
+                0.5% 14%, 0% 12%, 0.5% 10%, 0% 8%, 0.5% 6%, 0% 4%, 0.5% 2%
+            );
+        }
+
+        /* Textured paper background */
+        .paper-texture {
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0,0,0,0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(0,0,0,0.03) 3px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(0,0,0,0.03) 3px
+                );
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Diagonal section */
+        .diagonal-section {
+            transform: skewY(-3deg);
+            margin: 4rem 0;
+        }
+
+        .diagonal-section > * {
+            transform: skewY(3deg);
+        }
+
+        /* Stain/watercolor effect */
+        .watercolor-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .watercolor-bg::before {
+            content: '';
+            position: absolute;
+            inset: -20%;
+            background: radial-gradient(
+                ellipse at 20% 30%,
+                rgba(93, 120, 96, 0.15) 0%,
+                transparent 50%
+            ),
+            radial-gradient(
+                ellipse at 70% 60%,
+                rgba(157, 125, 92, 0.15) 0%,
+                transparent 50%
+            ),
+            radial-gradient(
+                ellipse at 50% 80%,
+                rgba(106, 130, 103, 0.15) 0%,
+                transparent 50%
+            );
+            filter: blur(40px);
+            animation: watercolor-float 20s ease-in-out infinite;
+        }
+
+        @keyframes watercolor-float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(10%, 5%) scale(1.05);
+            }
+            66% {
+                transform: translate(-5%, 10%) scale(0.95);
+            }
+        }
+
+        /* Split-screen asymmetric */
+        @media (min-width: 768px) {
+            .split-asymmetric {
+                display: grid;
+                grid-template-columns: 40% 60%;
+                align-items: center;
+            }
+
+            .split-asymmetric.reverse {
+                grid-template-columns: 60% 40%;
+            }
+        }
+
+        /* Magazine-style pull quote */
+        .pull-quote {
+            position: relative;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .pull-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 120px;
+            color: rgba(93, 120, 96, 0.15);
+            font-family: 'Libre Baskerville', serif;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-sand-50">
+
+    <!-- Vertical side navigation (editorial style) -->
+    <nav class="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-8">
+        <a href="#hero" class="w-2 h-2 bg-earth-400 rounded-full hover:scale-150 transition-transform"></a>
+        <a href="#story" class="w-2 h-2 bg-earth-300 rounded-full hover:scale-150 transition-transform"></a>
+        <a href="#services" class="w-2 h-2 bg-earth-300 rounded-full hover:scale-150 transition-transform"></a>
+        <a href="#contact" class="w-2 h-2 bg-earth-300 rounded-full hover:scale-150 transition-transform"></a>
+    </nav>
+
+    <!-- Top navigation minimal -->
+    <header class="fixed top-0 w-full z-40 bg-sand-50/80 backdrop-blur-sm border-b border-earth-200">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="index.html" class="font-display text-2xl text-earth-800">
+                <span class="font-hand text-forest-600">Massages &</span> Naissance
+            </a>
+            <a href="index.html" class="text-sm text-earth-600 hover:text-earth-800 underline">← Retour au site</a>
+        </div>
+    </header>
+
+    <!-- Hero Section - Asymmetric Split -->
+    <section id="hero" class="min-h-screen flex items-center pt-32 pb-20 watercolor-bg">
+        <div class="container mx-auto px-6">
+            <div class="split-asymmetric gap-12">
+                <!-- Left: Text -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="font-hand text-3xl text-forest-600 block mb-4">
+                            L'art du toucher conscient
+                        </span>
+                        <h1 class="text-6xl lg:text-8xl font-display leading-tight text-earth-900 mb-6">
+                            Retrouver
+                            <span class="block hand-underline text-forest-700">l'essentiel</span>
+                        </h1>
+                    </div>
+
+                    <p class="text-xl text-earth-700 leading-relaxed max-w-lg">
+                        Dans un monde en perpétuel mouvement, je vous propose un espace hors du temps.
+                        Un refuge pour vous reconnecter à votre corps, à vos sensations, à votre essence.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                        <a href="contact.html" class="inline-block px-8 py-4 bg-forest-600 text-white font-medium hover:bg-forest-700 transition-colors">
+                            Prendre rendez-vous
+                        </a>
+                        <a href="#story" class="inline-block px-8 py-4 border-2 border-earth-400 text-earth-800 font-medium hover:bg-earth-50 transition-colors">
+                            Découvrir l'approche
+                        </a>
+                    </div>
+
+                    <div class="pt-8 flex gap-12 text-sm">
+                        <div>
+                            <div class="font-hand text-4xl text-forest-600">10+</div>
+                            <div class="text-earth-600 mt-1">ans d'expérience</div>
+                        </div>
+                        <div>
+                            <div class="font-hand text-4xl text-forest-600">500+</div>
+                            <div class="text-earth-600 mt-1">personnes accompagnées</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Image with organic shape -->
+                <div class="relative">
+                    <div class="relative">
+                        <img src="assets/images/hero/hero-nanou-cliente.jpg"
+                             alt="Séance de massage dans une ambiance apaisante"
+                             class="w-full h-[600px] object-cover organic-blob shadow-2xl"
+                             loading="eager">
+                        <div class="absolute -bottom-6 -right-6 bg-clay-100 p-6 max-w-xs shadow-xl">
+                            <p class="font-hand text-2xl text-clay-800">
+                                "Le bien-être commence par l'écoute de soi"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section - Full width with diagonal -->
+    <section id="story" class="diagonal-section bg-forest-800 text-white py-32">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="reveal text-5xl lg:text-7xl font-display mb-12 leading-tight">
+                    Une approche <span class="italic">humaine</span> et <span class="italic">bienveillante</span>
+                </h2>
+
+                <div class="pull-quote bg-forest-700/30 backdrop-blur-sm rounded-3xl">
+                    <p class="reveal text-2xl lg:text-3xl font-display italic text-forest-50 leading-relaxed">
+                        Le toucher est le premier sens qui se développe in utero et le dernier à s'éteindre.
+                        C'est notre langage le plus profond, le plus authentique.
+                    </p>
+                </div>
+
+                <p class="reveal text-xl text-forest-100 mt-12 leading-relaxed">
+                    Je vous accompagne avec respect et écoute, dans un espace sécurisant où vous pouvez
+                    simplement être. Chaque séance est unique, adaptée à vos besoins du moment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - Bento Grid Asymmetric -->
+    <section id="services" class="py-32 paper-texture">
+        <div class="container mx-auto px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="font-hand text-4xl text-forest-600 block mb-4">Mes accompagnements</span>
+                    <h2 class="reveal text-5xl lg:text-6xl font-display text-earth-900">
+                        Trois chemins vers le bien-être
+                    </h2>
+                </div>
+
+                <!-- Asymmetric grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Large card - Massage -->
+                    <div class="reveal lg:col-span-7 bg-white p-12 shadow-xl hover:shadow-2xl transition-shadow">
+                        <div class="flex flex-col h-full">
+                            <div class="mb-8">
+                                <img src="assets/images/massage-adulte/massage-dos-huile.jpg"
+                                     alt="Massage thérapeutique"
+                                     class="w-full h-80 object-cover mb-8"
+                                     loading="lazy">
+                            </div>
+                            <span class="font-hand text-2xl text-forest-600 mb-3">01</span>
+                            <h3 class="text-4xl font-display text-earth-900 mb-6">
+                                Massage Thérapeutique
+                            </h3>
+                            <p class="text-lg text-earth-700 leading-relaxed mb-8 flex-grow">
+                                Un moment de détente profonde pour relâcher les tensions physiques et émotionnelles.
+                                Le massage californien, suédois ou intuitif selon vos besoins.
+                            </p>
+                            <a href="prestations.html#massage" class="inline-flex items-center gap-2 text-forest-700 font-semibold group">
+                                Découvrir
+                                <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Small stacked cards -->
+                    <div class="lg:col-span-5 flex flex-col gap-8">
+                        <!-- Haptonomie -->
+                        <div class="reveal bg-moss-100 p-10 shadow-xl hover:shadow-2xl transition-shadow">
+                            <span class="font-hand text-2xl text-moss-700 mb-3 block">02</span>
+                            <h3 class="text-3xl font-display text-earth-900 mb-4">
+                                Haptonomie
+                            </h3>
+                            <p class="text-earth-700 leading-relaxed mb-6">
+                                Créez un lien profond avec votre bébé dès la grossesse.
+                            </p>
+                            <a href="prestations.html#haptonomie" class="inline-flex items-center gap-2 text-moss-700 font-semibold group">
+                                Découvrir
+                                <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Therapie -->
+                        <div class="reveal bg-clay-100 p-10 shadow-xl hover:shadow-2xl transition-shadow">
+                            <span class="font-hand text-2xl text-clay-700 mb-3 block">03</span>
+                            <h3 class="text-3xl font-display text-earth-900 mb-4">
+                                Thérapie Psycho-corporelle
+                            </h3>
+                            <p class="text-earth-700 leading-relaxed mb-6">
+                                Réconcilier corps et esprit pour un mieux-être durable.
+                            </p>
+                            <a href="prestations.html#therapie" class="inline-flex items-center gap-2 text-clay-700 font-semibold group">
+                                Découvrir
+                                <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section - Magazine style with image -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="split-asymmetric reverse gap-16">
+                    <!-- Left: Image -->
+                    <div class="reveal relative">
+                        <img src="assets/images/therapie/massage-tete-delicat.jpg"
+                             alt="Approche bienveillante et humaine"
+                             class="w-full h-[600px] object-cover shadow-2xl"
+                             loading="lazy">
+                        <div class="absolute -top-8 -left-8 font-hand text-9xl text-forest-200 opacity-50">"</div>
+                    </div>
+
+                    <!-- Right: Text -->
+                    <div class="reveal space-y-8">
+                        <h2 class="text-5xl lg:text-6xl font-display text-earth-900 leading-tight">
+                            Prendre soin,
+                            <span class="block italic text-forest-700">c'est écouter</span>
+                        </h2>
+
+                        <div class="space-y-6 text-lg text-earth-700 leading-relaxed">
+                            <p>
+                                Chaque corps a sa propre histoire, son propre rythme, ses propres besoins.
+                                Mon rôle est de créer un espace où vous vous sentez en sécurité pour explorer,
+                                relâcher, vous reconnecter.
+                            </p>
+
+                            <p>
+                                Je ne travaille pas <span class="italic">sur</span> vous, mais <span class="italic">avec</span> vous.
+                                Dans le respect de votre rythme, de vos limites, de votre unicité.
+                            </p>
+
+                            <p class="font-hand text-2xl text-forest-700 pt-4">
+                                ~ Nanou
+                            </p>
+                        </div>
+
+                        <div class="pt-8 space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 bg-forest-200 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-4 h-4 text-forest-800" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-earth-900 mb-1">Approche holistique</h4>
+                                    <p class="text-earth-600">Vision globale de votre bien-être</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 bg-forest-200 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-4 h-4 text-forest-800" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-earth-900 mb-1">Cadre sécurisant</h4>
+                                    <p class="text-earth-600">Espace chaleureux et bienveillant</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-8 h-8 bg-forest-200 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-4 h-4 text-forest-800" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-earth-900 mb-1">Écoute profonde</h4>
+                                    <p class="text-earth-600">Chaque séance est unique</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section - Organic shape -->
+    <section id="contact" class="py-32 watercolor-bg">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal bg-earth-800 text-white p-16 lg:p-20 shadow-2xl relative overflow-hidden">
+                    <!-- Decorative element -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-forest-600/20 rounded-full -mr-32 -mt-32"></div>
+                    <div class="absolute bottom-0 left-0 w-48 h-48 bg-clay-600/20 rounded-full -ml-24 -mb-24"></div>
+
+                    <div class="relative z-10 text-center">
+                        <span class="font-hand text-4xl text-sand-200 block mb-6">
+                            Prêt·e à prendre soin de vous ?
+                        </span>
+                        <h2 class="text-4xl lg:text-5xl font-display mb-8 leading-tight">
+                            Offrez-vous un moment
+                            <span class="block italic">rien que pour vous</span>
+                        </h2>
+                        <p class="text-xl text-sand-100 mb-12 max-w-2xl mx-auto leading-relaxed">
+                            Je vous accueille avec bienveillance dans mon cabinet à Bruxelles,
+                            pour un moment de détente et de reconnexion.
+                        </p>
+                        <a href="contact.html" class="inline-block px-12 py-5 bg-white text-earth-900 font-semibold text-lg hover:bg-sand-50 transition-colors shadow-xl">
+                            Réserver votre séance
+                        </a>
+
+                        <div class="mt-12 flex justify-center items-center gap-8 text-sand-200">
+                            <div class="flex items-center gap-2">
+                                <span class="text-yellow-400">★★★★★</span>
+                                <span>5.0 sur Google</span>
+                            </div>
+                            <div class="w-px h-6 bg-sand-400"></div>
+                            <div>500+ clients satisfaits</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer minimal -->
+    <footer class="bg-earth-900 text-earth-200 py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center space-y-6">
+                <div>
+                    <div class="font-display text-3xl mb-2">
+                        <span class="font-hand text-forest-400">Massages &</span> Naissance
+                    </div>
+                    <div class="text-sm text-earth-400">Design Éditorial Organique</div>
+                </div>
+
+                <div class="flex justify-center gap-4">
+                    <a href="index.html" class="px-6 py-2 border border-earth-600 hover:bg-earth-800 transition-colors text-sm">
+                        Retour au site principal
+                    </a>
+                </div>
+
+                <div class="pt-8 border-t border-earth-800 text-sm text-earth-500">
+                    <p>&copy; 2025 Massages & Naissance - Demo Design 2</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Premium JavaScript -->
+    <script src="assets/js/premium.js"></script>
+
+    <!-- Reveal animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Dot navigation active state
+        const sections = document.querySelectorAll('section[id]');
+        const navDots = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navDots.forEach(dot => {
+                dot.classList.remove('bg-earth-400');
+                dot.classList.add('bg-earth-300');
+                if (dot.getAttribute('href').slice(1) === current) {
+                    dot.classList.remove('bg-earth-300');
+                    dot.classList.add('bg-earth-400');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
