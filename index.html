@@ -11,8 +11,8 @@
     <meta property="og:title" content="Massages & Naissance - Bien-être à Bruxelles">
     <meta property="og:description" content="Approche psycho-corporelle bienveillante : massage, haptonomie, thérapie.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.massages-naissance.be">
-    <meta property="og:image" content="https://www.massages-naissance.be/assets/images/hero/hero-silhouette-nanou.jpg">
+    <meta property="og:url" content="https://www.massages-et-naissance.com">
+    <meta property="og:image" content="https://www.massages-et-naissance.com/assets/images/hero/hero-silhouette-nanou.jpg">
     <meta property="og:locale" content="fr_BE">
     <meta property="og:site_name" content="Massages & Naissance">
 
@@ -20,123 +20,30 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Massages & Naissance - Bien-être à Bruxelles">
     <meta name="twitter:description" content="Approche psycho-corporelle bienveillante : massage, haptonomie, thérapie.">
-    <meta name="twitter:image" content="https://www.massages-naissance.be/assets/images/hero/hero-silhouette-nanou.jpg">
+    <meta name="twitter:image" content="https://www.massages-et-naissance.com/assets/images/hero/hero-silhouette-nanou.jpg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        copper: {
-                            50: '#faf8f5',
-                            100: '#f2ebe4',
-                            200: '#e6d7c8',
-                            300: '#d4b9a0',
-                            400: '#B8956A',
-                            500: '#A0826D',
-                            600: '#8B6F47',
-                            700: '#705838',
-                            800: '#5c472d',
-                            900: '#4a3a24',
-                        },
-                        beige: {
-                            50: '#fdfbf7',
-                            100: '#f9f4eb',
-                            200: '#f3eadb',
-                            300: '#E8DCC4',
-                            400: '#dcc9a8',
-                            500: '#cfb58c',
-                            600: '#c0a172',
-                            700: '#a88760',
-                            800: '#896d4f',
-                            900: '#6f5941',
-                        },
-                        terracotta: {
-                            50: '#faf6f5',
-                            100: '#f5ebe9',
-                            200: '#ead9d6',
-                            300: '#D4A59A',
-                            400: '#c88b7d',
-                            500: '#b97163',
-                            600: '#a65c4f',
-                            700: '#8a4d43',
-                            800: '#73433b',
-                            900: '#5f3a35',
-                        }
-                    },
-                    fontFamily: {
-                        'display': ['Cormorant Garamond', 'serif'],
-                        'body': ['Work Sans', 'sans-serif'],
-                        'accent': ['Cormorant Garamond', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Stylesheet (Tailwind build) -->
+    <link rel="stylesheet" href="assets/css/nanou.css">
 
-    <style>
-        body {
-            font-family: 'Work Sans', sans-serif;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(184, 149, 106, 0.9) 0%, rgba(232, 220, 196, 0.9) 100%);
-        }
-
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .nav-shadow {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Smooth transitions */
-        * {
-            transition: all 0.3s ease;
-        }
-
-        button, a {
-            transition: all 0.2s ease;
-        }
-    </style>
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Schema.org JSON-LD for Local Business SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://www.massages-naissance.be",
+      "@id": "https://www.massages-et-naissance.com",
       "name": "Massages & Naissance",
-      "image": "https://www.massages-naissance.be/assets/images/hero/hero-silhouette-nanou.jpg",
+      "image": "https://www.massages-et-naissance.com/assets/images/hero/hero-silhouette-nanou.jpg",
       "description": "Massages thérapeutiques, haptonomie et thérapie psycho-corporelle à Bruxelles. Approche humaniste et bienveillante pour adultes, bébés et futurs parents.",
-      "url": "https://www.massages-naissance.be",
+      "url": "https://www.massages-et-naissance.com",
       "telephone": "+32498549969",
       "email": "contact@massages-naissance.be",
       "priceRange": "€€",
@@ -179,359 +86,470 @@
     }
     </script>
 </head>
-<body class="smooth-scroll bg-beige-50 text-copper-900">
+<body class="bg-beige-50 text-copper-900">
 
-    <!-- Header Navigation -->
-    <header id="header" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-copper-400 rounded-full flex items-center justify-center ring-2 ring-yellow-500 shadow-lg">
-                        <span class="text-white text-xl font-display font-bold">M</span>
-                    </div>
-                    <span class="text-xl font-display font-semibold text-copper-800">Massages & Naissance</span>
-                </a>
+    <!-- ═══════════════════════════════════════════════════════
+         MOBILE MENU OVERLAY + PANEL
+         ═══════════════════════════════════════════════════════ -->
+    <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true"></div>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-copper-700 hover:text-copper-500 font-medium">Accueil</a>
-                    <a href="prestations.html" class="text-copper-700 hover:text-copper-500 font-medium">Prestations</a>
-                    <a href="a-propos.html" class="text-copper-700 hover:text-copper-500 font-medium">À propos</a>
-                    <a href="tarifs.html" class="text-copper-700 hover:text-copper-500 font-medium">Tarifs</a>
-                    <a href="contact.html" class="text-copper-700 hover:text-copper-500 font-medium">Contact</a>
-                    <a href="contact.html" class="bg-terracotta-400 text-white px-6 py-2 rounded-full hover:bg-terracotta-500 font-semibold shadow-lg flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        Réserver en ligne
-                    </a>
+    <nav id="mobile-panel" class="mobile-panel" aria-label="Menu principal mobile" role="dialog">
+        <div class="flex items-center justify-between px-7 py-6 border-b border-beige-200">
+            <a href="index.html" class="logo-link">
+                <div class="logo-mark">
+                    <span class="text-copper-500 text-sm font-display font-light">M</span>
                 </div>
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-copper-700 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <div class="flex flex-col leading-none gap-0.5">
+                    <span class="text-[0.6rem] font-body font-medium text-copper-400 tracking-[0.18em] uppercase">Massages</span>
+                    <span class="text-sm font-display text-copper-800">&amp; Naissance</span>
+                </div>
+            </a>
+            <button id="mobile-close-btn" class="p-2 text-copper-600 hover:text-copper-800" aria-label="Fermer le menu">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col px-7 py-8 gap-6 flex-1">
+            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Accueil</a>
+            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Prestations</a>
+            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">À propos</a>
+            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Tarifs</a>
+            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Contact</a>
+        </div>
+        <div class="px-7 pb-8">
+            <a href="contact.html" class="btn-primary w-full text-center">Prendre rendez-vous</a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HEADER
+         ═══════════════════════════════════════════════════════ -->
+    <header id="header" class="site-header">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo-link">
+                <div class="logo-mark">
+                    <span class="text-copper-500 text-sm font-display font-light">M</span>
+                </div>
+                <div class="flex flex-col leading-none gap-0.5">
+                    <span class="text-[0.6rem] font-body font-medium text-copper-400 tracking-[0.18em] uppercase">Massages</span>
+                    <span class="text-base font-display text-copper-800">&amp; Naissance</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link active">Accueil</a>
+                <a href="prestations.html" class="nav-link">Prestations</a>
+                <a href="a-propos.html" class="nav-link">À propos</a>
+                <a href="tarifs.html" class="nav-link">Tarifs</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="btn-primary ml-4">Réserver</a>
             </div>
 
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="index.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">Accueil</a>
-                <a href="prestations.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">Prestations</a>
-                <a href="a-propos.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">À propos</a>
-                <a href="tarifs.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">Tarifs</a>
-                <a href="contact.html" class="block py-2 text-copper-700 hover:text-copper-500 font-medium">Contact</a>
-            </div>
+            <!-- Mobile burger -->
+            <button id="mobile-menu-button" class="md:hidden p-2 text-copper-700"
+                    aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Background Image -->
-        <div class="absolute inset-0 z-0">
+    <!-- ═══════════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════════ -->
+    <section class="hero-section">
+        <!-- Background image — Ken Burns applied via CSS -->
+        <div class="hero-bg">
             <img src="assets/images/hero/hero-silhouette-nanou.jpg"
-                 alt="Nanou Mendeles pratiquant un massage dans une atmosphère apaisante"
+                 alt="Nanou Mendeles dans son espace de soin — ambiance apaisante"
                  class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-copper-800/80 via-copper-700/70 to-beige-600/60"></div>
         </div>
 
+        <!-- Vignette overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Hero content -->
         <div class="container mx-auto px-6 text-center relative z-10">
-            <div class="max-w-4xl mx-auto fade-in-up">
-                <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 drop-shadow-lg">
-                    Bienvenue dans votre espace<br>de bien-être
-                </h1>
-                <p class="text-xl md:text-2xl text-white/95 mb-4 font-light drop-shadow-md">
-                    Massage • Haptonomie • Thérapie psycho-corporelle
+            <div class="max-w-5xl mx-auto">
+                <!-- Eyebrow -->
+                <p class="hero-eyebrow font-body font-light text-white/60 mb-8"
+                   style="font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase">
+                    Bruxelles · Bien-être
                 </p>
-                <p class="text-lg md:text-xl text-white/90 mb-10 drop-shadow-md">
-                    à Bruxelles
+
+                <!-- Title — curtain reveal (overflow:hidden clips upward slide) -->
+                <div class="hero-title-wrap overflow-hidden mb-2">
+                    <h1 class="hero-title font-display font-bold text-white"
+                        style="font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 0.93; letter-spacing: -0.01em">
+                        Bienvenue dans votre<br>espace de bien-être
+                    </h1>
+                </div>
+
+                <!-- Animated decorative line -->
+                <div class="hero-line"></div>
+
+                <!-- Subtitle -->
+                <p class="hero-sub font-display font-light text-white/85 mb-10"
+                   style="font-size: clamp(1rem, 2.2vw, 1.3rem); letter-spacing: 0.04em; font-style: italic">
+                    Massage · Haptonomie · Thérapie psycho-corporelle
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="bg-white text-copper-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-xl transition-all hover:scale-105">
-                        Prendre rendez-vous
-                    </a>
-                    <a href="#intro" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 shadow-lg transition-all">
-                        Découvrir
-                    </a>
+
+                <!-- CTAs — GSAP sets opacity: 1 -->
+                <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="contact.html" class="btn-white">Prendre rendez-vous</a>
+                    <a href="#intro" class="btn-ghost-white">Découvrir</a>
                 </div>
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-            <svg class="w-6 h-6 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10">
+            <span class="font-body text-white/40" style="font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase">
+                Défiler
+            </span>
+            <div class="scroll-line-indicator">
+                <div class="scroll-dot-anim"></div>
+            </div>
         </div>
     </section>
 
-    <!-- Introduction Section -->
-    <section id="intro" class="py-20 bg-white">
+    <!-- ═══════════════════════════════════════════════════════
+         INTRODUCTION SECTION
+         ═══════════════════════════════════════════════════════ -->
+    <section id="intro" class="py-24 bg-white scroll-mt-header">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-copper-800 mb-8">
-                    L'approche psycho-corporelle :<br>une invitation au lâcher-prise
+
+            <!-- Section ornament -->
+            <div class="section-ornament mb-10" data-reveal="up">
+                <div class="section-ornament-line"></div>
+                <span>L'approche</span>
+                <div class="section-ornament-line"></div>
+            </div>
+
+            <!-- Pull-quote — the most important sentence, centered, large -->
+            <blockquote class="max-w-3xl mx-auto text-center mb-16 px-4" data-reveal="up" data-delay="0.1">
+                <p class="font-display italic text-copper-700 leading-snug"
+                   style="font-size: clamp(1.4rem, 3vw, 1.9rem)">
+                    Avant même de naître, le toucher est notre première connexion au monde.
+                </p>
+            </blockquote>
+
+            <!-- Two-column text -->
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
+                <div data-reveal="left">
+                    <p class="font-display italic text-lg text-copper-600 leading-relaxed mb-6">
+                        C'est par lui que nous apprenons la confiance, la sécurité, l'apaisement. L'approche psycho-corporelle nous invite à renouer avec cette dimension essentielle : celle de notre corps vécu, ressenti, habité.
+                    </p>
+                    <p class="font-display italic text-lg text-copper-600 leading-relaxed">
+                        Le toucher est le premier sens qui se développe in-utero et le dernier à s'éteindre avant notre dernier voyage. Il est notre première approche palpable au monde en début de vie.
+                    </p>
+                </div>
+                <div data-reveal="right">
+                    <p class="font-body text-base text-copper-700 leading-loose mb-6">
+                        Une approche accueillante envers le nouveau-né lui donnera confiance en lui-même et en ce qui l'entoure. Un toucher accueillant envers un adulte lui permettra de se réconcilier avec son corps.
+                    </p>
+                    <p class="font-body text-base text-copper-700 leading-loose mb-6">
+                        Nos sensations corporelles nous accompagnent partout et sont le reflet de nos états de conscience. Notre enveloppe corporelle et énergétique constitue notre protection et notre force.
+                    </p>
+                    <p class="font-body font-medium text-copper-800 leading-loose">
+                        En prendre soin est essentiel pour un équilibre physique et mental. Mon approche humaniste est destinée à tous : bébés, enfants, adultes, futurs parents.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         SERVICES SECTION
+         ═══════════════════════════════════════════════════════ -->
+    <section class="py-24 bg-beige-50">
+        <div class="container mx-auto px-6">
+
+            <!-- Section header -->
+            <div class="text-center mb-16">
+                <div class="section-ornament mb-8" data-reveal="up">
+                    <div class="section-ornament-line"></div>
+                    <span>Prestations</span>
+                    <div class="section-ornament-line"></div>
+                </div>
+                <h2 class="font-display font-bold text-copper-800" data-reveal="up" data-delay="0.1"
+                    style="font-size: clamp(2rem, 4vw, 3.2rem)">
+                    Mes Prestations
                 </h2>
-
-                <div class="space-y-6 text-lg text-copper-700 leading-relaxed">
-                    <p class="text-xl font-semibold text-copper-800">
-                        Le toucher : notre premier langage
-                    </p>
-
-                    <p class="font-accent italic text-xl leading-relaxed text-copper-700">
-                        Avant même de naître, le toucher est notre première connexion au monde. C'est par lui que nous apprenons la confiance, la sécurité, l'apaisement. L'approche psycho-corporelle nous invite à renouer avec cette dimension essentielle : celle de notre corps vécu, ressenti, habité.
-                    </p>
-
-                    <p class="font-accent italic text-xl leading-relaxed text-copper-700 mt-4">
-                        Le toucher est le premier sens qui se développe in-utero et le dernier à s'éteindre avant notre dernier voyage. Il est notre première approche palpable au monde en début de vie. Une approche accueillante envers le nouveau-né lui donnera confiance en lui-même et en ce qui l'entoure. Un toucher accueillant envers un adulte lui permettra de se réconcilier avec son corps.
-                    </p>
-
-                    <p class="font-accent italic text-xl leading-relaxed text-copper-700 mt-4">
-                        Nos sensations corporelles nous accompagnent partout et sont le reflet de nos états de conscience. Notre enveloppe corporelle et énergétique constitue notre protection et notre force. <strong class="font-semibold">En prendre soin est essentiel pour un équilibre physique et mental.</strong>
-                    </p>
-
-                    <p class="text-lg text-copper-800 pt-4 leading-relaxed font-medium">
-                        Mon approche humaniste et affective est destinée à tous : bébés, enfants, adultes, futurs parents. Les bienfaits sont puissants et durables.
-                    </p>
-                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Services Section -->
-    <section class="py-20 bg-beige-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-16">
-                Mes Prestations
-            </h2>
+            <!-- Cards grid — center card slightly elevated -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start" data-stagger>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Service 1: Massage -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-                    <div class="h-64 overflow-hidden">
+                <!-- Card 1: Massage & Relaxation -->
+                <div class="service-card">
+                    <div class="card-image">
                         <img src="assets/images/massage-adulte/massage-dos-huile.jpg"
-                             alt="Massage relaxant et thérapeutique"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                             alt="Massage relaxant et thérapeutique — détente profonde"
+                             loading="lazy">
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-display font-semibold text-copper-800 mb-4 text-center">
-                            Massage & Relaxation
+                    <div class="p-7">
+                        <h3 class="font-display font-semibold text-copper-800 text-center mb-3"
+                            style="font-size: 1.45rem">
+                            Massage &amp; Relaxation
                         </h3>
-                        <p class="text-copper-700 text-center mb-6">
+                        <p class="font-body text-sm text-copper-600 text-center leading-relaxed mb-6">
                             Relaxation profonde et libération des tensions. Pour retrouver équilibre et sérénité.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#massage" class="text-copper-600 hover:text-copper-800 font-semibold inline-flex items-center">
+                            <a href="prestations.html#massage" class="card-link text-copper-500 hover:text-copper-700">
                                 En savoir plus
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 2: Haptonomie -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-                    <div class="h-64 overflow-hidden">
+                <!-- Card 2: Haptonomie — featured, elevated -->
+                <div class="service-card md:-mt-6 border-t-2 border-copper-400">
+                    <div class="card-image" style="aspect-ratio: 3/4">
                         <img src="assets/images/prenatal/prenatal-01-massage-ventre.jpg"
-                             alt="Massage prénatal et haptonomie pour femme enceinte"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                             alt="Massage prénatal et haptonomie — accompagnement de la naissance"
+                             loading="lazy">
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-display font-semibold text-copper-800 mb-4 text-center">
+                    <div class="p-7">
+                        <h3 class="font-display font-semibold text-copper-800 text-center mb-3"
+                            style="font-size: 1.45rem">
                             Haptonomie
                         </h3>
-                        <p class="text-copper-700 text-center mb-6">
+                        <p class="font-body text-sm text-copper-600 text-center leading-relaxed mb-6">
                             Préparation à la naissance. Créer le lien avec bébé et vivre une grossesse en conscience.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#haptonomie" class="text-terracotta-400 hover:text-terracotta-500 font-semibold inline-flex items-center">
+                            <a href="prestations.html#haptonomie" class="card-link text-terracotta-500 hover:text-terracotta-700">
                                 En savoir plus
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 3: Thérapie -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-                    <div class="h-64 overflow-hidden">
+                <!-- Card 3: Thérapie Psycho-corporelle -->
+                <div class="service-card">
+                    <div class="card-image">
                         <img src="assets/images/therapie/massage-tete-delicat.jpg"
-                             alt="Thérapie psycho-corporelle et massage crânien"
-                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                             alt="Thérapie psycho-corporelle — réconcilier corps et esprit"
+                             loading="lazy">
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-display font-semibold text-copper-800 mb-4 text-center">
+                    <div class="p-7">
+                        <h3 class="font-display font-semibold text-copper-800 text-center mb-3"
+                            style="font-size: 1.45rem">
                             Thérapie Psycho-corporelle
                         </h3>
-                        <p class="text-copper-700 text-center mb-6">
+                        <p class="font-body text-sm text-copper-600 text-center leading-relaxed mb-6">
                             Accompagnement en profondeur. Réconcilier corps et esprit pour un mieux-être durable.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#therapie" class="text-beige-600 hover:text-beige-700 font-semibold inline-flex items-center">
+                            <a href="prestations.html#therapie" class="card-link text-beige-700 hover:text-beige-900">
                                 En savoir plus
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </a>
                         </div>
                     </div>
                 </div>
+
+            </div>
+
+            <!-- CTA to prestations -->
+            <div class="text-center mt-14" data-reveal="up">
+                <a href="prestations.html" class="btn-primary">Voir toutes les prestations</a>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Me Section -->
-    <section class="py-20 bg-white">
+    <!-- ═══════════════════════════════════════════════════════
+         WHY CHOOSE ME — elegant stat layout
+         ═══════════════════════════════════════════════════════ -->
+    <section class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-16">
-                Pourquoi me choisir ?
-            </h2>
+            <div class="text-center mb-16">
+                <div class="section-ornament mb-8" data-reveal="up">
+                    <div class="section-ornament-line"></div>
+                    <span>L'essentiel</span>
+                    <div class="section-ornament-line"></div>
+                </div>
+                <h2 class="font-display font-bold text-copper-800" data-reveal="up" data-delay="0.1"
+                    style="font-size: clamp(2rem, 4vw, 3.2rem)">
+                    Pourquoi me choisir ?
+                </h2>
+            </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto" data-stagger>
+
+                <!-- Stat 1 -->
                 <div class="text-center">
-                    <div class="w-12 h-12 bg-copper-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    <span class="stat-number mb-1" data-target="15">0</span>
+                    <span class="block font-body font-medium text-xs text-copper-400 mb-3"
+                          style="letter-spacing: 0.2em; text-transform: uppercase">
+                        Ans d'expérience
+                    </span>
+                    <p class="font-body text-sm text-copper-600 leading-relaxed">
+                        Une pratique régulière et une formation solide en approche psycho-corporelle
+                    </p>
+                </div>
+
+                <!-- Item 2: Humaniste -->
+                <div class="text-center">
+                    <div class="w-14 h-14 border border-copper-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-copper-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-2">
+                    <h3 class="font-display font-semibold text-copper-800 text-xl mb-2">
                         Approche humaniste
                     </h3>
-                    <p class="text-copper-600">
+                    <p class="font-body text-sm text-copper-600 leading-relaxed">
                         Bienveillance et écoute au cœur de chaque séance
                     </p>
                 </div>
 
+                <!-- Item 3: Tous publics -->
                 <div class="text-center">
-                    <div class="w-12 h-12 bg-copper-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    <div class="w-14 h-14 border border-copper-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-copper-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-2">
+                    <h3 class="font-display font-semibold text-copper-800 text-xl mb-2">
                         Tous publics
                     </h3>
-                    <p class="text-copper-600">
+                    <p class="font-body text-sm text-copper-600 leading-relaxed">
                         Bébés, enfants, adultes, futurs parents
                     </p>
                 </div>
 
+                <!-- Item 4: Cadre bienveillant -->
                 <div class="text-center">
-                    <div class="w-12 h-12 bg-copper-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    <div class="w-14 h-14 border border-copper-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-copper-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-2">
-                        Expérience confirmée
-                    </h3>
-                    <p class="text-copper-600">
-                        Formation solide et pratique régulière
-                    </p>
-                </div>
-
-                <div class="text-center">
-                    <div class="w-12 h-12 bg-copper-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <svg class="w-6 h-6 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-display font-semibold text-copper-800 mb-2">
+                    <h3 class="font-display font-semibold text-copper-800 text-xl mb-2">
                         Cadre bienveillant
                     </h3>
-                    <p class="text-copper-600">
+                    <p class="font-body text-sm text-copper-600 leading-relaxed">
                         Espace sécurisant et apaisant à Bruxelles
                     </p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Insurance & Packages Section -->
-    <section class="py-20 bg-gradient-to-br from-terracotta-50 to-beige-50">
+    <!-- ═══════════════════════════════════════════════════════
+         ACCOMPAGNEMENTS ACCESSIBLES
+         ═══════════════════════════════════════════════════════ -->
+    <section class="py-24 bg-terracotta-50">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-center text-copper-800 mb-4">
-                    Des accompagnements accessibles
-                </h2>
-                <p class="text-xl text-center text-copper-600 mb-16 max-w-3xl mx-auto">
-                    Profitez de forfaits avantageux et d'un remboursement possible par votre mutuelle
-                </p>
 
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <!-- Insurance Info -->
-                    <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-copper-100">
-                        <div class="flex items-start mb-6">
-                            <div class="w-16 h-16 bg-copper-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-8 h-8 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                <div class="text-center mb-16">
+                    <div class="section-ornament mb-8" data-reveal="up">
+                        <div class="section-ornament-line"></div>
+                        <span>Accessibilité</span>
+                        <div class="section-ornament-line"></div>
+                    </div>
+                    <h2 class="font-display font-bold text-copper-800 mb-4" data-reveal="up" data-delay="0.1"
+                        style="font-size: clamp(2rem, 4vw, 3.2rem)">
+                        Des accompagnements accessibles
+                    </h2>
+                    <p class="font-body text-copper-600 max-w-2xl mx-auto" data-reveal="up" data-delay="0.2">
+                        Profitez de forfaits avantageux et d'un remboursement possible par votre mutuelle
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12" data-stagger>
+
+                    <!-- Mutuelle -->
+                    <div class="info-card">
+                        <div class="flex items-start gap-5">
+                            <div class="w-14 h-14 bg-copper-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-7 h-7 text-copper-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-display font-bold text-copper-800 mb-2">
+                                <h3 class="font-display font-bold text-copper-800 text-xl mb-2">
                                     Votre mutuelle peut rembourser
                                 </h3>
-                                <p class="text-copper-700 leading-relaxed mb-4">
+                                <p class="font-body text-sm text-copper-700 leading-relaxed mb-4">
                                     De nombreuses mutuelles belges remboursent partiellement les séances de thérapie psycho-corporelle et de médecine douce.
                                 </p>
-                                <ul class="space-y-2 text-copper-700">
-                                    <li class="flex items-start">
-                                        <svg class="w-5 h-5 text-copper-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 font-body text-sm text-copper-700">
+                                        <svg class="w-4 h-4 text-copper-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                         </svg>
-                                        <span>Attestation fournie après chaque séance</span>
+                                        Attestation fournie après chaque séance
                                     </li>
-                                    <li class="flex items-start">
-                                        <svg class="w-5 h-5 text-copper-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    <li class="flex items-start gap-2 font-body text-sm text-copper-700">
+                                        <svg class="w-4 h-4 text-copper-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                         </svg>
-                                        <span>Remboursement jusqu'à 20-30€/séance selon votre mutuelle</span>
+                                        Remboursement jusqu'à 20–30 €/séance selon votre mutuelle
                                     </li>
-                                    <li class="flex items-start">
-                                        <svg class="w-5 h-5 text-copper-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    <li class="flex items-start gap-2 font-body text-sm text-copper-700">
+                                        <svg class="w-4 h-4 text-copper-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                         </svg>
-                                        <span>Renseignez-vous auprès de votre mutuelle</span>
+                                        Renseignez-vous auprès de votre mutuelle
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Packages -->
-                    <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-terracotta-100">
-                        <div class="flex items-start mb-6">
-                            <div class="w-16 h-16 bg-terracotta-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-8 h-8 text-terracotta-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    <!-- Forfaits -->
+                    <div class="info-card info-card-terracotta">
+                        <div class="flex items-start gap-5">
+                            <div class="w-14 h-14 bg-terracotta-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-7 h-7 text-terracotta-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                             </div>
-                            <div>
-                                <h3 class="text-2xl font-display font-bold text-copper-800 mb-2">
+                            <div class="flex-1">
+                                <h3 class="font-display font-bold text-copper-800 text-xl mb-2">
                                     Forfaits avantageux
                                 </h3>
-                                <p class="text-copper-700 leading-relaxed mb-4">
+                                <p class="font-body text-sm text-copper-700 leading-relaxed mb-4">
                                     Économisez en choisissant un forfait pour un accompagnement régulier et des résultats durables.
                                 </p>
                                 <div class="space-y-3">
-                                    <div class="bg-terracotta-50 rounded-xl p-4">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <span class="font-semibold text-copper-800">Forfait 5 séances</span>
-                                            <span class="inline-block bg-terracotta-400 text-white text-xs font-bold px-3 py-1 rounded-full">Économisez 25€</span>
+                                    <div class="bg-terracotta-50 rounded-lg p-4 flex items-center justify-between">
+                                        <div>
+                                            <p class="font-body font-semibold text-copper-800 text-sm">Forfait 5 séances</p>
+                                            <p class="font-body text-xs text-copper-600 mt-0.5">Accompagnement court terme</p>
                                         </div>
-                                        <p class="text-sm text-copper-600">Idéal pour un accompagnement court terme</p>
+                                        <span class="savings-badge">− 25 €</span>
                                     </div>
-                                    <div class="bg-terracotta-50 rounded-xl p-4">
-                                        <div class="flex justify-between items-center mb-1">
-                                            <span class="font-semibold text-copper-800">Forfait 10 séances</span>
-                                            <span class="inline-block bg-terracotta-400 text-white text-xs font-bold px-3 py-1 rounded-full">Économisez 50€</span>
+                                    <div class="bg-terracotta-50 rounded-lg p-4 flex items-center justify-between">
+                                        <div>
+                                            <p class="font-body font-semibold text-copper-800 text-sm">Forfait 10 séances</p>
+                                            <p class="font-body text-xs text-copper-600 mt-0.5">Accompagnement en profondeur</p>
                                         </div>
-                                        <p class="text-sm text-copper-600">Pour un accompagnement en profondeur</p>
+                                        <span class="savings-badge">− 50 €</span>
                                     </div>
                                 </div>
                             </div>
@@ -539,293 +557,241 @@
                     </div>
                 </div>
 
-                <div class="text-center">
-                    <a href="tarifs.html" class="inline-block bg-copper-400 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-copper-500 shadow-lg">
-                        Voir tous les tarifs
-                    </a>
+                <div class="text-center" data-reveal="up">
+                    <a href="tarifs.html" class="btn-primary">Voir tous les tarifs</a>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Google Reviews Section -->
-    <section class="py-20 bg-copper-50">
+    <!-- ═══════════════════════════════════════════════════════
+         GOOGLE REVIEWS
+         ═══════════════════════════════════════════════════════ -->
+    <section class="py-24 bg-copper-50">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
-                <!-- Section Header with Google Integration -->
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-display font-bold text-copper-800 mb-6">
+
+                <!-- Section header + Google rating -->
+                <div class="text-center mb-14">
+                    <div class="section-ornament mb-8" data-reveal="up">
+                        <div class="section-ornament-line"></div>
+                        <span>Témoignages</span>
+                        <div class="section-ornament-line"></div>
+                    </div>
+                    <h2 class="font-display font-bold text-copper-800 mb-8" data-reveal="up" data-delay="0.1"
+                        style="font-size: clamp(2rem, 4vw, 3.2rem)">
                         Avis Google
                     </h2>
 
-                    <!-- Google Rating Card -->
-                    <div class="inline-block bg-white rounded-2xl shadow-lg px-8 py-6 mb-8">
-                        <div class="flex items-center gap-4">
-                            <!-- Google Logo -->
-                            <svg class="w-12 h-12" viewBox="0 0 48 48">
-                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
-                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-                            </svg>
-
-                            <div class="text-left">
-                                <div class="flex items-center gap-2 mb-1">
-                                    <span class="text-4xl font-bold text-copper-800">5.0</span>
-                                    <div class="flex text-yellow-400 text-2xl">
-                                        ★★★★★
-                                    </div>
-                                </div>
-                                <p class="text-copper-600 text-sm">Basé sur les avis Google</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Reviews Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                    <!-- Review 1 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-copper-200 rounded-full flex items-center justify-center text-lg font-display text-copper-700 mr-3">
-                                    S
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-copper-800">Sophie L.</p>
-                                    <div class="flex text-yellow-400 text-sm">
-                                        ★★★★★
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
-                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
-                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-                            </svg>
-                        </div>
-                        <p class="text-copper-700 leading-relaxed mb-3">
-                            "Nanou propose de magnifiques massages dans un cadre bienveillant et apaisant. Je me sens complètement détendue après chaque séance. Une vraie pro !"
-                        </p>
-                        <p class="text-xs text-copper-500">Il y a 2 mois</p>
-                    </div>
-
-                    <!-- Review 2 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-terracotta-200 rounded-full flex items-center justify-center text-lg font-display text-terracotta-700 mr-3">
-                                    C
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-copper-800">Claire M.</p>
-                                    <div class="flex text-yellow-400 text-sm">
-                                        ★★★★★
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
-                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
-                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-                            </svg>
-                        </div>
-                        <p class="text-copper-700 leading-relaxed mb-3">
-                            "L'accompagnement en haptonomie pendant ma grossesse a été magique. Nanou est à l'écoute, douce et professionnelle. Je recommande sans hésiter !"
-                        </p>
-                        <p class="text-xs text-copper-500">Il y a 1 mois</p>
-                    </div>
-
-                    <!-- Review 3 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-beige-300 rounded-full flex items-center justify-center text-lg font-display text-beige-700 mr-3">
-                                    M
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-copper-800">Marie D.</p>
-                                    <div class="flex text-yellow-400 text-sm">
-                                        ★★★★★
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
-                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
-                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-                            </svg>
-                        </div>
-                        <p class="text-copper-700 leading-relaxed mb-3">
-                            "Une expérience exceptionnelle. Le professionnalisme et la douceur de l'accompagnement m'ont permis de me reconnecter avec mon corps. Je recommande vivement."
-                        </p>
-                        <p class="text-xs text-copper-500">Il y a 3 semaines</p>
-                    </div>
-
-                    <!-- Review 4 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-copper-200 rounded-full flex items-center justify-center text-lg font-display text-copper-700 mr-3">
-                                    L
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-copper-800">Laura P.</p>
-                                    <div class="flex text-yellow-400 text-sm">
-                                        ★★★★★
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
-                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
-                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-                            </svg>
-                        </div>
-                        <p class="text-copper-700 leading-relaxed mb-3">
-                            "Un moment de détente absolue. Nanou a des mains en or et crée une atmosphère très apaisante. Le lieu est magnifique et calme."
-                        </p>
-                        <p class="text-xs text-copper-500">Il y a 1 semaine</p>
-                    </div>
-
-                    <!-- Review 5 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-terracotta-200 rounded-full flex items-center justify-center text-lg font-display text-terracotta-700 mr-3">
-                                    A
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-copper-800">Anne V.</p>
-                                    <div class="flex text-yellow-400 text-sm">
-                                        ★★★★★
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
-                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
-                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-                            </svg>
-                        </div>
-                        <p class="text-copper-700 leading-relaxed mb-3">
-                            "La thérapie psycho-corporelle avec Nanou a transformé ma relation à mon corps. Approche sensible, professionnelle et profondément humaine."
-                        </p>
-                        <p class="text-xs text-copper-500">Il y a 3 mois</p>
-                    </div>
-
-                    <!-- Review 6 -->
-                    <div class="bg-white rounded-2xl p-6 shadow-lg">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-beige-300 rounded-full flex items-center justify-center text-lg font-display text-beige-700 mr-3">
-                                    J
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-copper-800">Julie & Tom</p>
-                                    <div class="flex text-yellow-400 text-sm">
-                                        ★★★★★
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="w-6 h-6 text-gray-400" viewBox="0 0 48 48">
-                                <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-                                <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-                                <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
-                                <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-                            </svg>
-                        </div>
-                        <p class="text-copper-700 leading-relaxed mb-3">
-                            "Les séances d'haptonomie nous ont permis de créer un lien fort avec notre bébé avant même sa naissance. Une préparation précieuse et émouvante."
-                        </p>
-                        <p class="text-xs text-copper-500">Il y a 2 mois</p>
-                    </div>
-                </div>
-
-                <!-- CTA Button to Google Reviews -->
-                <div class="text-center">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Nanou+Mendeles+Avenue+Louise+349+Bruxelles&query_place_id=ChIJoei5ybvDw0cRrR8S5ZcVdSw"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-copper-800 px-8 py-4 rounded-full font-semibold text-lg shadow-lg border-2 border-copper-200 transition-all hover:shadow-xl">
-                        <svg class="w-6 h-6" viewBox="0 0 48 48">
+                    <!-- Google rating badge -->
+                    <div class="inline-flex items-center gap-4 bg-white rounded-xl shadow-sm px-8 py-5 border border-beige-200"
+                         data-reveal="up" data-delay="0.2">
+                        <!-- Google G logo -->
+                        <svg class="w-10 h-10 flex-shrink-0" viewBox="0 0 48 48" aria-label="Google">
                             <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
                             <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
                             <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
                             <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
                         </svg>
+                        <div class="text-left">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-display font-bold text-4xl text-copper-800 leading-none">5,0</span>
+                                <span class="text-yellow-400 text-2xl leading-none" aria-label="5 étoiles">★★★★★</span>
+                            </div>
+                            <p class="font-body text-xs text-copper-500">Basé sur les avis Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10" data-stagger>
+
+                    <div class="testimonial-card">
+                        <p class="font-display italic text-copper-700 leading-relaxed text-base mb-5 relative z-10">
+                            "Nanou propose de magnifiques massages dans un cadre bienveillant et apaisant. Je me sens complètement détendue après chaque séance. Une vraie professionnelle !"
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 bg-copper-100 rounded-full flex items-center justify-center font-display text-copper-600 flex-shrink-0">S</div>
+                            <div>
+                                <p class="font-body font-semibold text-copper-800 text-sm">Sophie L.</p>
+                                <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
+                                <span class="font-body text-xs text-copper-400 ml-1">· Il y a 2 mois</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="font-display italic text-copper-700 leading-relaxed text-base mb-5 relative z-10">
+                            "L'accompagnement en haptonomie pendant ma grossesse a été magique. Nanou est à l'écoute, douce et professionnelle. Je recommande sans hésiter !"
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 bg-terracotta-100 rounded-full flex items-center justify-center font-display text-terracotta-600 flex-shrink-0">C</div>
+                            <div>
+                                <p class="font-body font-semibold text-copper-800 text-sm">Claire M.</p>
+                                <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
+                                <span class="font-body text-xs text-copper-400 ml-1">· Il y a 1 mois</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="font-display italic text-copper-700 leading-relaxed text-base mb-5 relative z-10">
+                            "Une expérience exceptionnelle. Le professionnalisme et la douceur de l'accompagnement m'ont permis de me reconnecter avec mon corps. Je recommande vivement."
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 bg-beige-300 rounded-full flex items-center justify-center font-display text-beige-700 flex-shrink-0">M</div>
+                            <div>
+                                <p class="font-body font-semibold text-copper-800 text-sm">Marie D.</p>
+                                <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
+                                <span class="font-body text-xs text-copper-400 ml-1">· Il y a 3 semaines</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="font-display italic text-copper-700 leading-relaxed text-base mb-5 relative z-10">
+                            "Un moment de détente absolue. Nanou a des mains en or et crée une atmosphère très apaisante. Le lieu est magnifique et calme."
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 bg-copper-100 rounded-full flex items-center justify-center font-display text-copper-600 flex-shrink-0">L</div>
+                            <div>
+                                <p class="font-body font-semibold text-copper-800 text-sm">Laura P.</p>
+                                <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
+                                <span class="font-body text-xs text-copper-400 ml-1">· Il y a 1 semaine</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="font-display italic text-copper-700 leading-relaxed text-base mb-5 relative z-10">
+                            "La thérapie psycho-corporelle avec Nanou a transformé ma relation à mon corps. Approche sensible, professionnelle et profondément humaine."
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 bg-terracotta-100 rounded-full flex items-center justify-center font-display text-terracotta-600 flex-shrink-0">A</div>
+                            <div>
+                                <p class="font-body font-semibold text-copper-800 text-sm">Anne V.</p>
+                                <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
+                                <span class="font-body text-xs text-copper-400 ml-1">· Il y a 3 mois</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="font-display italic text-copper-700 leading-relaxed text-base mb-5 relative z-10">
+                            "Les séances d'haptonomie nous ont permis de créer un lien fort avec notre bébé avant même sa naissance. Une préparation précieuse et émouvante."
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 bg-beige-300 rounded-full flex items-center justify-center font-display text-beige-700 flex-shrink-0">J</div>
+                            <div>
+                                <p class="font-body font-semibold text-copper-800 text-sm">Julie &amp; Tom</p>
+                                <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
+                                <span class="font-body text-xs text-copper-400 ml-1">· Il y a 2 mois</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CTA Google Reviews -->
+                <div class="text-center" data-reveal="up">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Nanou+Mendeles+Avenue+Louise+349+Bruxelles"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center gap-3 bg-white border border-beige-300 text-copper-700 font-body font-medium text-sm px-7 py-3.5 rounded-lg shadow-sm hover:shadow-md"
+                       style="transition: box-shadow 0.22s ease, transform 0.22s ease"
+                       onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+                        <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+                            <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+                            <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+                            <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7z"/>
+                        </svg>
                         Voir tous les avis sur Google
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        <svg class="w-4 h-4 text-copper-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                         </svg>
                     </a>
-                    <p class="text-sm text-copper-600 mt-4">
+                    <p class="font-body text-xs text-copper-500 mt-3">
                         Vous avez déjà consulté Nanou ? Partagez votre expérience sur Google !
                     </p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 hero-gradient">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+    <!-- ═══════════════════════════════════════════════════════
+         CTA SECTION — image background with overlay
+         ═══════════════════════════════════════════════════════ -->
+    <section class="parallax-section py-32 text-center" data-parallax style="min-height: 28rem; display: flex; align-items: center; justify-content: center;">
+        <img src="assets/images/ambiance/detail-textile-ethnique.jpg"
+             alt=""
+             class="parallax-img"
+             aria-hidden="true">
+        <div class="absolute inset-0 bg-copper-900/65"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="font-display font-bold text-white mb-6"
+                data-reveal="up"
+                style="font-size: clamp(2rem, 4vw, 3.2rem)">
                 Prêt(e) à prendre soin de vous ?
             </h2>
-            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            <p class="font-body text-white/85 mb-10 max-w-xl mx-auto leading-relaxed" data-reveal="up" data-delay="0.1">
                 Offrez-vous un moment de détente et de reconnexion avec vous-même. Je serai ravie de vous accompagner.
             </p>
-            <a href="contact.html" class="inline-block bg-white text-copper-700 px-10 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-lg">
-                Contactez-moi
-            </a>
+            <div data-reveal="up" data-delay="0.2">
+                <a href="contact.html" class="btn-white">Me contacter</a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-copper-800 text-white py-12">
+    <!-- ═══════════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════════ -->
+    <footer class="bg-copper-800 text-white py-14">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <div class="grid md:grid-cols-3 gap-10 mb-10">
+
                 <!-- Column 1: Logo & Contact -->
                 <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-copper-400 rounded-full flex items-center justify-center ring-2 ring-yellow-500 shadow-lg">
-                            <span class="text-white text-xl font-display font-bold">M</span>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-9 h-9 border border-copper-400 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-copper-400 text-sm font-display font-light">M</span>
                         </div>
-                        <span class="text-xl font-display font-semibold">Massages & Naissance</span>
+                        <div class="flex flex-col leading-none gap-0.5">
+                            <span class="text-[0.6rem] font-body font-medium text-copper-400 tracking-[0.18em] uppercase">Massages</span>
+                            <span class="text-base font-display text-white">&amp; Naissance</span>
+                        </div>
                     </div>
-                    <div class="space-y-2 text-copper-200">
-                        <p class="flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <div class="space-y-3 text-copper-200 text-sm">
+                        <p class="flex items-center gap-2">
+                            <svg class="w-4 h-4 flex-shrink-0 text-copper-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
-                            Bruxelles, Belgique
+                            Avenue Louise 349, Bruxelles
                         </p>
-                        <p class="flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        <p class="flex items-center gap-2">
+                            <svg class="w-4 h-4 flex-shrink-0 text-copper-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            contact@massages-naissance.be
+                            <a href="mailto:contact@massages-naissance.be" class="hover:text-white">
+                                contact@massages-naissance.be
+                            </a>
                         </p>
-                        <p class="flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        <p class="flex items-center gap-2">
+                            <svg class="w-4 h-4 flex-shrink-0 text-copper-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
-                            +32 XXX XX XX XX
+                            <a href="tel:+32498549969" class="hover:text-white">+32 498 54 99 69</a>
                         </p>
                     </div>
                 </div>
 
                 <!-- Column 2: Navigation -->
                 <div>
-                    <h3 class="text-lg font-display font-semibold mb-4">Navigation</h3>
-                    <ul class="space-y-2 text-copper-200">
+                    <h3 class="font-display text-lg font-semibold mb-5">Navigation</h3>
+                    <ul class="space-y-2.5 text-copper-200 text-sm">
                         <li><a href="index.html" class="hover:text-white">Accueil</a></li>
                         <li><a href="prestations.html" class="hover:text-white">Prestations</a></li>
                         <li><a href="a-propos.html" class="hover:text-white">À propos</a></li>
@@ -834,78 +800,50 @@
                     </ul>
                 </div>
 
-                <!-- Column 3: Legal -->
+                <!-- Column 3: Légal + Réseaux -->
                 <div>
-                    <h3 class="text-lg font-display font-semibold mb-4">Légal</h3>
-                    <ul class="space-y-2 text-copper-200">
+                    <h3 class="font-display text-lg font-semibold mb-5">Légal</h3>
+                    <ul class="space-y-2.5 text-copper-200 text-sm mb-8">
                         <li><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a></li>
                         <li><a href="confidentialite.html" class="hover:text-white">Politique de confidentialité</a></li>
                     </ul>
-
-                    <div class="mt-6">
-                        <h3 class="text-lg font-display font-semibold mb-4">Suivez-moi</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 bg-copper-700 rounded-full flex items-center justify-center hover:bg-copper-600">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-copper-700 rounded-full flex items-center justify-center hover:bg-copper-600">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                            </a>
-                        </div>
+                    <h3 class="font-display text-lg font-semibold mb-4">Suivez-moi</h3>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 border border-copper-600 rounded-full flex items-center justify-center text-copper-300 hover:border-copper-400 hover:text-white" aria-label="Facebook">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 border border-copper-600 rounded-full flex items-center justify-center text-copper-300 hover:border-copper-400 hover:text-white" aria-label="Instagram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
+
             </div>
 
-            <div class="border-t border-copper-700 pt-6 text-center text-copper-300">
-                <p>&copy; 2025 Massages & Naissance - Tous droits réservés</p>
+            <div class="border-t border-copper-700 pt-6 text-center text-copper-400 text-sm">
+                <p>&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/32498549969" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 z-50">
-        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+    <!-- ═══════════════════════════════════════════════════════
+         FLOATING WHATSAPP BUTTON
+         ═══════════════════════════════════════════════════════ -->
+    <a href="https://wa.me/32498549969"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="whatsapp-float"
+       aria-label="Contacter Nanou sur WhatsApp">
+        <svg class="w-6 h-6 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
     </a>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Header shadow on scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('nav-shadow');
-            } else {
-                header.classList.remove('nav-shadow');
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- Animations JS -->
+    <script src="assets/js/nanou.js"></script>
 </body>
 </html>

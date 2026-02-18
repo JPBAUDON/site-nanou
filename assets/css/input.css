@@ -1,0 +1,718 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SOURCE FILES — scan all HTML from project root
+   ============================================================ */
+@source "../../*.html";
+
+/* ============================================================
+   DESIGN TOKENS — Tailwind v4 theme
+   ============================================================ */
+@theme {
+  /* Copper (warm brown — primary) */
+  --color-copper-50:  #faf8f5;
+  --color-copper-100: #f2ebe4;
+  --color-copper-200: #e6d7c8;
+  --color-copper-300: #d4b9a0;
+  --color-copper-400: #B8956A;
+  --color-copper-500: #A0826D;
+  --color-copper-600: #8B6F47;
+  --color-copper-700: #705838;
+  --color-copper-800: #5c472d;
+  --color-copper-900: #4a3a24;
+
+  /* Beige (warm neutral — secondary) */
+  --color-beige-50:  #fdfbf7;
+  --color-beige-100: #f9f4eb;
+  --color-beige-200: #f3eadb;
+  --color-beige-300: #E8DCC4;
+  --color-beige-400: #dcc9a8;
+  --color-beige-500: #cfb58c;
+  --color-beige-600: #c0a172;
+  --color-beige-700: #a88760;
+  --color-beige-800: #896d4f;
+  --color-beige-900: #6f5941;
+
+  /* Terracotta (warm red — accent) */
+  --color-terracotta-50:  #faf6f5;
+  --color-terracotta-100: #f5ebe9;
+  --color-terracotta-200: #ead9d6;
+  --color-terracotta-300: #D4A59A;
+  --color-terracotta-400: #c88b7d;
+  --color-terracotta-500: #b97163;
+  --color-terracotta-600: #a65c4f;
+  --color-terracotta-700: #8a4d43;
+  --color-terracotta-800: #73433b;
+  --color-terracotta-900: #5f3a35;
+
+  /* Fonts */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'Work Sans', sans-serif;
+  --font-accent:  'Cormorant Garamond', serif;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Reset the catastrophic wildcard transition */
+  * {
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #fdfbf7;
+    color: #4a3a24;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* Page entrance animation */
+  body {
+    animation: page-in 0.5s ease forwards;
+  }
+
+  @keyframes page-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* Precise transitions — ONLY on interactive elements */
+  a {
+    transition: color 0.22s ease, opacity 0.22s ease;
+  }
+
+  button {
+    transition: background-color 0.22s ease, color 0.22s ease,
+                box-shadow 0.22s ease, opacity 0.22s ease;
+  }
+}
+
+/* ============================================================
+   COMPONENT CLASSES
+   ============================================================ */
+@layer components {
+
+  /* ----------------------------------------------------------
+     LOGO
+     ---------------------------------------------------------- */
+  .logo-mark {
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid var(--color-copper-400);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.22s ease;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .logo-link:hover .logo-mark {
+    border-color: var(--color-copper-600);
+  }
+
+  /* ----------------------------------------------------------
+     NAVIGATION LINKS — animated underline
+     ---------------------------------------------------------- */
+  .nav-link {
+    position: relative;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    color: var(--color-copper-700);
+    padding-bottom: 2px;
+    text-decoration: none;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-copper-500);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.32s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .nav-link:hover {
+    color: var(--color-copper-600);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* ----------------------------------------------------------
+     BUTTONS
+     ---------------------------------------------------------- */
+
+  /* Primary: outline copper, fills from left on hover */
+  .btn-primary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2.25rem;
+    border: 1.5px solid var(--color-copper-400);
+    border-radius: 0.5rem;
+    color: var(--color-copper-600);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.32s ease;
+    z-index: 0;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-copper-400);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.38s cubic-bezier(0.76, 0, 0.24, 1);
+    z-index: -1;
+  }
+
+  .btn-primary:hover {
+    color: white;
+  }
+
+  .btn-primary:hover::before {
+    transform: scaleX(1);
+  }
+
+  /* White variant — for dark/hero backgrounds */
+  .btn-white {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2.25rem;
+    border: 1.5px solid white;
+    border-radius: 0.5rem;
+    background-color: white;
+    color: var(--color-copper-700);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.32s ease, background-color 0.32s ease, box-shadow 0.32s ease;
+  }
+
+  .btn-white:hover {
+    background-color: var(--color-beige-100);
+    box-shadow: 0 8px 30px rgba(74, 58, 36, 0.15);
+  }
+
+  /* Ghost — for dark backgrounds, transparent */
+  .btn-ghost-white {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2.25rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.32s ease, border-color 0.32s ease, background-color 0.32s ease;
+  }
+
+  .btn-ghost-white::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.38s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .btn-ghost-white:hover {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .btn-ghost-white:hover::before {
+    transform: scaleX(1);
+  }
+
+  /* Card link arrow */
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: gap 0.22s ease, color 0.22s ease;
+  }
+
+  .card-link:hover {
+    gap: 0.6rem;
+  }
+
+  .card-link svg {
+    transition: transform 0.22s ease;
+  }
+
+  .card-link:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* ----------------------------------------------------------
+     HERO SECTION
+     ---------------------------------------------------------- */
+  .hero-section {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Ken Burns — slow imperceptible zoom */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    transform: scale(1.08);
+    animation: ken-burns 22s ease-out forwards;
+  }
+
+  @keyframes ken-burns {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1.0); }
+  }
+
+  /* Vignette overlay — protects text readability, shows photography */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        ellipse 100% 120% at 50% 100%,
+        rgba(44, 35, 22, 0.78) 0%,
+        rgba(44, 35, 22, 0.35) 45%,
+        rgba(44, 35, 22, 0.06) 100%
+      ),
+      linear-gradient(
+        to right,
+        rgba(44, 35, 22, 0.25) 0%,
+        transparent 55%
+      );
+  }
+
+  /* Decorative animated line in hero */
+  .hero-line {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 1.5rem auto;
+    width: 0; /* GSAP animates this */
+  }
+
+  /* Scroll indicator */
+  .scroll-line-indicator {
+    position: relative;
+    width: 1px;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+  }
+
+  .scroll-dot-anim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: rgba(255, 255, 255, 0.65);
+    animation: scroll-down-dot 2.2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-down-dot {
+    0%   { transform: translateY(-100%); opacity: 0; }
+    25%  { opacity: 1; }
+    100% { transform: translateY(300%); opacity: 0; }
+  }
+
+  /* ----------------------------------------------------------
+     SERVICE CARDS
+     ---------------------------------------------------------- */
+  .service-card {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--color-beige-200);
+    transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 2px 16px rgba(74, 58, 36, 0.05);
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(74, 58, 36, 0.13),
+                0 8px 20px rgba(74, 58, 36, 0.07);
+  }
+
+  .card-image {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .service-card:hover .card-image img {
+    transform: scale(1.06);
+  }
+
+  /* ----------------------------------------------------------
+     TESTIMONIAL CARDS
+     ---------------------------------------------------------- */
+  .testimonial-card {
+    position: relative;
+    background-color: white;
+    padding: 2.25rem;
+    border: 1px solid var(--color-beige-200);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: box-shadow 0.32s ease, transform 0.32s ease;
+  }
+
+  .testimonial-card:hover {
+    box-shadow: 0 12px 40px rgba(74, 58, 36, 0.1);
+    transform: translateY(-4px);
+  }
+
+  /* Giant decorative opening quote */
+  .testimonial-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    line-height: 1;
+    color: var(--color-copper-400);
+    opacity: 0.12;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ----------------------------------------------------------
+     SECTION ORNAMENT (line + label + line)
+     ---------------------------------------------------------- */
+  .section-ornament {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 14rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-ornament-line {
+    height: 1px;
+    flex: 1;
+    background-color: var(--color-copper-300);
+    transform: scaleX(0);
+    transform-origin: center;
+    /* GSAP will animate this */
+  }
+
+  .section-ornament span {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-copper-400);
+    white-space: nowrap;
+  }
+
+  /* ----------------------------------------------------------
+     MOBILE MENU PANEL (slide from right)
+     ---------------------------------------------------------- */
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(44, 35, 22, 0.35);
+    z-index: 40;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    backdrop-filter: blur(2px);
+  }
+
+  .mobile-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(22rem, 85vw);
+    background-color: var(--color-beige-50);
+    z-index: 50;
+    transform: translateX(100%);
+    transition: transform 0.42s cubic-bezier(0.76, 0, 0.24, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 40px rgba(44, 35, 22, 0.12);
+  }
+
+  .mobile-panel.open {
+    transform: translateX(0);
+  }
+
+  /* ----------------------------------------------------------
+     FLOATING WHATSAPP BUTTON — pulse ring
+     ---------------------------------------------------------- */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #25D366;
+    border-radius: 50%;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    text-decoration: none;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+  }
+
+  .whatsapp-float::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.45);
+    animation: whatsapp-pulse 2.8s ease-out infinite;
+  }
+
+  @keyframes whatsapp-pulse {
+    0%   { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.9); opacity: 0; }
+  }
+
+  /* ----------------------------------------------------------
+     HEADER
+     ---------------------------------------------------------- */
+  .site-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background-color 0.42s ease, box-shadow 0.42s ease;
+  }
+
+  /* ----------------------------------------------------------
+     STAT NUMBERS
+     ---------------------------------------------------------- */
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4rem);
+    color: var(--color-copper-300);
+    line-height: 1;
+    display: block;
+  }
+
+  /* ----------------------------------------------------------
+     INSURANCE / PACKAGE CARDS
+     ---------------------------------------------------------- */
+  .info-card {
+    background-color: white;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    border: 1.5px solid var(--color-copper-100);
+    transition: box-shadow 0.32s ease, transform 0.32s ease;
+  }
+
+  .info-card:hover {
+    box-shadow: 0 12px 40px rgba(74, 58, 36, 0.09);
+    transform: translateY(-4px);
+  }
+
+  .info-card-terracotta {
+    border-color: var(--color-terracotta-100);
+  }
+
+  /* Badge "Économisez" — no emoji, typographic */
+  .savings-badge {
+    display: inline-block;
+    background-color: var(--color-terracotta-400);
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.75rem;
+    border-radius: 0.25rem;
+  }
+
+  /* ----------------------------------------------------------
+     FAQ ACCORDION
+     ---------------------------------------------------------- */
+  .faq-answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .faq-answer.open {
+    opacity: 1;
+  }
+
+  .faq-icon {
+    transition: transform 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    flex-shrink: 0;
+  }
+
+  .faq-icon.rotate {
+    transform: rotate(180deg);
+  }
+
+  /* ----------------------------------------------------------
+     FORM FIELDS — proper focus states
+     ---------------------------------------------------------- */
+  .form-field {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1.5px solid var(--color-beige-300);
+    border-radius: 0.5rem;
+    background-color: white;
+    color: var(--color-copper-800);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .form-field::placeholder {
+    color: var(--color-copper-400);
+    opacity: 0.6;
+  }
+
+  .form-field:focus {
+    border-color: var(--color-copper-400);
+    box-shadow: 0 0 0 3px rgba(184, 149, 106, 0.15);
+  }
+
+  /* ----------------------------------------------------------
+     PARALLAX IMAGE CONTAINERS
+     ---------------------------------------------------------- */
+  .parallax-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .parallax-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 115%; /* Extra height for parallax travel */
+    object-fit: cover;
+    will-change: transform;
+  }
+
+  /* ----------------------------------------------------------
+     TIMELINE (a-propos page)
+     ---------------------------------------------------------- */
+  .timeline-item {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1.5px;
+    background: linear-gradient(to bottom, var(--color-copper-400), var(--color-beige-300));
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -0.3rem;
+    top: 0.25rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+    background-color: var(--color-copper-400);
+  }
+
+  /* ----------------------------------------------------------
+     UTILITIES
+     ---------------------------------------------------------- */
+
+  /* Smooth inner scroll anchor offset */
+  .scroll-mt-header {
+    scroll-margin-top: 5rem;
+  }
+}
