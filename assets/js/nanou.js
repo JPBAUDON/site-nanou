@@ -196,8 +196,8 @@ function initHeader() {
     gsap.set(header, { backgroundColor: 'rgba(255,255,255,0)', boxShadow: 'none' });
   } else {
     gsap.set(header, {
-      backgroundColor: 'rgba(253, 249, 242, 0.97)',
-      boxShadow: '0 2px 35px rgba(74, 58, 36, 0.12)',
+      backgroundColor: 'rgba(253, 249, 242, 0.72)',
+      boxShadow: '0 2px 32px rgba(74, 58, 36, 0.10)',
     });
     header.classList.add('scrolled');
   }
@@ -221,24 +221,24 @@ function initHeader() {
         ease: 'power2.out',
       });
     } else if (scrollingDown && pastHero) {
-      // Scroll vers le bas — compact + frosted glass
+      // Scroll vers le bas — compact + frosted glass fort
       if (!header.classList.contains('compact')) {
         header.classList.add('scrolled', 'compact');
         gsap.to(header, {
-          backgroundColor: 'rgba(253, 249, 242, 0.55)',
-          boxShadow: '0 1px 16px rgba(74, 58, 36, 0.06)',
+          backgroundColor: 'rgba(253, 249, 242, 0.42)',
+          boxShadow: '0 1px 12px rgba(74, 58, 36, 0.05)',
           duration: 0.35,
           ease: 'power2.out',
         });
       }
     } else if (!scrollingDown && pastHero) {
-      // Scroll vers le haut — header complet
+      // Scroll vers le haut — glassmorphism doux
       if (header.classList.contains('compact')) {
         header.classList.remove('compact');
         header.classList.add('scrolled');
         gsap.to(header, {
-          backgroundColor: 'rgba(253, 249, 242, 0.96)',
-          boxShadow: '0 2px 40px rgba(74, 58, 36, 0.14)',
+          backgroundColor: 'rgba(253, 249, 242, 0.72)',
+          boxShadow: '0 2px 32px rgba(74, 58, 36, 0.10)',
           duration: 0.35,
           ease: 'power2.out',
         });
