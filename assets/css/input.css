@@ -586,6 +586,35 @@
     z-index: 50;
     backdrop-filter: blur(12px) saturate(1.4);
     -webkit-backdrop-filter: blur(12px) saturate(1.4);
+    transition: background-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  /* ── Compact mode : scroll vers le bas ── */
+  .header-premium.compact {
+    backdrop-filter: blur(28px) saturate(1.8);
+    -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  }
+
+  .header-premium.compact .header-frame-top,
+  .header-premium.compact .header-premium-line {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+  }
+
+  .header-premium .header-frame-top,
+  .header-premium .header-premium-line {
+    transition: opacity 0.3s ease, height 0.3s ease;
+  }
+
+  .header-premium .header-premium-inner {
+    transition: padding 0.3s ease;
+  }
+
+  .header-premium.compact .header-premium-inner {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
   }
 
   /* Ligne supérieure du cadre — animée au chargement */

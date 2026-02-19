@@ -191,39 +191,70 @@ function initHeader() {
     });
   }
 
+  // État initial
   if (isHomePage) {
-    // Page accueil : header transparent sur le hero, opaque au scroll
     gsap.set(header, { backgroundColor: 'rgba(255,255,255,0)', boxShadow: 'none' });
-
-    ScrollTrigger.create({
-      start: 'top -80px',
-      onEnter: () => {
-        gsap.to(header, {
-          backgroundColor: 'rgba(253, 249, 242, 0.96)',
-          boxShadow: '0 2px 40px rgba(74, 58, 36, 0.14)',
-          duration: 0.5,
-          ease: 'power2.out',
-        });
-        header.classList.add('scrolled');
-      },
-      onLeaveBack: () => {
-        gsap.to(header, {
-          backgroundColor: 'rgba(255,255,255,0)',
-          boxShadow: 'none',
-          duration: 0.45,
-          ease: 'power2.out',
-        });
-        header.classList.remove('scrolled');
-      },
-    });
   } else {
-    // Pages internes : header toujours opaque avec ombre plus marquée
     gsap.set(header, {
       backgroundColor: 'rgba(253, 249, 242, 0.97)',
       boxShadow: '0 2px 35px rgba(74, 58, 36, 0.12)',
     });
     header.classList.add('scrolled');
   }
+
+  // Suivi de direction du scroll
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  const updateHeader = () => {
+    const currentY = window.scrollY;
+    const scrollingDown = currentY > lastScrollY;
+    const pastHero = currentY > 80;
+
+    if (!pastHero && isHomePage) {
+      // En haut de la page — transparent
+      header.classList.remove('scrolled', 'compact');
+      gsap.to(header, {
+        backgroundColor: 'rgba(255,255,255,0)',
+        boxShadow: 'none',
+        duration: 0.4,
+        ease: 'power2.out',
+      });
+    } else if (scrollingDown && pastHero) {
+      // Scroll vers le bas — compact + frosted glass
+      if (!header.classList.contains('compact')) {
+        header.classList.add('scrolled', 'compact');
+        gsap.to(header, {
+          backgroundColor: 'rgba(253, 249, 242, 0.55)',
+          boxShadow: '0 1px 16px rgba(74, 58, 36, 0.06)',
+          duration: 0.35,
+          ease: 'power2.out',
+        });
+      }
+    } else if (!scrollingDown && pastHero) {
+      // Scroll vers le haut — header complet
+      if (header.classList.contains('compact')) {
+        header.classList.remove('compact');
+        header.classList.add('scrolled');
+        gsap.to(header, {
+          backgroundColor: 'rgba(253, 249, 242, 0.96)',
+          boxShadow: '0 2px 40px rgba(74, 58, 36, 0.14)',
+          duration: 0.35,
+          ease: 'power2.out',
+        });
+      }
+    }
+
+    lastScrollY = currentY;
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 // ─── 6. MOBILE MENU — panneau slide-in ───────────────────────────────────────
