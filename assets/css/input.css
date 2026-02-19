@@ -682,6 +682,8 @@
 
   /* Logo centré — masthead typographique */
   .header-logo-editorial {
+    grid-column: 2;
+    justify-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -754,6 +756,7 @@
 
   /* Navigation gauche */
   .header-nav-left {
+    grid-column: 1;
     display: flex;
     align-items: center;
     gap: 2.5rem;
@@ -762,6 +765,7 @@
 
   /* Navigation droite */
   .header-nav-right {
+    grid-column: 3;
     display: flex;
     align-items: center;
     gap: 2.5rem;
@@ -859,13 +863,14 @@
 
   /* Hamburger mobile */
   .header-burger {
-    background: none;
-    border: none;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1.5px solid rgba(255, 255, 255, 0.40);
+    border-radius: 8px;
     cursor: pointer;
-    padding: 0.35rem;
+    padding: 0.45rem 0.6rem;
     color: white;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.55), 0 0 10px rgba(0,0,0,0.25);
-    transition: color 0.28s ease, text-shadow 0.28s ease;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.45);
+    transition: color 0.28s ease, background 0.28s ease, border-color 0.28s ease;
     line-height: 1;
     display: flex;
     align-items: center;
@@ -873,7 +878,9 @@
   }
 
   .header-premium.scrolled .header-burger {
-    color: var(--color-copper-700);
+    background: rgba(184, 149, 106, 0.15);
+    border-color: rgba(184, 149, 106, 0.35);
+    color: var(--color-copper-800);
     text-shadow: none;
   }
 
