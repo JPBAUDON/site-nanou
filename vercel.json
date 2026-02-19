@@ -1,6 +1,8 @@
 {
   "version": 2,
   "name": "massages-et-naissance",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",

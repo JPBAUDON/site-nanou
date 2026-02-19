@@ -37,7 +37,7 @@
     <link rel="preload" as="video" href="assets/videos/hero-massage.mp4" fetchpriority="high">
 
     <!-- Stylesheet (Tailwind build) -->
-    <link rel="stylesheet" href="assets/css/nanou.css?v=20260219o">
+    <link rel="stylesheet" href="assets/css/nanou.css?v=20260219p">
 
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
@@ -48,7 +48,7 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <!-- i18n FR/NL/EN -->
-    <script src="assets/js/i18n.min.js?v=20260219o" defer></script>
+    <script src="assets/js/i18n.min.js?v=20260219p" defer></script>
 
     <!-- Schema.org JSON-LD for Local Business SEO -->
     <script type="application/ld+json">
@@ -117,7 +117,7 @@
 
     <nav id="mobile-panel" class="mobile-panel" aria-label="Menu principal mobile" role="dialog">
         <div class="flex items-center justify-between px-7 py-6 border-b border-beige-200">
-            <a href="index.html" class="header-logo-editorial" style="gap:0.35rem; text-align:left; text-decoration:none;">
+            <a href="/" class="header-logo-editorial" style="gap:0.35rem; text-align:left; text-decoration:none;">
                 <span class="header-logo-editorial-title" style="font-size:0.8rem;" data-i18n="nav.brand">Massages &amp; Naissance</span>
                 <span class="header-logo-ornament" aria-hidden="true"></span>
                 <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
@@ -127,11 +127,11 @@
             </button>
         </div>
         <div class="flex flex-col px-7 py-8 gap-6 flex-1">
-            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.accueil">Accueil</a>
-            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.prestations">Prestations</a>
-            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.apropos">À propos</a>
-            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.tarifs">Tarifs</a>
-            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.contact">Contact</a>
+            <a href="/" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.accueil">Accueil</a>
+            <a href="/prestations" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.prestations">Prestations</a>
+            <a href="/a-propos" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.apropos">À propos</a>
+            <a href="/tarifs" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.tarifs">Tarifs</a>
+            <a href="/contact" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.contact">Contact</a>
         </div>
         <div class="flex items-center justify-center gap-4 py-4 px-7 border-t border-beige-100">
             <button class="lang-btn" data-lang="fr">FR</button>
@@ -159,12 +159,12 @@
 
             <!-- Navigation gauche (desktop uniquement) -->
             <nav class="header-nav-left hidden md:flex" aria-label="Navigation principale">
-                <a href="prestations.html" class="header-nav-link" data-i18n="nav.prestations">Prestations</a>
-                <a href="a-propos.html" class="header-nav-link" data-i18n="nav.apropos">À propos</a>
+                <a href="/prestations" class="header-nav-link" data-i18n="nav.prestations">Prestations</a>
+                <a href="/a-propos" class="header-nav-link" data-i18n="nav.apropos">À propos</a>
             </nav>
 
             <!-- Logo centré — masthead typographique -->
-            <a href="index.html" class="header-logo-editorial">
+            <a href="/" class="header-logo-editorial">
                 <span class="header-logo-editorial-title" data-i18n="nav.brand">Massages &amp; Naissance</span>
                 <span class="header-logo-ornament" aria-hidden="true"></span>
                 <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
@@ -172,8 +172,8 @@
 
             <!-- Navigation droite (desktop) + burger (mobile) -->
             <div class="header-nav-right">
-                <a href="tarifs.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.tarifs">Tarifs</a>
-                <a href="contact.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.contact">Contact</a>
+                <a href="/tarifs" class="header-nav-link hidden md:inline-block" data-i18n="nav.tarifs">Tarifs</a>
+                <a href="/contact" class="header-nav-link hidden md:inline-block" data-i18n="nav.contact">Contact</a>
                 <a href="#" class="header-cta-link hidden md:inline-block calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="nav.reserver">Réserver</a>
                 <!-- Language switcher — dropdown compact -->
                 <div class="lang-dropdown hidden md:block">
@@ -351,7 +351,7 @@
                             Relaxation profonde et libération des tensions. Pour retrouver équilibre et sérénité.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#massage" class="card-link text-copper-500 hover:text-copper-700">
+                            <a href="/prestations#massage" class="card-link text-copper-500 hover:text-copper-700">
                                 <span data-i18n="index_services_s1_cta">En savoir plus</span>
                                 <i class="ph-thin ph-caret-right" style="font-size: 1.25rem; line-height: 1;"></i>
                             </a>
@@ -376,7 +376,7 @@
                             Préparation à la naissance. Créer le lien avec bébé et vivre une grossesse en conscience.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#haptonomie" class="card-link text-mineral-500 hover:text-mineral-700">
+                            <a href="/prestations#haptonomie" class="card-link text-mineral-500 hover:text-mineral-700">
                                 <span data-i18n="index_services_s2_cta">En savoir plus</span>
                                 <i class="ph-thin ph-caret-right" style="font-size: 1.25rem; line-height: 1;"></i>
                             </a>
@@ -401,7 +401,7 @@
                             Accompagnement en profondeur. Réconcilier corps et esprit pour un mieux-être durable.
                         </p>
                         <div class="text-center">
-                            <a href="prestations.html#therapie" class="card-link text-beige-700 hover:text-beige-900">
+                            <a href="/prestations#therapie" class="card-link text-beige-700 hover:text-beige-900">
                                 <span data-i18n="index_services_s3_cta">En savoir plus</span>
                                 <i class="ph-thin ph-caret-right" style="font-size: 1.25rem; line-height: 1;"></i>
                             </a>
@@ -413,7 +413,7 @@
 
             <!-- CTA to prestations -->
             <div class="text-center mt-14" data-reveal="up">
-                <a href="prestations.html" class="btn-primary" data-i18n="index_services_all_cta">Voir toutes les prestations</a>
+                <a href="/prestations" class="btn-primary" data-i18n="index_services_all_cta">Voir toutes les prestations</a>
             </div>
         </div>
     </section>
@@ -583,7 +583,7 @@
                 </div>
 
                 <div class="text-center" data-reveal="up">
-                    <a href="tarifs.html" class="btn-primary" data-i18n="index_access_cta">Voir tous les tarifs</a>
+                    <a href="/tarifs" class="btn-primary" data-i18n="index_access_cta">Voir tous les tarifs</a>
                 </div>
 
             </div>
@@ -767,7 +767,7 @@
                 Offrez-vous un moment de détente et de reconnexion avec vous-même. Je serai ravie de vous accompagner.
             </p>
             <div data-reveal="up" data-delay="0.2">
-                <a href="contact.html" class="btn-white" data-i18n="index_closing_cta">Me contacter</a>
+                <a href="/contact" class="btn-white" data-i18n="index_closing_cta">Me contacter</a>
             </div>
         </div>
     </section>
@@ -828,11 +828,11 @@
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5" data-i18n="index_footer_nav_title">Navigation</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm">
-                        <li><a href="index.html" class="hover:text-white" data-i18n="nav.accueil">Accueil</a></li>
-                        <li><a href="prestations.html" class="hover:text-white" data-i18n="nav.prestations">Prestations</a></li>
-                        <li><a href="a-propos.html" class="hover:text-white" data-i18n="nav.apropos">À propos</a></li>
-                        <li><a href="tarifs.html" class="hover:text-white" data-i18n="nav.tarifs">Tarifs</a></li>
-                        <li><a href="contact.html" class="hover:text-white" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="/" class="hover:text-white" data-i18n="nav.accueil">Accueil</a></li>
+                        <li><a href="/prestations" class="hover:text-white" data-i18n="nav.prestations">Prestations</a></li>
+                        <li><a href="/a-propos" class="hover:text-white" data-i18n="nav.apropos">À propos</a></li>
+                        <li><a href="/tarifs" class="hover:text-white" data-i18n="nav.tarifs">Tarifs</a></li>
+                        <li><a href="/contact" class="hover:text-white" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -840,8 +840,8 @@
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5" data-i18n="index_footer_legal_title">Légal</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm mb-8">
-                        <li><a href="mentions-legales.html" class="hover:text-white" data-i18n="footer.legal">Mentions légales</a></li>
-                        <li><a href="confidentialite.html" class="hover:text-white" data-i18n="footer.privacy">Politique de confidentialité</a></li>
+                        <li><a href="/mentions-legales" class="hover:text-white" data-i18n="footer.legal">Mentions légales</a></li>
+                        <li><a href="/confidentialite" class="hover:text-white" data-i18n="footer.privacy">Politique de confidentialité</a></li>
                     </ul>
                     <a href="tel:+32498549969" class="flex items-center gap-2 font-body text-sm text-copper-300 hover:text-copper-100 transition-colors">
                         <i class="ph-thin ph-phone"></i>
@@ -859,6 +859,6 @@
 
 
     <!-- Animations JS -->
-    <script src="assets/js/nanou.min.js?v=20260219o" defer></script>
+    <script src="assets/js/nanou.min.js?v=20260219p" defer></script>
 </body>
 </html>

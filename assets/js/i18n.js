@@ -1713,7 +1713,7 @@ const I18n = {
     // Texte
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const text = this.resolve(lang, el.dataset.i18n);
-      if (text != null) el.textContent = text;
+      if (text != null) el.innerHTML = text;
     });
 
     // Placeholder

@@ -655,7 +655,7 @@ function initCalendlyTriggers() {
         Calendly.initPopupWidget({ url });
       } else {
         // Fallback : naviguer vers le formulaire de contact si Calendly n'est pas configuré
-        window.location.href = 'contact.html#contact-form';
+        window.location.href = '/contact#contact-form';
       }
     });
   });
@@ -682,7 +682,7 @@ function initStickyBooking() {
     if (typeof Calendly !== 'undefined' && url && !url.includes('NANOU_CALENDLY_URL')) {
       Calendly.initPopupWidget({ url });
     } else {
-      window.location.href = 'contact.html#contact-form';
+      window.location.href = '/contact#contact-form';
     }
   });
 
