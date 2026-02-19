@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/thin/style.css">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/i18n.js" defer></script>
 </head>
 <body class="bg-beige-50 text-copper-900">
 
@@ -402,7 +402,7 @@
 
                         <!-- CTA to Google -->
                         <!-- ⚠️ REMPLACER : obtenir le Place ID sur Google Business Profile → Info → Place ID -->
-                        <a href="https://g.page/r/YOUR_GOOGLE_PLACE_ID/review" target="_blank" class="inline-flex items-center gap-2 bg-white text-copper-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-copper-50 shadow-lg border-2 border-copper-200">
+                        <a href="https://g.page/r/YOUR_GOOGLE_PLACE_ID/review" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-copper-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-copper-50 shadow-lg border-2 border-copper-200">
                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                                 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -466,7 +466,7 @@
                     <i class="ph-thin ph-phone" style="font-size: 1.25rem; line-height: 1;"></i>
                     <span data-i18n="contact.closing_phone">Appelez-moi</span>
                 </a>
-                <a href="https://wa.me/32498549969" target="_blank" class="inline-flex items-center justify-center bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 shadow-lg">
+                <a href="https://wa.me/32498549969" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 shadow-lg">
                     <i class="ph-thin ph-whatsapp-logo" style="font-size: 1.25rem; line-height: 1;"></i>
                     WhatsApp
                 </a>
@@ -518,20 +518,6 @@
     </footer>
 
 
-    <script src="assets/js/nanou.js"></script>
-    <script>
-    (function() {
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
-          document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
-          btn.classList.add('active');
-          btn.setAttribute('aria-selected','true');
-          var target = document.getElementById('tab-' + btn.dataset.tab);
-          if (target) target.classList.remove('hidden');
-        });
-      });
-    })();
-    </script>
+    <script src="assets/js/nanou.js" defer></script>
 </body>
 </html>

@@ -42,7 +42,7 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <!-- i18n FR/NL/EN -->
-    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/i18n.js" defer></script>
 
     <!-- Schema.org JSON-LD for Local Business SEO -->
     <script type="application/ld+json">
@@ -195,7 +195,7 @@
     <section class="hero-section">
         <!-- Background video — autoplay muted loop, image fallback via poster -->
         <div class="hero-bg hero-bg--video">
-            <video autoplay muted loop playsinline
+            <video autoplay muted loop playsinline preload="metadata"
                    poster="assets/images/hero/hero-silhouette-nanou.jpg"
                    class="w-full h-full object-cover">
                 <source src="assets/videos/hero-massage.webm" type="video/webm">
@@ -848,6 +848,6 @@
 
 
     <!-- Animations JS -->
-    <script src="assets/js/nanou.js"></script>
+    <script src="assets/js/nanou.js" defer></script>
 </body>
 </html>
