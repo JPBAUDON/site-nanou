@@ -215,11 +215,11 @@ function initHeader() {
 
   // Helpers — applique les styles inline (inline > toute règle CSS)
   const applyOpaque = () => {
-    header.style.background = 'rgba(255, 255, 255, 0.95)';
-    header.style.backdropFilter = 'blur(24px) saturate(180%)';
-    header.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
-    header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.10)';
-    header.style.borderBottom = '1px solid rgba(184, 149, 106, 0.25)';
+    header.style.background = 'rgba(255, 255, 255, 0.65)';
+    header.style.backdropFilter = 'blur(32px) saturate(200%)';
+    header.style.webkitBackdropFilter = 'blur(32px) saturate(200%)';
+    header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.06)';
+    header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.50)';
   };
 
   const applyTransparent = () => {
