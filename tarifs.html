@@ -17,6 +17,8 @@
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
 </head>
 <body class="bg-beige-50 text-copper-900">
 
@@ -88,7 +90,7 @@
     </section>
 
     <!-- Grille Tarifaire -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" data-section-number="01">
         <div class="container mx-auto px-6">
             <div data-stagger class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
@@ -115,7 +117,7 @@
                         <div class="flex justify-between items-center py-3 bg-copper-50 rounded-lg px-3">
                             <div>
                                 <span class="text-copper-700 font-semibold">Forfait 5 séances</span>
-                                <span class="block text-xs text-green-600 font-bold">🎉 Économisez 25€</span>
+                                <span class="savings-tag">− 25 €</span>
                             </div>
                             <span class="text-lg font-bold text-copper-600">300€</span>
                         </div>
@@ -148,14 +150,14 @@
                         <div class="flex justify-between items-center py-3 border-b border-terracotta-200 bg-terracotta-50 rounded-lg px-3">
                             <div>
                                 <span class="text-copper-700 font-semibold">Forfait 5 séances</span>
-                                <span class="block text-xs text-green-600 font-bold">🎉 Économisez 25€</span>
+                                <span class="savings-tag">− 25 €</span>
                             </div>
                             <span class="text-2xl font-bold text-copper-800">350€</span>
                         </div>
                         <div class="flex justify-between items-center py-3 bg-terracotta-100 rounded-lg px-3">
                             <div>
                                 <span class="text-copper-700 font-semibold">Forfait 10 séances</span>
-                                <span class="block text-xs text-green-600 font-bold">💰 Économisez 100€</span>
+                                <span class="savings-tag">− 100 €</span>
                             </div>
                             <span class="text-lg font-bold text-terracotta-600">650€</span>
                         </div>
@@ -189,7 +191,7 @@
                         <div class="flex justify-between items-center py-3 bg-beige-100 rounded-lg px-3">
                             <div>
                                 <span class="text-copper-700 font-semibold">Forfait 5 séances</span>
-                                <span class="block text-xs text-green-600 font-bold">🎉 Économisez 25€</span>
+                                <span class="savings-tag">− 25 €</span>
                             </div>
                             <span class="text-lg font-bold text-beige-700">325€</span>
                         </div>
@@ -232,7 +234,7 @@
     </section>
 
     <!-- Informations Pratiques -->
-    <section class="py-20 bg-beige-50">
+    <section class="py-20 bg-beige-50" data-section-number="02">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <h2 data-reveal="up" class="text-4xl font-display font-bold text-center text-copper-800 mb-12">
@@ -315,7 +317,7 @@
     </section>
 
     <!-- FAQ Tarifaire -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" data-section-number="03">
         <div class="container mx-auto px-6">
             <h2 data-reveal="up" class="text-4xl font-display font-bold text-center text-copper-800 mb-12">
                 Questions fréquentes

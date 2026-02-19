@@ -67,7 +67,7 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior géré par Lenis (JS) — ne pas redéfinir ici */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -714,5 +714,179 @@
   /* Smooth inner scroll anchor offset */
   .scroll-mt-header {
     scroll-margin-top: 5rem;
+  }
+
+  /* ----------------------------------------------------------
+     GRAIN ORGANIQUE ANIMÉ — texture tactile globale
+     Overlay SVG feTurbulence qui mime le grain d'une pellicule photo
+     Très basse opacité — subliminalement perçu, jamais distrayant
+     ---------------------------------------------------------- */
+  .grain-overlay {
+    position: fixed;
+    inset: -200%;
+    width: 400%;
+    height: 400%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    animation: grain-shift 8s steps(8) infinite;
+    will-change: transform;
+  }
+
+  @keyframes grain-shift {
+    0%   { transform: translate(0,    0); }
+    12%  { transform: translate(-3%, -2%); }
+    25%  { transform: translate(2%,   3%); }
+    37%  { transform: translate(-2%,  1%); }
+    50%  { transform: translate(3%,  -3%); }
+    62%  { transform: translate(-1%,  2%); }
+    75%  { transform: translate(2%,  -1%); }
+    88%  { transform: translate(-3%,  3%); }
+  }
+
+  /* ----------------------------------------------------------
+     CURSEUR AURA CUIVRÉE — orbe qui suit le curseur avec inertie
+     Matérialise la chaleur du toucher comme une présence physique
+     ---------------------------------------------------------- */
+  .cursor-aura {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid var(--color-copper-400);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    mix-blend-mode: multiply;
+    transition: width 0.4s ease, height 0.4s ease,
+                border-color 0.3s ease, background-color 0.3s ease,
+                opacity 0.3s ease;
+    will-change: transform;
+  }
+
+  .cursor-aura.is-hovering-img {
+    width: 80px;
+    height: 80px;
+    margin-left: -20px;
+    margin-top: -20px;
+    border-color: rgba(184, 149, 106, 0.5);
+  }
+
+  .cursor-aura.is-hovering-btn {
+    width: 56px;
+    height: 56px;
+    margin-left: -8px;
+    margin-top: -8px;
+    border-color: var(--color-copper-500);
+    background-color: rgba(184, 149, 106, 0.07);
+  }
+
+  /* ----------------------------------------------------------
+     NUMÉRO FANTÔME DE SECTION — grands chiffres Cormorant
+     Arrière-plan typographique à opacité très basse
+     Parallaxent plus lentement que le contenu (profondeur)
+     ---------------------------------------------------------- */
+  .section-ghost-number {
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-size: clamp(8rem, 18vw, 16rem);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--color-copper-900);
+    opacity: 0.04;
+    pointer-events: none;
+    user-select: none;
+    will-change: transform;
+    letter-spacing: -0.05em;
+  }
+
+  /* ----------------------------------------------------------
+     MARQUEE TESTIMONIALS — défilement infini horizontal
+     Les témoignages forment un flux continu, jamais interrompu
+     ---------------------------------------------------------- */
+  .marquee-wrapper {
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: marquee-left 40s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Chaque carte dans le marquee a une largeur fixe */
+  .marquee-track .testimonial-card {
+    width: 340px;
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ----------------------------------------------------------
+     PAGE CURTAIN — rideau de transition cuivré
+     Voile qui entre depuis la droite (départ) et sort vers la gauche (arrivée)
+     ---------------------------------------------------------- */
+  .page-curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    background-color: var(--color-copper-900);
+    transform: translateX(100%);
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  /* ----------------------------------------------------------
+     SPLIT LINE PARENT — wrapper overflow:hidden pour SplitType
+     Chaque ligne de titre est clippée pour l'effet rideau de scène
+     ---------------------------------------------------------- */
+  .split-line-parent {
+    overflow: hidden;
+    display: block;
+    line-height: inherit;
+  }
+
+  /* ----------------------------------------------------------
+     SAVINGS TAG — remplace les emojis dans tarifs.html
+     Typographie élégante à la place des emojis génériques
+     ---------------------------------------------------------- */
+  .savings-tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-copper-600);
+    letter-spacing: 0.02em;
   }
 }
