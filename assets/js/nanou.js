@@ -39,6 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initCalendlyTriggers();
   initStickyBooking();
+
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.addEventListener('click', () => window.print());
+
+  // Google reviews hover
+  const reviewsBtn = document.getElementById('google-reviews-btn');
+  if (reviewsBtn) {
+    reviewsBtn.addEventListener('mouseover', () => { reviewsBtn.style.transform = 'translateY(-2px)'; });
+    reviewsBtn.addEventListener('mouseout',  () => { reviewsBtn.style.transform = ''; });
+  }
 });
 
 // ─── 1. GRAIN ORGANIQUE ───────────────────────────────────────────────────────
