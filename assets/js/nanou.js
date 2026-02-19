@@ -652,6 +652,17 @@ function initStickyBooking() {
   btn.setAttribute('aria-label', 'Prendre rendez-vous');
   document.body.appendChild(btn);
 
+  // Click handler direct — le bouton est créé après initCalendlyTriggers()
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const url = btn.dataset.calendlyUrl;
+    if (typeof Calendly !== 'undefined' && url && !url.includes('NANOU_CALENDLY_URL')) {
+      Calendly.initPopupWidget({ url });
+    } else {
+      window.location.href = 'contact.html#contact-form';
+    }
+  });
+
   ScrollTrigger.create({
     start: 400,
     onEnter: () => btn.classList.add('visible'),
