@@ -1228,8 +1228,8 @@
 /* ─── STICKY BOOKING BUTTON ─────────────────────────────────────────────────── */
 .sticky-book-btn {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 5.5rem;
+  right: 1.5rem;
   z-index: 9990;
   opacity: 0;
   transform: translateY(0.75rem);
@@ -1245,7 +1245,7 @@
 }
 @media (max-width: 767px) {
   .sticky-book-btn {
-    bottom: 5.5rem;
+    bottom: 9rem;
     right: 1rem;
     font-size: 0.75rem;
     padding: 0.55rem 1.1rem;
