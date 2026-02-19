@@ -115,24 +115,16 @@ function initCursor() {
 }
 
 // ─── 4. RIDEAU DE PAGE CUIVRÉ ─────────────────────────────────────────────────
-// Voile cuivré qui entre et sort entre les pages — transition physique
+// Voile cuivré qui s'ouvre uniquement à la navigation (exit) — entrée sans rideau
+// Note : le rideau reste hors-écran (translateX 100%) par défaut (CSS)
+// pour éviter tout risque de blocage de la page au chargement.
 function initPageCurtain() {
   const curtain = document.createElement('div');
   curtain.className = 'page-curtain';
   curtain.setAttribute('aria-hidden', 'true');
   document.body.appendChild(curtain);
 
-  // Entrée de page : le rideau sort vers la gauche (révèle la nouvelle page)
-  gsap.timeline()
-    .set(curtain, { xPercent: 0 })
-    .to(curtain, {
-      xPercent: -100,
-      duration: 0.65,
-      ease: 'power3.inOut',
-      delay: 0.05,
-    });
-
-  // Intercepter les liens internes
+  // Intercepter les liens internes uniquement (exit animation)
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
     if (
@@ -149,14 +141,16 @@ function initPageCurtain() {
     link.addEventListener('click', e => {
       e.preventDefault();
       const destination = href;
-      gsap.timeline()
-        .set(curtain, { xPercent: 100 })
-        .to(curtain, {
+      // Rideau entre depuis la droite, couvre l'écran, puis navigue
+      gsap.fromTo(curtain,
+        { xPercent: 100 },
+        {
           xPercent: 0,
-          duration: 0.5,
+          duration: 0.55,
           ease: 'power3.inOut',
           onComplete() { window.location.href = destination; },
-        });
+        }
+      );
     });
   });
 }
