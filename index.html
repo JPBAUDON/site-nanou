@@ -26,6 +26,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="assets/images/hero/hero-silhouette-nanou.jpg" fetchpriority="high">
+    <!-- Hero video preconnect for faster first-byte -->
+    <link rel="preload" as="video" href="assets/videos/hero-massage.mp4" fetchpriority="high">
 
     <!-- Stylesheet (Tailwind build) -->
     <link rel="stylesheet" href="assets/css/nanou.css">
@@ -35,6 +38,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- i18n FR/NL/EN -->
+    <script src="assets/js/i18n.js"></script>
 
     <!-- Schema.org JSON-LD for Local Business SEO -->
     <script type="application/ld+json">
@@ -47,11 +55,11 @@
       "description": "Massages thérapeutiques, haptonomie et thérapie psycho-corporelle à Bruxelles. Approche humaniste et bienveillante pour adultes, bébés et futurs parents.",
       "url": "https://www.massages-et-naissance.com",
       "telephone": "+32498549969",
-      "email": "contact@massages-naissance.be",
+      "email": "nanoumendels@gmail.com",
       "priceRange": "€€",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Avenue Louise 349",
+        "streetAddress": "Avenue Louise 349 — Espace Mauna",
         "addressLocality": "Bruxelles",
         "postalCode": "1000",
         "addressCountry": "BE"
@@ -87,7 +95,7 @@
       }
     }
     </script>
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/thin/style.css">
 </head>
 <body class="bg-beige-50 text-copper-900">
 
@@ -98,28 +106,31 @@
 
     <nav id="mobile-panel" class="mobile-panel" aria-label="Menu principal mobile" role="dialog">
         <div class="flex items-center justify-between px-7 py-6 border-b border-beige-200">
-            <a href="index.html" class="logo-link">
-                <div class="logo-mark">
-                    <span class="text-copper-500 text-sm font-display font-light">M</span>
-                </div>
-                <div class="flex flex-col leading-none gap-0.5">
-                    <span class="text-[0.6rem] font-body font-medium text-copper-400 tracking-[0.18em] uppercase">Massages</span>
-                    <span class="text-sm font-display text-copper-800">&amp; Naissance</span>
-                </div>
+            <a href="index.html" class="header-logo-editorial" style="gap:0.35rem; text-align:left; text-decoration:none;">
+                <span class="header-logo-editorial-title" style="font-size:0.8rem;" data-i18n="nav.brand">Massages &amp; Naissance</span>
+                <span class="header-logo-ornament" aria-hidden="true"></span>
+                <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
             </a>
             <button id="mobile-close-btn" class="p-2 text-copper-600 hover:text-copper-800" aria-label="Fermer le menu">
                 <i class="ph-thin ph-x" style="font-size: 1.25rem; line-height: 1;"></i>
             </button>
         </div>
         <div class="flex flex-col px-7 py-8 gap-6 flex-1">
-            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Accueil</a>
-            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Prestations</a>
-            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">À propos</a>
-            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Tarifs</a>
-            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Contact</a>
+            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.accueil">Accueil</a>
+            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.prestations">Prestations</a>
+            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.apropos">À propos</a>
+            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.tarifs">Tarifs</a>
+            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="flex items-center justify-center gap-5 py-4 px-7 border-t border-beige-100">
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="fr">FR</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="nl">NL</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="en">EN</button>
         </div>
         <div class="px-7 pb-8">
-            <a href="contact.html" class="btn-primary w-full text-center">Prendre rendez-vous</a>
+            <a href="#" class="btn-primary w-full text-center calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">Prendre rendez-vous</a>
         </div>
     </nav>
 
@@ -135,22 +146,30 @@
 
             <!-- Navigation gauche (desktop uniquement) -->
             <nav class="header-nav-left hidden md:flex" aria-label="Navigation principale">
-                <a href="prestations.html" class="header-nav-link">Prestations</a>
-                <a href="a-propos.html" class="header-nav-link">À propos</a>
+                <a href="prestations.html" class="header-nav-link" data-i18n="nav.prestations">Prestations</a>
+                <a href="a-propos.html" class="header-nav-link" data-i18n="nav.apropos">À propos</a>
             </nav>
 
             <!-- Logo centré — masthead typographique -->
             <a href="index.html" class="header-logo-editorial">
-                <span class="header-logo-editorial-title">Massages &amp; Naissance</span>
+                <span class="header-logo-editorial-title" data-i18n="nav.brand">Massages &amp; Naissance</span>
                 <span class="header-logo-ornament" aria-hidden="true"></span>
-                <span class="header-logo-editorial-sub">Nanou Mendels</span>
+                <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
             </a>
 
             <!-- Navigation droite (desktop) + burger (mobile) -->
             <div class="header-nav-right">
-                <a href="tarifs.html" class="header-nav-link hidden md:inline-block">Tarifs</a>
-                <a href="contact.html" class="header-nav-link hidden md:inline-block">Contact</a>
-                <a href="contact.html" class="header-cta-link hidden md:inline-block">Réserver</a>
+                <a href="tarifs.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.tarifs">Tarifs</a>
+                <a href="contact.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.contact">Contact</a>
+                <a href="#" class="header-cta-link hidden md:inline-block calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="nav.reserver">Réserver</a>
+                <!-- Language switcher -->
+                <div class="lang-switcher hidden md:flex items-center gap-1">
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
+                    <button class="lang-btn" data-lang="nl">NL</button>
+                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
                 <button id="mobile-menu-button" class="header-burger md:hidden"
                         aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
                     <i class="ph-thin ph-list" style="font-size: 1.5rem; line-height: 1;"></i>
@@ -166,11 +185,14 @@
          HERO SECTION
          ═══════════════════════════════════════════════════════ -->
     <section class="hero-section">
-        <!-- Background image — Ken Burns applied via CSS -->
-        <div class="hero-bg">
-            <img src="assets/images/hero/hero-silhouette-nanou.jpg"
-                 alt="Nanou Mendeles dans son espace de soin — ambiance apaisante"
-                 class="w-full h-full object-cover">
+        <!-- Background video — autoplay muted loop, image fallback via poster -->
+        <div class="hero-bg hero-bg--video">
+            <video autoplay muted loop playsinline
+                   poster="assets/images/hero/hero-silhouette-nanou.jpg"
+                   class="w-full h-full object-cover">
+                <source src="assets/videos/hero-massage.webm" type="video/webm">
+                <source src="assets/videos/hero-massage.mp4" type="video/mp4">
+            </video>
         </div>
 
         <!-- Vignette overlay -->
@@ -187,7 +209,7 @@
 
                 <!-- Title — curtain reveal (overflow:hidden clips upward slide) -->
                 <div class="hero-title-wrap overflow-hidden mb-2">
-                    <h1 class="hero-title font-display font-bold text-white"
+                    <h1 class="hero-title font-display font-light text-white"
                         style="font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 0.93; letter-spacing: -0.01em">
                         Bienvenue dans votre<br>espace de bien-être
                     </h1>
@@ -197,14 +219,14 @@
                 <div class="hero-line"></div>
 
                 <!-- Subtitle -->
-                <p class="hero-sub font-display font-light text-white/85 mb-10"
+                <p class="hero-sub font-accent font-light text-white/85 mb-10"
                    style="font-size: clamp(1rem, 2.2vw, 1.3rem); letter-spacing: 0.04em; font-style: italic">
                     Massage · Haptonomie · Thérapie psycho-corporelle
                 </p>
 
                 <!-- CTAs — GSAP sets opacity: 1 -->
                 <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="btn-white">Prendre rendez-vous</a>
+                    <a href="#" class="btn-white calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">Prendre rendez-vous</a>
                     <a href="#intro" class="btn-ghost-white">Découvrir</a>
                 </div>
             </div>
@@ -704,7 +726,8 @@
         <img src="assets/images/ambiance/detail-textile-ethnique.jpg"
              alt=""
              class="parallax-img"
-             aria-hidden="true">
+             aria-hidden="true"
+             loading="lazy">
         <div class="absolute inset-0 bg-copper-900/65"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="font-display font-bold text-white mb-6"
@@ -718,6 +741,22 @@
             <div data-reveal="up" data-delay="0.2">
                 <a href="contact.html" class="btn-white">Me contacter</a>
             </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         NEWSLETTER
+         ═══════════════════════════════════════════════════════ -->
+    <section class="py-16 bg-beige-100 border-t border-beige-200">
+        <div class="container mx-auto px-6 max-w-lg text-center">
+            <p class="font-label text-xs tracking-[0.2em] text-copper-400 uppercase mb-3" data-i18n="newsletter.label">Newsletter</p>
+            <h3 class="font-display text-2xl text-copper-800 mb-2" data-i18n="newsletter.title">Conseils bien-être & actualités</h3>
+            <p class="font-body text-copper-500 text-sm mb-6" data-i18n="newsletter.sub">Inspirations, conseils et moments de douceur — jamais de spam.</p>
+            <form class="flex flex-col sm:flex-row gap-3" onsubmit="return false;">
+                <input type="email" class="newsletter-input flex-1" placeholder="votre@email.com" data-i18n-placeholder="newsletter.placeholder" required>
+                <button type="submit" class="btn-primary" data-i18n="newsletter.cta">S'inscrire</button>
+            </form>
+            <p class="font-body text-xs text-copper-300 mt-3" data-i18n="newsletter.disclaimer">Désabonnement en 1 clic à tout moment.</p>
         </div>
     </section>
 
@@ -742,12 +781,12 @@
                     <div class="space-y-3 text-copper-200 text-sm">
                         <p class="flex items-center gap-2">
                             <i class="ph-thin ph-map-pin" style="font-size: 1.25rem; line-height: 1;"></i>
-                            Avenue Louise 349, Bruxelles
+                            Avenue Louise 349, Espace Mauna, 1000 Bruxelles
                         </p>
                         <p class="flex items-center gap-2">
                             <i class="ph-thin ph-envelope" style="font-size: 1.25rem; line-height: 1;"></i>
-                            <a href="mailto:contact@massages-naissance.be" class="hover:text-white">
-                                contact@massages-naissance.be
+                            <a href="mailto:nanoumendels@gmail.com" class="hover:text-white">
+                                nanoumendels@gmail.com
                             </a>
                         </p>
                         <p class="flex items-center gap-2">
@@ -761,11 +800,11 @@
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5">Navigation</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm">
-                        <li><a href="index.html" class="hover:text-white">Accueil</a></li>
-                        <li><a href="prestations.html" class="hover:text-white">Prestations</a></li>
-                        <li><a href="a-propos.html" class="hover:text-white">À propos</a></li>
-                        <li><a href="tarifs.html" class="hover:text-white">Tarifs</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-white" data-i18n="nav.accueil">Accueil</a></li>
+                        <li><a href="prestations.html" class="hover:text-white" data-i18n="nav.prestations">Prestations</a></li>
+                        <li><a href="a-propos.html" class="hover:text-white" data-i18n="nav.apropos">À propos</a></li>
+                        <li><a href="tarifs.html" class="hover:text-white" data-i18n="nav.tarifs">Tarifs</a></li>
+                        <li><a href="contact.html" class="hover:text-white" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -773,24 +812,19 @@
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5">Légal</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm mb-8">
-                        <li><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a></li>
-                        <li><a href="confidentialite.html" class="hover:text-white">Politique de confidentialité</a></li>
+                        <li><a href="mentions-legales.html" class="hover:text-white" data-i18n="footer.legal">Mentions légales</a></li>
+                        <li><a href="confidentialite.html" class="hover:text-white" data-i18n="footer.privacy">Politique de confidentialité</a></li>
                     </ul>
-                    <h3 class="font-display text-lg font-semibold mb-4">Suivez-moi</h3>
-                    <div class="flex gap-3">
-                        <a href="#" class="w-9 h-9 border border-copper-600 rounded-full flex items-center justify-center text-copper-300 hover:border-copper-400 hover:text-white" aria-label="Facebook">
-                            <i class="ph-thin ph-facebook-logo" style="font-size: 1.25rem; line-height: 1;"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 border border-copper-600 rounded-full flex items-center justify-center text-copper-300 hover:border-copper-400 hover:text-white" aria-label="Instagram">
-                            <i class="ph-thin ph-instagram-logo" style="font-size: 1.25rem; line-height: 1;"></i>
-                        </a>
-                    </div>
+                    <a href="tel:+32498549969" class="flex items-center gap-2 font-body text-sm text-copper-300 hover:text-copper-100 transition-colors">
+                        <i class="ph-thin ph-phone"></i>
+                        <span>+32 498 54 99 69</span>
+                    </a>
                 </div>
 
             </div>
 
             <div class="border-t border-copper-700 pt-6 text-center text-copper-400 text-sm">
-                <p>&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
             </div>
         </div>
     </footer>

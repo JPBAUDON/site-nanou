@@ -15,32 +15,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/thin/style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="assets/js/i18n.js"></script>
 </head>
 <body class="bg-beige-50 text-copper-900">
 
     <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true"></div>
     <nav id="mobile-panel" class="mobile-panel" aria-label="Menu principal mobile" role="dialog">
         <div class="flex items-center justify-between px-7 py-6 border-b border-beige-200">
-            <a href="index.html" class="logo-link">
-                <div class="logo-mark"><span class="text-copper-500 text-sm font-display font-light">M</span></div>
-                <div class="flex flex-col leading-none gap-0.5">
-                    <span class="text-[0.6rem] font-body font-medium text-copper-400 tracking-[0.18em] uppercase">Massages</span>
-                    <span class="text-sm font-display text-copper-800">&amp; Naissance</span>
-                </div>
+            <a href="index.html" class="header-logo-editorial" style="gap:0.35rem; text-align:left; text-decoration:none;">
+                <span class="header-logo-editorial-title" style="font-size:0.8rem;" data-i18n="nav.brand">Massages &amp; Naissance</span>
+                <span class="header-logo-ornament" aria-hidden="true"></span>
+                <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
             </a>
             <button id="mobile-close-btn" class="p-2 text-copper-600 hover:text-copper-800" aria-label="Fermer le menu">
                 <i class="ph-thin ph-x" style="font-size: 1.25rem; line-height: 1;"></i>
             </button>
         </div>
         <div class="flex flex-col px-7 py-8 gap-6 flex-1">
-            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Accueil</a>
-            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Prestations</a>
-            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">À propos</a>
-            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Tarifs</a>
-            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Contact</a>
+            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.accueil">Accueil</a>
+            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.prestations">Prestations</a>
+            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.apropos">À propos</a>
+            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.tarifs">Tarifs</a>
+            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.contact">Contact</a>
         </div>
-        <div class="px-7 pb-8"><a href="contact.html" class="btn-primary w-full text-center">Prendre rendez-vous</a></div>
+        <div class="flex items-center justify-center gap-5 py-4 px-7 border-t border-beige-100">
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="fr">FR</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="nl">NL</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="en">EN</button>
+        </div>
+        <div class="px-7 pb-8"><a href="#" class="btn-primary w-full text-center calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">Prendre rendez-vous</a></div>
     </nav>
 
     <!-- ═══════════════════════════════════════════════════════
@@ -52,22 +60,29 @@
 
             <!-- Navigation gauche (desktop uniquement) -->
             <nav class="header-nav-left hidden md:flex" aria-label="Navigation principale">
-                <a href="prestations.html" class="header-nav-link">Prestations</a>
-                <a href="a-propos.html" class="header-nav-link">À propos</a>
+                <a href="prestations.html" class="header-nav-link" data-i18n="nav.prestations">Prestations</a>
+                <a href="a-propos.html" class="header-nav-link" data-i18n="nav.apropos">À propos</a>
             </nav>
 
             <!-- Logo centré — masthead typographique -->
             <a href="index.html" class="header-logo-editorial">
-                <span class="header-logo-editorial-title">Massages &amp; Naissance</span>
+                <span class="header-logo-editorial-title" data-i18n="nav.brand">Massages &amp; Naissance</span>
                 <span class="header-logo-ornament" aria-hidden="true"></span>
-                <span class="header-logo-editorial-sub">Nanou Mendels</span>
+                <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
             </a>
 
             <!-- Navigation droite (desktop) + burger (mobile) -->
             <div class="header-nav-right">
-                <a href="tarifs.html" class="header-nav-link hidden md:inline-block">Tarifs</a>
-                <a href="contact.html" class="header-nav-link hidden md:inline-block">Contact</a>
-                <a href="contact.html" class="header-cta-link hidden md:inline-block">Réserver</a>
+                <a href="tarifs.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.tarifs">Tarifs</a>
+                <a href="contact.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.contact">Contact</a>
+                <a href="#" class="header-cta-link hidden md:inline-block calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="nav.reserver">Réserver</a>
+                <div class="lang-switcher hidden md:flex items-center gap-1">
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
+                    <button class="lang-btn" data-lang="nl">NL</button>
+                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
                 <button id="mobile-menu-button" class="header-burger md:hidden"
                         aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
                     <i class="ph-thin ph-list" style="font-size: 1.5rem; line-height: 1;"></i>
@@ -114,7 +129,7 @@
                             <li><strong>Forme juridique</strong> : [À compléter - Ex: Entreprise individuelle]</li>
                             <li><strong>Numéro d'entreprise</strong> : [À compléter]</li>
                             <li><strong>Adresse</strong> : Bruxelles, Belgique</li>
-                            <li><strong>Email</strong> : contact@massages-naissance.be</li>
+                            <li><strong>Email</strong> : nanoumendels@gmail.com</li>
                             <li><strong>Téléphone</strong> : +32 XXX XX XX XX</li>
                         </ul>
                     </section>
@@ -186,7 +201,7 @@
                             <strong>Dernière mise à jour :</strong> [Date - À compléter]
                         </p>
                         <p class="text-sm text-copper-600 mt-2">
-                            Pour toute question concernant ces mentions légales, veuillez nous contacter à : <a href="mailto:contact@massages-naissance.be" class="text-copper-700 underline">contact@massages-naissance.be</a>
+                            Pour toute question concernant ces mentions légales, veuillez nous contacter à : <a href="mailto:nanoumendels@gmail.com" class="text-copper-700 underline">nanoumendels@gmail.com</a>
                         </p>
                     </section>
 
@@ -213,31 +228,31 @@
                         </div>
                     </div>
                     <div class="space-y-3 text-copper-200 text-sm">
-                        <p class="flex items-center gap-2"><i class="ph-thin ph-map-pin" style="font-size: 1.25rem; line-height: 1;"></i>Avenue Louise 349, Bruxelles</p>
-                        <p class="flex items-center gap-2"><i class="ph-thin ph-envelope" style="font-size: 1.25rem; line-height: 1;"></i><a href="mailto:contact@massages-naissance.be" class="hover:text-white">contact@massages-naissance.be</a></p>
+                        <p class="flex items-center gap-2"><i class="ph-thin ph-map-pin" style="font-size: 1.25rem; line-height: 1;"></i>Avenue Louise 349, Espace Mauna, 1000 Bruxelles</p>
+                        <p class="flex items-center gap-2"><i class="ph-thin ph-envelope" style="font-size: 1.25rem; line-height: 1;"></i><a href="mailto:nanoumendels@gmail.com" class="hover:text-white">nanoumendels@gmail.com</a></p>
                         <p class="flex items-center gap-2"><i class="ph-thin ph-phone" style="font-size: 1.25rem; line-height: 1;"></i><a href="tel:+32498549969" class="hover:text-white">+32 498 54 99 69</a></p>
                     </div>
                 </div>
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5">Navigation</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm">
-                        <li><a href="index.html" class="hover:text-white">Accueil</a></li>
-                        <li><a href="prestations.html" class="hover:text-white">Prestations</a></li>
-                        <li><a href="a-propos.html" class="hover:text-white">À propos</a></li>
-                        <li><a href="tarifs.html" class="hover:text-white">Tarifs</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-white" data-i18n="nav.accueil">Accueil</a></li>
+                        <li><a href="prestations.html" class="hover:text-white" data-i18n="nav.prestations">Prestations</a></li>
+                        <li><a href="a-propos.html" class="hover:text-white" data-i18n="nav.apropos">À propos</a></li>
+                        <li><a href="tarifs.html" class="hover:text-white" data-i18n="nav.tarifs">Tarifs</a></li>
+                        <li><a href="contact.html" class="hover:text-white" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5">Légal</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm">
-                        <li><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a></li>
-                        <li><a href="confidentialite.html" class="hover:text-white">Politique de confidentialité</a></li>
+                        <li><a href="mentions-legales.html" class="hover:text-white" data-i18n="footer.legal">Mentions légales</a></li>
+                        <li><a href="confidentialite.html" class="hover:text-white" data-i18n="footer.privacy">Politique de confidentialité</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-copper-700 pt-6 text-center text-copper-400 text-sm">
-                <p>&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
             </div>
         </div>
     </footer>

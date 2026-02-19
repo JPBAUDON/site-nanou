@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   initMarqueeTestimonials();
   initFaqAccordion();
+  initCalendlyTriggers();
+  initStickyBooking();
 });
 
 // ─── 1. GRAIN ORGANIQUE ───────────────────────────────────────────────────────
@@ -567,6 +569,39 @@ function initMarqueeTestimonials() {
       track.style.animationPlayState = 'running';
     });
   }
+}
+
+// ─── 15. CALENDLY TRIGGERS — Gestion des CTAs de réservation ──────────────
+function initCalendlyTriggers() {
+  document.querySelectorAll('.calendly-trigger').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const url = btn.dataset.calendlyUrl;
+      if (typeof Calendly !== 'undefined' && url && !url.includes('NANOU_CALENDLY_URL')) {
+        Calendly.initPopupWidget({ url });
+      } else {
+        // Fallback : naviguer vers la page contact si Calendly n'est pas configuré
+        window.location.href = 'contact.html';
+      }
+    });
+  });
+}
+
+// ─── 16. STICKY BOOKING BUTTON — Apparaît après 400px de scroll ──────────
+function initStickyBooking() {
+  const btn = document.createElement('a');
+  btn.className = 'sticky-book-btn btn-primary calendly-trigger';
+  btn.setAttribute('href', '#');
+  btn.setAttribute('data-calendly-url', 'https://calendly.com/NANOU_CALENDLY_URL');
+  btn.innerHTML = '<i class="ph-thin ph-calendar-blank" style="margin-right:0.4rem; vertical-align:middle;"></i><span data-i18n="cta.book">Réserver</span>';
+  btn.setAttribute('aria-label', 'Prendre rendez-vous');
+  document.body.appendChild(btn);
+
+  ScrollTrigger.create({
+    start: 400,
+    onEnter: () => btn.classList.add('visible'),
+    onLeaveBack: () => btn.classList.remove('visible'),
+  });
 }
 
 // ─── 14. FAQ ACCORDION — transition fluide ───────────────────────────────────

@@ -19,32 +19,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/thin/style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="assets/js/i18n.js"></script>
 </head>
 <body class="bg-beige-50 text-copper-900">
 
     <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true"></div>
     <nav id="mobile-panel" class="mobile-panel" aria-label="Menu principal mobile" role="dialog">
         <div class="flex items-center justify-between px-7 py-6 border-b border-beige-200">
-            <a href="index.html" class="logo-link">
-                <div class="logo-mark"><span class="text-copper-500 text-sm font-display font-light">M</span></div>
-                <div class="flex flex-col leading-none gap-0.5">
-                    <span class="text-[0.6rem] font-body font-medium text-copper-400 tracking-[0.18em] uppercase">Massages</span>
-                    <span class="text-sm font-display text-copper-800">&amp; Naissance</span>
-                </div>
+            <a href="index.html" class="header-logo-editorial" style="gap:0.35rem; text-align:left; text-decoration:none;">
+                <span class="header-logo-editorial-title" style="font-size:0.8rem;" data-i18n="nav.brand">Massages &amp; Naissance</span>
+                <span class="header-logo-ornament" aria-hidden="true"></span>
+                <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
             </a>
             <button id="mobile-close-btn" class="p-2 text-copper-600 hover:text-copper-800" aria-label="Fermer le menu">
                 <i class="ph-thin ph-x" style="font-size: 1.25rem; line-height: 1;"></i>
             </button>
         </div>
         <div class="flex flex-col px-7 py-8 gap-6 flex-1">
-            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Accueil</a>
-            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Prestations</a>
-            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">À propos</a>
-            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Tarifs</a>
-            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Contact</a>
+            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.accueil">Accueil</a>
+            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.prestations">Prestations</a>
+            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.apropos">À propos</a>
+            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.tarifs">Tarifs</a>
+            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.contact">Contact</a>
         </div>
-        <div class="px-7 pb-8"><a href="contact.html" class="btn-primary w-full text-center">Prendre rendez-vous</a></div>
+        <div class="flex items-center justify-center gap-5 py-4 px-7 border-t border-beige-100">
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="fr">FR</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="nl">NL</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="en">EN</button>
+        </div>
+        <div class="px-7 pb-8"><a href="#" class="btn-primary w-full text-center calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">Prendre rendez-vous</a></div>
     </nav>
 
     <!-- ═══════════════════════════════════════════════════════
@@ -56,22 +64,29 @@
 
             <!-- Navigation gauche (desktop uniquement) -->
             <nav class="header-nav-left hidden md:flex" aria-label="Navigation principale">
-                <a href="prestations.html" class="header-nav-link">Prestations</a>
-                <a href="a-propos.html" class="header-nav-link">À propos</a>
+                <a href="prestations.html" class="header-nav-link" data-i18n="nav.prestations">Prestations</a>
+                <a href="a-propos.html" class="header-nav-link" data-i18n="nav.apropos">À propos</a>
             </nav>
 
             <!-- Logo centré — masthead typographique -->
             <a href="index.html" class="header-logo-editorial">
-                <span class="header-logo-editorial-title">Massages &amp; Naissance</span>
+                <span class="header-logo-editorial-title" data-i18n="nav.brand">Massages &amp; Naissance</span>
                 <span class="header-logo-ornament" aria-hidden="true"></span>
-                <span class="header-logo-editorial-sub">Nanou Mendels</span>
+                <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
             </a>
 
             <!-- Navigation droite (desktop) + burger (mobile) -->
             <div class="header-nav-right">
-                <a href="tarifs.html" class="header-nav-link hidden md:inline-block">Tarifs</a>
-                <a href="contact.html" class="header-nav-link active hidden md:inline-block">Contact</a>
-                <a href="contact.html" class="header-cta-link hidden md:inline-block">Réserver</a>
+                <a href="tarifs.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.tarifs">Tarifs</a>
+                <a href="contact.html" class="header-nav-link active hidden md:inline-block" data-i18n="nav.contact">Contact</a>
+                <a href="#" class="header-cta-link hidden md:inline-block calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="nav.reserver">Réserver</a>
+                <div class="lang-switcher hidden md:flex items-center gap-1">
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
+                    <button class="lang-btn" data-lang="nl">NL</button>
+                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
                 <button id="mobile-menu-button" class="header-burger md:hidden"
                         aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
                     <i class="ph-thin ph-list" style="font-size: 1.5rem; line-height: 1;"></i>
@@ -106,128 +121,141 @@
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
 
-                <!-- Formulaire de Contact -->
+                <!-- Formulaire de Contact / Onglets booking -->
                 <div>
-                    <h2 data-reveal="up" class="text-3xl font-display font-bold text-copper-800 mb-6">
-                        Envoyez-moi un message
-                    </h2>
-                    <p class="text-copper-700 mb-8">
-                        Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.
-                    </p>
+                    <!-- Onglets booking -->
+                    <div class="booking-tabs" role="tablist">
+                        <button class="tab-btn active" data-tab="calendly" role="tab" aria-selected="true" data-i18n="tabs.book">Choisir un créneau</button>
+                        <button class="tab-btn" data-tab="form" role="tab" aria-selected="false" data-i18n="tabs.message">Envoyer un message</button>
+                    </div>
 
-                    <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
-                        <!-- Nom -->
-                        <div>
-                            <label for="name" class="block text-copper-800 font-semibold mb-2">
-                                Nom complet <span class="text-red-500">*</span>
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                required
-                                class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
-                                placeholder="Jean Dupont"
+                    <!-- Onglet 1 — Calendly inline -->
+                    <div id="tab-calendly" class="tab-pane">
+                        <!-- ⚠️ REMPLACER : mettre l'URL Calendly de Nanou -->
+                        <div class="calendly-inline-widget"
+                             data-url="https://calendly.com/NANOU_CALENDLY_URL"
+                             style="min-width:320px; height:700px;">
+                        </div>
+                    </div>
+
+                    <!-- Onglet 2 — Formulaire Formspree -->
+                    <div id="tab-form" class="tab-pane hidden">
+                        <!-- ⚠️ REMPLACER : changer YOUR_FORMSPREE_ID par l'ID Formspree réel de Nanou -->
+                        <!-- Obtenir l'ID sur formspree.io → New Form → copier l'ID (format: xabcdefg) -->
+                        <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
+                            <!-- Nom -->
+                            <div>
+                                <label for="name" class="block text-copper-800 font-semibold mb-2">
+                                    Nom complet <span class="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
+                                    placeholder="Jean Dupont"
+                                >
+                                <span class="error-message text-red-500 text-sm hidden">Ce champ est requis</span>
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-copper-800 font-semibold mb-2">
+                                    Email <span class="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
+                                    placeholder="jean.dupont@email.com"
+                                >
+                                <span class="error-message text-red-500 text-sm hidden">Email invalide</span>
+                            </div>
+
+                            <!-- Téléphone -->
+                            <div>
+                                <label for="phone" class="block text-copper-800 font-semibold mb-2">
+                                    Téléphone
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
+                                    placeholder="+32 XXX XX XX XX"
+                                >
+                            </div>
+
+                            <!-- Type de prestation -->
+                            <div>
+                                <label for="service" class="block text-copper-800 font-semibold mb-2">
+                                    Prestation souhaitée
+                                </label>
+                                <select
+                                    id="service"
+                                    name="service"
+                                    class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
+                                >
+                                    <option value="">Sélectionnez une option</option>
+                                    <option value="massage">Massage & Relaxation</option>
+                                    <option value="haptonomie">Haptonomie</option>
+                                    <option value="therapie">Thérapie psycho-corporelle</option>
+                                    <option value="bebe">Accompagnement Bébé/Enfant</option>
+                                    <option value="autre">Autre / Renseignement</option>
+                                </select>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block text-copper-800 font-semibold mb-2">
+                                    Votre message <span class="text-red-500">*</span>
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    rows="6"
+                                    class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400 resize-none"
+                                    placeholder="Décrivez votre demande ou vos questions..."
+                                ></textarea>
+                                <span class="error-message text-red-500 text-sm hidden">Ce champ est requis</span>
+                            </div>
+
+                            <!-- Consent RGPD -->
+                            <div class="flex items-start">
+                                <input
+                                    type="checkbox"
+                                    id="consent"
+                                    name="consent"
+                                    required
+                                    class="mt-1 mr-3 w-5 h-5 text-copper-600 border-copper-300 rounded focus:ring-copper-400"
+                                >
+                                <label for="consent" class="text-sm text-copper-700">
+                                    J'accepte que mes données soient utilisées pour me recontacter. <a href="confidentialite.html" class="text-copper-600 underline">En savoir plus</a>
+                                </label>
+                            </div>
+
+                            <!-- Honeypot anti-spam (hidden field) -->
+                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                            <!-- Submit Button -->
+                            <button
+                                type="submit"
+                                class="w-full bg-copper-400 text-white py-4 rounded-full font-semibold text-lg hover:bg-copper-500 shadow-lg"
                             >
-                            <span class="error-message text-red-500 text-sm hidden">Ce champ est requis</span>
-                        </div>
+                                Envoyer le message
+                            </button>
 
-                        <!-- Email -->
-                        <div>
-                            <label for="email" class="block text-copper-800 font-semibold mb-2">
-                                Email <span class="text-red-500">*</span>
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
-                                placeholder="jean.dupont@email.com"
-                            >
-                            <span class="error-message text-red-500 text-sm hidden">Email invalide</span>
-                        </div>
-
-                        <!-- Téléphone -->
-                        <div>
-                            <label for="phone" class="block text-copper-800 font-semibold mb-2">
-                                Téléphone
-                            </label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
-                                placeholder="+32 XXX XX XX XX"
-                            >
-                        </div>
-
-                        <!-- Type de prestation -->
-                        <div>
-                            <label for="service" class="block text-copper-800 font-semibold mb-2">
-                                Prestation souhaitée
-                            </label>
-                            <select
-                                id="service"
-                                name="service"
-                                class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
-                            >
-                                <option value="">Sélectionnez une option</option>
-                                <option value="massage">Massage & Relaxation</option>
-                                <option value="haptonomie">Haptonomie</option>
-                                <option value="therapie">Thérapie psycho-corporelle</option>
-                                <option value="bebe">Accompagnement Bébé/Enfant</option>
-                                <option value="autre">Autre / Renseignement</option>
-                            </select>
-                        </div>
-
-                        <!-- Message -->
-                        <div>
-                            <label for="message" class="block text-copper-800 font-semibold mb-2">
-                                Votre message <span class="text-red-500">*</span>
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                                rows="6"
-                                class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400 resize-none"
-                                placeholder="Décrivez votre demande ou vos questions..."
-                            ></textarea>
-                            <span class="error-message text-red-500 text-sm hidden">Ce champ est requis</span>
-                        </div>
-
-                        <!-- Consent RGPD -->
-                        <div class="flex items-start">
-                            <input
-                                type="checkbox"
-                                id="consent"
-                                name="consent"
-                                required
-                                class="mt-1 mr-3 w-5 h-5 text-copper-600 border-copper-300 rounded focus:ring-copper-400"
-                            >
-                            <label for="consent" class="text-sm text-copper-700">
-                                J'accepte que mes données soient utilisées pour me recontacter. <a href="confidentialite.html" class="text-copper-600 underline">En savoir plus</a>
-                            </label>
-                        </div>
-
-                        <!-- Honeypot anti-spam (hidden field) -->
-                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-                        <!-- Submit Button -->
-                        <button
-                            type="submit"
-                            class="w-full bg-copper-400 text-white py-4 rounded-full font-semibold text-lg hover:bg-copper-500 shadow-lg"
-                        >
-                            Envoyer le message
-                        </button>
-
-                        <!-- Success Message -->
-                        <div id="success-message" class="hidden bg-green-50 border-2 border-green-200 text-green-800 px-6 py-4 rounded-xl">
-                            <p class="font-semibold">Message envoyé avec succès !</p>
-                            <p class="text-sm">Je vous répondrai dans les plus brefs délais.</p>
-                        </div>
-                    </form>
+                            <!-- Success Message -->
+                            <div id="success-message" class="hidden bg-green-50 border-2 border-green-200 text-green-800 px-6 py-4 rounded-xl">
+                                <p class="font-semibold">Message envoyé avec succès !</p>
+                                <p class="text-sm">Je vous répondrai dans les plus brefs délais.</p>
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
                 <!-- Informations de Contact -->
@@ -244,7 +272,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-copper-800 mb-1">Adresse</h3>
-                                <p class="text-copper-700">Avenue Louise 349</p>
+                                <p class="text-copper-700">Avenue Louise 349 — Espace Mauna</p><p class="text-copper-700">1000 Bruxelles</p>
                                 <p class="text-copper-700">1000 Bruxelles</p>
                             </div>
                         </div>
@@ -256,8 +284,8 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-copper-800 mb-1">Email</h3>
-                                <a href="mailto:contact@massages-naissance.be" class="text-copper-600 hover:text-copper-800">
-                                    contact@massages-naissance.be
+                                <a href="mailto:nanoumendels@gmail.com" class="text-copper-600 hover:text-copper-800">
+                                    nanoumendels@gmail.com
                                 </a>
                             </div>
                         </div>
@@ -362,6 +390,7 @@
                         </div>
 
                         <!-- CTA to Google -->
+                        <!-- ⚠️ REMPLACER : obtenir le Place ID sur Google Business Profile → Info → Place ID -->
                         <a href="https://g.page/r/YOUR_GOOGLE_PLACE_ID/review" target="_blank" class="inline-flex items-center gap-2 bg-white text-copper-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-copper-50 shadow-lg border-2 border-copper-200">
                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -448,31 +477,31 @@
                         </div>
                     </div>
                     <div class="space-y-3 text-copper-200 text-sm">
-                        <p class="flex items-center gap-2"><i class="ph-thin ph-map-pin" style="font-size: 1.25rem; line-height: 1;"></i>Avenue Louise 349, Bruxelles</p>
-                        <p class="flex items-center gap-2"><i class="ph-thin ph-envelope" style="font-size: 1.25rem; line-height: 1;"></i><a href="mailto:contact@massages-naissance.be" class="hover:text-white">contact@massages-naissance.be</a></p>
+                        <p class="flex items-center gap-2"><i class="ph-thin ph-map-pin" style="font-size: 1.25rem; line-height: 1;"></i>Avenue Louise 349, Espace Mauna, 1000 Bruxelles</p>
+                        <p class="flex items-center gap-2"><i class="ph-thin ph-envelope" style="font-size: 1.25rem; line-height: 1;"></i><a href="mailto:nanoumendels@gmail.com" class="hover:text-white">nanoumendels@gmail.com</a></p>
                         <p class="flex items-center gap-2"><i class="ph-thin ph-phone" style="font-size: 1.25rem; line-height: 1;"></i><a href="tel:+32498549969" class="hover:text-white">+32 498 54 99 69</a></p>
                     </div>
                 </div>
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5">Navigation</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm">
-                        <li><a href="index.html" class="hover:text-white">Accueil</a></li>
-                        <li><a href="prestations.html" class="hover:text-white">Prestations</a></li>
-                        <li><a href="a-propos.html" class="hover:text-white">À propos</a></li>
-                        <li><a href="tarifs.html" class="hover:text-white">Tarifs</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-white" data-i18n="nav.accueil">Accueil</a></li>
+                        <li><a href="prestations.html" class="hover:text-white" data-i18n="nav.prestations">Prestations</a></li>
+                        <li><a href="a-propos.html" class="hover:text-white" data-i18n="nav.apropos">À propos</a></li>
+                        <li><a href="tarifs.html" class="hover:text-white" data-i18n="nav.tarifs">Tarifs</a></li>
+                        <li><a href="contact.html" class="hover:text-white" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5">Légal</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm mb-8">
-                        <li><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a></li>
-                        <li><a href="confidentialite.html" class="hover:text-white">Politique de confidentialité</a></li>
+                        <li><a href="mentions-legales.html" class="hover:text-white" data-i18n="footer.legal">Mentions légales</a></li>
+                        <li><a href="confidentialite.html" class="hover:text-white" data-i18n="footer.privacy">Politique de confidentialité</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-copper-700 pt-6 text-center text-copper-400 text-sm">
-                <p>&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
             </div>
         </div>
     </footer>
@@ -482,5 +511,19 @@
     </a>
 
     <script src="assets/js/nanou.js"></script>
+    <script>
+    (function() {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+          document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected','true');
+          var target = document.getElementById('tab-' + btn.dataset.tab);
+          if (target) target.classList.remove('hidden');
+        });
+      });
+    })();
+    </script>
 </body>
 </html>

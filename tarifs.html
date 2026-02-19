@@ -19,32 +19,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/thin/style.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="assets/js/i18n.js"></script>
 </head>
 <body class="bg-beige-50 text-copper-900">
 
     <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true"></div>
     <nav id="mobile-panel" class="mobile-panel" aria-label="Menu principal mobile" role="dialog">
         <div class="flex items-center justify-between px-7 py-6 border-b border-beige-200">
-            <a href="index.html" class="logo-link">
-                <div class="logo-mark"><span class="text-copper-500 text-sm font-display font-light">M</span></div>
-                <div class="flex flex-col leading-none gap-0.5">
-                    <span class="text-[0.6rem] font-body font-medium text-copper-400 tracking-[0.18em] uppercase">Massages</span>
-                    <span class="text-sm font-display text-copper-800">&amp; Naissance</span>
-                </div>
+            <a href="index.html" class="header-logo-editorial" style="gap:0.35rem; text-align:left; text-decoration:none;">
+                <span class="header-logo-editorial-title" style="font-size:0.8rem;" data-i18n="nav.brand">Massages &amp; Naissance</span>
+                <span class="header-logo-ornament" aria-hidden="true"></span>
+                <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
             </a>
             <button id="mobile-close-btn" class="p-2 text-copper-600 hover:text-copper-800" aria-label="Fermer le menu">
                 <i class="ph-thin ph-x" style="font-size: 1.25rem; line-height: 1;"></i>
             </button>
         </div>
         <div class="flex flex-col px-7 py-8 gap-6 flex-1">
-            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Accueil</a>
-            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Prestations</a>
-            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">À propos</a>
-            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Tarifs</a>
-            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500">Contact</a>
+            <a href="index.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.accueil">Accueil</a>
+            <a href="prestations.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.prestations">Prestations</a>
+            <a href="a-propos.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.apropos">À propos</a>
+            <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.tarifs">Tarifs</a>
+            <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.contact">Contact</a>
         </div>
-        <div class="px-7 pb-8"><a href="contact.html" class="btn-primary w-full text-center">Prendre rendez-vous</a></div>
+        <div class="flex items-center justify-center gap-5 py-4 px-7 border-t border-beige-100">
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="fr">FR</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="nl">NL</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
+            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="en">EN</button>
+        </div>
+        <div class="px-7 pb-8"><a href="#" class="btn-primary w-full text-center calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">Prendre rendez-vous</a></div>
     </nav>
 
     <!-- ═══════════════════════════════════════════════════════
@@ -56,22 +64,29 @@
 
             <!-- Navigation gauche (desktop uniquement) -->
             <nav class="header-nav-left hidden md:flex" aria-label="Navigation principale">
-                <a href="prestations.html" class="header-nav-link">Prestations</a>
-                <a href="a-propos.html" class="header-nav-link">À propos</a>
+                <a href="prestations.html" class="header-nav-link" data-i18n="nav.prestations">Prestations</a>
+                <a href="a-propos.html" class="header-nav-link" data-i18n="nav.apropos">À propos</a>
             </nav>
 
             <!-- Logo centré — masthead typographique -->
             <a href="index.html" class="header-logo-editorial">
-                <span class="header-logo-editorial-title">Massages &amp; Naissance</span>
+                <span class="header-logo-editorial-title" data-i18n="nav.brand">Massages &amp; Naissance</span>
                 <span class="header-logo-ornament" aria-hidden="true"></span>
-                <span class="header-logo-editorial-sub">Nanou Mendels</span>
+                <span class="header-logo-editorial-sub" data-i18n="nav.name">Nanou Mendels</span>
             </a>
 
             <!-- Navigation droite (desktop) + burger (mobile) -->
             <div class="header-nav-right">
-                <a href="tarifs.html" class="header-nav-link active hidden md:inline-block">Tarifs</a>
-                <a href="contact.html" class="header-nav-link hidden md:inline-block">Contact</a>
-                <a href="contact.html" class="header-cta-link hidden md:inline-block">Réserver</a>
+                <a href="tarifs.html" class="header-nav-link active hidden md:inline-block" data-i18n="nav.tarifs">Tarifs</a>
+                <a href="contact.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.contact">Contact</a>
+                <a href="#" class="header-cta-link hidden md:inline-block calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="nav.reserver">Réserver</a>
+                <div class="lang-switcher hidden md:flex items-center gap-1">
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
+                    <button class="lang-btn" data-lang="nl">NL</button>
+                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
                 <button id="mobile-menu-button" class="header-burger md:hidden"
                         aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
                     <i class="ph-thin ph-list" style="font-size: 1.5rem; line-height: 1;"></i>
@@ -106,6 +121,15 @@
     <!-- Grille Tarifaire -->
     <section class="py-20 bg-white" data-section-number="01">
         <div class="container mx-auto px-6">
+            <h2 data-reveal="up" class="text-4xl font-display font-bold text-center text-copper-800 mb-4">
+                Grille tarifaire
+            </h2>
+                <div class="flex justify-center mb-8" data-reveal="up">
+                    <button onclick="window.print()" class="flex items-center gap-2 font-label text-xs tracking-widest text-copper-500 border border-copper-200 px-4 py-2 rounded-full hover:border-copper-400 hover:text-copper-700 transition-colors" data-i18n="pdf.download">
+                        <i class="ph-thin ph-printer"></i>
+                        Télécharger la grille tarifaire (PDF)
+                    </button>
+                </div>
             <div data-stagger class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
                 <!-- Card 1: Massage -->
@@ -135,7 +159,7 @@
                         </div>
                     </div>
 
-                    <a href="contact.html" class="block w-full text-center bg-copper-400 text-white py-3 rounded-full font-semibold hover:bg-copper-500">
+                    <a href="#" class="block w-full text-center bg-copper-400 text-white py-3 rounded-full font-semibold hover:bg-copper-500 calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">
                         Réserver
                     </a>
                 </div>
@@ -173,7 +197,7 @@
                         </div>
                     </div>
 
-                    <a href="contact.html" class="block w-full text-center bg-mineral-400 text-white py-3 rounded-full font-semibold hover:bg-mineral-500">
+                    <a href="#" class="block w-full text-center bg-mineral-400 text-white py-3 rounded-full font-semibold hover:bg-mineral-500 calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">
                         Réserver
                     </a>
                 </div>
@@ -205,7 +229,7 @@
                         </div>
                     </div>
 
-                    <a href="contact.html" class="block w-full text-center bg-beige-600 text-white py-3 rounded-full font-semibold hover:bg-beige-700">
+                    <a href="#" class="block w-full text-center bg-beige-600 text-white py-3 rounded-full font-semibold hover:bg-beige-700 calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">
                         Réserver
                     </a>
                 </div>
@@ -229,7 +253,7 @@
                         </div>
                         <div class="text-center md:text-right">
                             <div class="text-4xl font-bold text-copper-800 mb-2">50€</div>
-                            <a href="contact.html" class="inline-block bg-copper-400 text-white px-6 py-2 rounded-full font-semibold hover:bg-copper-500 text-sm">
+                            <a href="#" class="inline-block bg-copper-400 text-white px-6 py-2 rounded-full font-semibold hover:bg-copper-500 text-sm calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">
                                 Réserver
                             </a>
                         </div>
@@ -314,6 +338,22 @@
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════
+         CARTE CADEAU
+         ═══════════════════════════════════════════════════════ -->
+    <section class="py-20 bg-gradient-to-br from-copper-50 to-beige-100">
+        <div class="container mx-auto px-6 text-center max-w-2xl" data-reveal="up">
+            <i class="ph-thin ph-gift" style="font-size: 3rem; color: var(--color-copper-400); display: block; margin-bottom: 1.5rem;" aria-hidden="true"></i>
+            <h2 class="font-display text-3xl text-copper-800 mb-4" data-i18n="gift.title">Offrir un soin</h2>
+            <p class="font-body text-copper-600 leading-relaxed mb-8" data-i18n="gift.sub">
+                Offrez un moment de bien-être unique à un proche. Les bons cadeaux sont disponibles pour toutes les prestations, sans date d'expiration.
+            </p>
+            <a href="#" class="btn-primary calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="gift.cta">
+                Demander un bon cadeau
+            </a>
+        </div>
+    </section>
+
     <!-- FAQ Tarifaire -->
     <section class="py-20 bg-white" data-section-number="03">
         <div class="container mx-auto px-6">
@@ -365,6 +405,61 @@
                         Non, pas du tout. Les forfaits sont une option intéressante si vous souhaitez vous engager dans un suivi régulier et bénéficier d'un tarif avantageux. Vous pouvez tout à fait prendre des séances à l'unité.
                     </div>
                 </div>
+
+                <!-- Q5 — Parking -->
+                <div class="faq-item bg-beige-50 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-8 py-6 text-left flex justify-between items-center hover:bg-beige-100" data-i18n="faq.parking.q">
+                        <span class="text-lg font-semibold text-copper-800">Y a-t-il un parking à proximité ?</span>
+                        <i class="ph-thin ph-caret-down" style="font-size: 1.25rem; line-height: 1;"></i>
+                    </button>
+                    <div class="faq-answer px-8 pb-6 text-copper-700 hidden">
+                        <p data-i18n="faq.parking.a">Le cabinet est facilement accessible en transports en commun (tram 93/94, arrêt Trinité) ou en voiture avec le parking Toison d'Or à 5 minutes à pied.</p>
+                    </div>
+                </div>
+
+                <!-- Q6 — Langues -->
+                <div class="faq-item bg-beige-50 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-8 py-6 text-left flex justify-between items-center hover:bg-beige-100" data-i18n="faq.language.q">
+                        <span class="text-lg font-semibold text-copper-800">Travaillez-vous en néerlandais ou en anglais ?</span>
+                        <i class="ph-thin ph-caret-down" style="font-size: 1.25rem; line-height: 1;"></i>
+                    </button>
+                    <div class="faq-answer px-8 pb-6 text-copper-700 hidden">
+                        <p data-i18n="faq.language.a">Oui, les consultations peuvent se dérouler en français, en néerlandais et en anglais.</p>
+                    </div>
+                </div>
+
+                <!-- Q7 — Bon cadeau -->
+                <div class="faq-item bg-beige-50 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-8 py-6 text-left flex justify-between items-center hover:bg-beige-100" data-i18n="faq.gift.q">
+                        <span class="text-lg font-semibold text-copper-800">Proposez-vous des bons cadeaux ?</span>
+                        <i class="ph-thin ph-caret-down" style="font-size: 1.25rem; line-height: 1;"></i>
+                    </button>
+                    <div class="faq-answer px-8 pb-6 text-copper-700 hidden">
+                        <p data-i18n="faq.gift.a">Absolument. Des bons cadeaux sont disponibles pour toutes les prestations, sans date d'expiration.</p>
+                    </div>
+                </div>
+
+                <!-- Q8 — Tenue -->
+                <div class="faq-item bg-beige-50 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-8 py-6 text-left flex justify-between items-center hover:bg-beige-100" data-i18n="faq.outfit.q">
+                        <span class="text-lg font-semibold text-copper-800">Quelle tenue prévoir pour le massage ?</span>
+                        <i class="ph-thin ph-caret-down" style="font-size: 1.25rem; line-height: 1;"></i>
+                    </button>
+                    <div class="faq-answer px-8 pb-6 text-copper-700 hidden">
+                        <p data-i18n="faq.outfit.a">Sous-vêtements ou tenue légère. Des serviettes sont fournies. La pudeur de chaque personne est entièrement respectée.</p>
+                    </div>
+                </div>
+
+                <!-- Q9 — Bébé -->
+                <div class="faq-item bg-beige-50 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full px-8 py-6 text-left flex justify-between items-center hover:bg-beige-100" data-i18n="faq.baby.q">
+                        <span class="text-lg font-semibold text-copper-800">Puis-je venir avec mon nourrisson ?</span>
+                        <i class="ph-thin ph-caret-down" style="font-size: 1.25rem; line-height: 1;"></i>
+                    </button>
+                    <div class="faq-answer px-8 pb-6 text-copper-700 hidden">
+                        <p data-i18n="faq.baby.a">Oui, l'espace est adapté pour accueillir les bébés dès la naissance. Le massage bébé et l'haptonomie sont proposés en présence des parents.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -378,7 +473,7 @@
             <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
                 Contactez-moi pour réserver votre première séance ou pour toute question.
             </p>
-            <a href="contact.html" class="inline-block bg-white text-copper-700 px-10 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-lg">
+            <a href="#" class="inline-block bg-white text-copper-700 px-10 py-4 rounded-full font-semibold text-lg hover:bg-beige-100 shadow-lg calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">
                 Prendre rendez-vous
             </a>
         </div>
@@ -398,31 +493,31 @@
                         </div>
                     </div>
                     <div class="space-y-3 text-copper-200 text-sm">
-                        <p class="flex items-center gap-2"><i class="ph-thin ph-map-pin" style="font-size: 1.25rem; line-height: 1;"></i>Avenue Louise 349, Bruxelles</p>
-                        <p class="flex items-center gap-2"><i class="ph-thin ph-envelope" style="font-size: 1.25rem; line-height: 1;"></i><a href="mailto:contact@massages-naissance.be" class="hover:text-white">contact@massages-naissance.be</a></p>
+                        <p class="flex items-center gap-2"><i class="ph-thin ph-map-pin" style="font-size: 1.25rem; line-height: 1;"></i>Avenue Louise 349, Espace Mauna, 1000 Bruxelles</p>
+                        <p class="flex items-center gap-2"><i class="ph-thin ph-envelope" style="font-size: 1.25rem; line-height: 1;"></i><a href="mailto:nanoumendels@gmail.com" class="hover:text-white">nanoumendels@gmail.com</a></p>
                         <p class="flex items-center gap-2"><i class="ph-thin ph-phone" style="font-size: 1.25rem; line-height: 1;"></i><a href="tel:+32498549969" class="hover:text-white">+32 498 54 99 69</a></p>
                     </div>
                 </div>
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5">Navigation</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm">
-                        <li><a href="index.html" class="hover:text-white">Accueil</a></li>
-                        <li><a href="prestations.html" class="hover:text-white">Prestations</a></li>
-                        <li><a href="a-propos.html" class="hover:text-white">À propos</a></li>
-                        <li><a href="tarifs.html" class="hover:text-white">Tarifs</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-white" data-i18n="nav.accueil">Accueil</a></li>
+                        <li><a href="prestations.html" class="hover:text-white" data-i18n="nav.prestations">Prestations</a></li>
+                        <li><a href="a-propos.html" class="hover:text-white" data-i18n="nav.apropos">À propos</a></li>
+                        <li><a href="tarifs.html" class="hover:text-white" data-i18n="nav.tarifs">Tarifs</a></li>
+                        <li><a href="contact.html" class="hover:text-white" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-display text-lg font-semibold mb-5">Légal</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm mb-8">
-                        <li><a href="mentions-legales.html" class="hover:text-white">Mentions légales</a></li>
-                        <li><a href="confidentialite.html" class="hover:text-white">Politique de confidentialité</a></li>
+                        <li><a href="mentions-legales.html" class="hover:text-white" data-i18n="footer.legal">Mentions légales</a></li>
+                        <li><a href="confidentialite.html" class="hover:text-white" data-i18n="footer.privacy">Politique de confidentialité</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-copper-700 pt-6 text-center text-copper-400 text-sm">
-                <p>&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
             </div>
         </div>
     </footer>
