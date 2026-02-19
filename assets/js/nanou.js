@@ -213,21 +213,54 @@ function initHeader() {
     });
   }
 
-  // Helpers — applique les styles inline (inline > toute règle CSS)
+  // Couche glass — z-index:2, entre underlines (z:1) et contenu (z:3)
+  const headerGlass = document.createElement('div');
+  headerGlass.className = 'header-glass';
+  headerGlass.setAttribute('aria-hidden', 'true');
+  header.insertBefore(headerGlass, header.children[1]);
+
+  // Underlines JS — z-index:1 = derrière le glass, lumière diffractée
+  const navLinks = Array.from(header.querySelectorAll('.header-nav-link'));
+  const underlines = navLinks.map(link => {
+    const u = document.createElement('div');
+    u.className = 'header-nav-underline';
+    u.setAttribute('aria-hidden', 'true');
+    header.appendChild(u);
+
+    const position = () => {
+      const lr = link.getBoundingClientRect();
+      const hr = header.getBoundingClientRect();
+      u.style.left  = (lr.left - hr.left) + 'px';
+      u.style.width = lr.width + 'px';
+      u.style.top   = (lr.bottom - hr.top - 2) + 'px';
+    };
+
+    link.addEventListener('mouseenter', () => { position(); u.classList.add('visible'); });
+    link.addEventListener('mouseleave', () => { u.classList.remove('visible'); });
+    return { link, u, position };
+  });
+
+  window.addEventListener('resize', () => {
+    underlines.forEach(({ u, position }) => { if (u.classList.contains('visible')) position(); });
+  }, { passive: true });
+
+  // Helpers — backdrop-filter sur header, background blanc sur headerGlass
   const applyOpaque = () => {
-    header.style.background = 'rgba(255, 255, 255, 0.65)';
     header.style.backdropFilter = 'blur(32px) saturate(200%)';
     header.style.webkitBackdropFilter = 'blur(32px) saturate(200%)';
+    header.style.background = 'transparent';
     header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.06)';
-    header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.50)';
+    header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.45)';
+    headerGlass.style.background = 'rgba(255, 255, 255, 0.65)';
   };
 
   const applyTransparent = () => {
-    header.style.background = 'transparent';
     header.style.backdropFilter = 'none';
     header.style.webkitBackdropFilter = 'none';
+    header.style.background = 'transparent';
     header.style.boxShadow = 'none';
     header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.12)';
+    headerGlass.style.background = 'transparent';
   };
 
   // État initial
