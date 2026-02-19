@@ -115,6 +115,14 @@
   }
 }
 
+
+  /* Focus visible — accessibilité clavier avec palette copper */
+  *:focus-visible {
+    outline: 2px solid var(--color-copper-500);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
 /* ============================================================
    COMPONENT CLASSES
    ============================================================ */
@@ -537,22 +545,6 @@
   /* ----------------------------------------------------------
      FLOATING WHATSAPP BUTTON — pulse ring
      ---------------------------------------------------------- */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 3.5rem;
-    height: 3.5rem;
-    background-color: #25D366;
-    border-radius: 50%;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-    text-decoration: none;
-  }
 
   .whatsapp-float:hover {
     transform: scale(1.08);

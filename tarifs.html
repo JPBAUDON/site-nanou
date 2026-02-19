@@ -5,9 +5,18 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.ico" sizes="32x32">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Tarifs des séances de massage, haptonomie et thérapie psycho-corporelle à Bruxelles. Accompagnements accessibles et sur mesure.">
     <title>Tarifs - Massages & Naissance</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tarifs - Massages & Naissance · Bruxelles">
+    <meta property="og:description" content="Consultez la grille tarifaire : massages, haptonomie, thérapie psycho-corporelle. Séances individuelles et forfaits à Bruxelles.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.massages-et-naissance.com/tarifs.html">
+    <meta property="og:image" content="https://www.massages-et-naissance.com/assets/images/hero/hero-silhouette-nanou.jpg">
+    <meta property="og:locale" content="fr_BE">
+    <meta property="og:site_name" content="Massages & Naissance">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,8 +35,18 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script src="assets/js/i18n.min.js" defer></script>
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href="https://www.massages-et-naissance.com/tarifs.html">
+    <link rel="alternate" hreflang="fr" href="https://www.massages-et-naissance.com/tarifs.html">
+    <link rel="alternate" hreflang="nl" href="https://www.massages-et-naissance.com/tarifs.html">
+    <link rel="alternate" hreflang="en" href="https://www.massages-et-naissance.com/tarifs.html">
+    <link rel="alternate" hreflang="it" href="https://www.massages-et-naissance.com/tarifs.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.massages-et-naissance.com/tarifs.html">
 </head>
 <body class="bg-beige-50 text-copper-900">
+    <!-- Skip to content — accessibilité clavier -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-copper-800 focus:rounded focus:shadow-lg focus:outline-none">Aller au contenu principal</a>
 
     <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true"></div>
     <nav id="mobile-panel" class="mobile-panel" aria-label="Menu principal mobile" role="dialog">
@@ -111,7 +130,7 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
+    <section id="main-content" class="relative pt-32 pb-20 overflow-hidden">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="assets/images/ambiance/tarifs-massage-jambes.jpg"
@@ -504,7 +523,7 @@
                     </div>
                 </div>
                 <div>
-                    <h3 class="font-display text-lg font-semibold mb-5">Navigation</h3>
+                    <h3 class="font-display text-lg font-semibold mb-5" data-i18n="footer.nav_title">Navigation</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm">
                         <li><a href="index.html" class="hover:text-white" data-i18n="nav.accueil">Accueil</a></li>
                         <li><a href="prestations.html" class="hover:text-white" data-i18n="nav.prestations">Prestations</a></li>
@@ -514,7 +533,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-display text-lg font-semibold mb-5">Légal</h3>
+                    <h3 class="font-display text-lg font-semibold mb-5" data-i18n="footer.legal_title">Légal</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm mb-8">
                         <li><a href="mentions-legales.html" class="hover:text-white" data-i18n="footer.legal">Mentions légales</a></li>
                         <li><a href="confidentialite.html" class="hover:text-white" data-i18n="footer.privacy">Politique de confidentialité</a></li>

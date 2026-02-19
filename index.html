@@ -5,7 +5,7 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.ico" sizes="32x32">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Massages thérapeutiques, haptonomie et thérapie psycho-corporelle à Bruxelles. Approche humaniste et bienveillante pour adultes, bébés et futurs parents.">
     <meta name="keywords" content="massage, haptonomie, thérapie psycho-corporelle, relaxation, Bruxelles, bien-être, préparation naissance">
     <title>Massages & Naissance - Bien-être et Haptonomie à Bruxelles</title>
@@ -86,11 +86,6 @@
           "closes": "14:00"
         }
       ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "12"
-      },
       "paymentAccepted": "Cash, Credit Card, Bank Transfer",
       "areaServed": {
         "@type": "City",
@@ -99,8 +94,18 @@
     }
     </script>
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/thin/style.css" integrity="sha384-672OEizVhnHe1cezTOdWIZOu5kjUaEhzC5VCvOwiNeu0MRadEc7/hZhE5xsfDoFP" crossorigin="anonymous">
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href="https://www.massages-et-naissance.com/index.html">
+    <link rel="alternate" hreflang="fr" href="https://www.massages-et-naissance.com/index.html">
+    <link rel="alternate" hreflang="nl" href="https://www.massages-et-naissance.com/index.html">
+    <link rel="alternate" hreflang="en" href="https://www.massages-et-naissance.com/index.html">
+    <link rel="alternate" hreflang="it" href="https://www.massages-et-naissance.com/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.massages-et-naissance.com/index.html">
 </head>
 <body class="bg-beige-50 text-copper-900">
+    <!-- Skip to content — accessibilité clavier -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-copper-800 focus:rounded focus:shadow-lg focus:outline-none">Aller au contenu principal</a>
 
     <!-- ═══════════════════════════════════════════════════════
          MOBILE MENU OVERLAY + PANEL
@@ -198,7 +203,7 @@
     <section class="hero-section">
         <!-- Background video — autoplay muted loop, image fallback via poster -->
         <div class="hero-bg hero-bg--video">
-            <video autoplay muted loop playsinline preload="metadata"
+            <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"
                    poster="assets/images/hero/hero-silhouette-nanou.jpg"
                    class="w-full h-full object-cover">
                 <source src="assets/videos/hero-massage.webm" type="video/webm">
@@ -241,7 +246,7 @@
                 <!-- CTAs — GSAP sets opacity: 1 -->
                 <div class="hero-ctas flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a href="#" class="btn-white calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">Prendre rendez-vous</a>
-                    <a href="#intro" class="btn-ghost-white" data-i18n="hero.discover">Découvrir</a>
+                    <a href="#main-content" class="btn-ghost-white" data-i18n="hero.discover">Découvrir</a>
                 </div>
             </div>
         </div>
@@ -260,7 +265,7 @@
     <!-- ═══════════════════════════════════════════════════════
          INTRODUCTION SECTION
          ═══════════════════════════════════════════════════════ -->
-    <section id="intro" class="py-24 bg-white scroll-mt-header" data-section-number="01">
+    <section id="main-content" class="py-24 bg-white scroll-mt-header" data-section-number="01">
         <div class="container mx-auto px-6">
 
             <!-- Section ornament -->

@@ -33,7 +33,7 @@ const TRANSLATIONS = {
       learn_more: 'En savoir plus',
     },
     footer: {
-      copyright: '© 2025 Massages & Naissance — Tous droits réservés',
+      copyright: '© 2026 Massages & Naissance — Tous droits réservés',
       legal:     'Mentions légales',
       privacy:   'Politique de confidentialité',
     },
@@ -451,7 +451,7 @@ const TRANSLATIONS = {
       learn_more: 'Meer info',
     },
     footer: {
-      copyright: '© 2025 Massages & Geboorte — Alle rechten voorbehouden',
+      copyright: '© 2026 Massages & Geboorte — Alle rechten voorbehouden',
       legal:     'Juridische kennisgeving',
       privacy:   'Privacybeleid',
     },
@@ -869,7 +869,7 @@ const TRANSLATIONS = {
       learn_more: 'Learn more',
     },
     footer: {
-      copyright: '© 2025 Massages & Birth — All rights reserved',
+      copyright: '© 2026 Massages & Birth — All rights reserved',
       legal:     'Legal notice',
       privacy:   'Privacy policy',
     },
@@ -1287,7 +1287,7 @@ const TRANSLATIONS = {
       learn_more: 'Scopri di più',
     },
     footer: {
-      copyright: '© 2025 Massaggi & Nascita — Tutti i diritti riservati',
+      copyright: '© 2026 Massaggi & Nascita — Tutti i diritti riservati',
       legal:     'Note legali',
       privacy:   'Informativa sulla privacy',
     },

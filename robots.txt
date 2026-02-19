@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.massages-naissance.be/sitemap.xml
+Sitemap: https://www.massages-et-naissance.com/sitemap.xml
 
 # Interdire certains répertoires (si besoin futur)
 # Disallow: /admin/
