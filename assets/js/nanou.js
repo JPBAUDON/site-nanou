@@ -213,11 +213,28 @@ function initHeader() {
     });
   }
 
-  // État initial — CSS gère tout via classes, GSAP ne touche PAS aux couleurs
+  // Helpers — applique les styles inline (inline > toute règle CSS)
+  const applyOpaque = () => {
+    header.style.background = 'rgba(255, 255, 255, 0.95)';
+    header.style.backdropFilter = 'blur(24px) saturate(180%)';
+    header.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
+    header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.10)';
+    header.style.borderBottom = '1px solid rgba(184, 149, 106, 0.25)';
+  };
+
+  const applyTransparent = () => {
+    header.style.background = 'transparent';
+    header.style.backdropFilter = 'none';
+    header.style.webkitBackdropFilter = 'none';
+    header.style.boxShadow = 'none';
+    header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.12)';
+  };
+
+  // État initial
   if (isHomePage) {
-    header.classList.add('hero-top');
+    applyTransparent();
   } else {
-    header.classList.add('scrolled');
+    applyOpaque();
   }
 
   // Suivi de direction du scroll
@@ -228,20 +245,21 @@ function initHeader() {
     const currentY = window.scrollY;
     const scrollingDown = currentY > lastScrollY;
     const pastHero = currentY > 80;
+    const showOpaque = pastHero || !isHomePage;
 
-    if (!pastHero && isHomePage) {
-      // En haut de la homepage — transparent
-      header.classList.add('hero-top');
-      header.classList.remove('scrolled', 'compact');
-    } else if (pastHero) {
-      // Scrollé : toujours glassmorphism, direction détermine compact ou non
+    if (showOpaque) {
+      applyOpaque();
       header.classList.remove('hero-top');
-      if (scrollingDown) {
-        header.classList.add('scrolled', 'compact');
+      header.classList.add('scrolled');
+      if (scrollingDown && pastHero) {
+        header.classList.add('compact');
       } else {
         header.classList.remove('compact');
-        header.classList.add('scrolled');
       }
+    } else {
+      applyTransparent();
+      header.classList.add('hero-top');
+      header.classList.remove('scrolled', 'compact');
     }
 
     lastScrollY = currentY;

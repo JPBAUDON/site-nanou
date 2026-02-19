@@ -1252,22 +1252,10 @@
   }
 }
 
-/* ─── HEADER OVERRIDES — unlayered (priorité max, écrase @layer components/utilities) ── */
-/* Fond blanc opaque façon verre dépoli — identique à l'effet "opaque glass" */
-.header-premium.scrolled,
-.header-premium.compact {
-  background: rgba(252, 249, 245, 0.96) !important;
-  backdrop-filter: blur(24px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-  box-shadow: 0 2px 24px rgba(100, 80, 50, 0.10) !important;
-  border-bottom: 1px solid rgba(184, 149, 106, 0.25) !important;
-}
-
-.header-premium.hero-top {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: none !important;
+/* ─── HEADER TRANSITION ── les couleurs/blur sont gérés par JS inline styles ── */
+/* Seule la transition CSS est nécessaire ici */
+.header-premium {
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 /* ─── BOOKING TABS ─────────────────────────────────────────────────────────── */
