@@ -1,5 +1,5 @@
 /**
- * i18n.js — Système de traduction FR / NL / EN
+ * i18n.js — Système de traduction FR / NL / EN / IT
  * Site Massages & Naissance · Nanou Mendels · Bruxelles
  *
  * Utilisation :
@@ -415,6 +415,140 @@ const TRANSLATIONS = {
       closing_whatsapp: 'WhatsApp',
     },
   },
+
+  /* ══════════════════════════════════════════════════════════════════
+     ITALIANO — Traduction italienne
+  ══════════════════════════════════════════════════════════════════ */
+  it: {
+    nav: {
+      brand:       'Massaggi & Nascita',
+      name:        'Nanou Mendels',
+      accueil:     'Home',
+      prestations: 'Prestazioni',
+      apropos:     'Chi sono',
+      tarifs:      'Tariffe',
+      contact:     'Contatto',
+      reserver:    'Prenotare',
+    },
+    cta: {
+      book:       'Prendere appuntamento',
+      learn_more: 'Scopri di più',
+    },
+    footer: {
+      copyright: '© 2025 Massaggi & Nascita — Tutti i diritti riservati',
+      legal:     'Note legali',
+      privacy:   'Informativa sulla privacy',
+    },
+    hero: {
+      eyebrow:   'Bruxelles · Benessere',
+      title:     'Benvenuti nel vostro spazio di benessere',
+      sub:       'Massaggio · Aptonomia · Terapia psico-corporea',
+      discover:  'Scoprire',
+      scroll:    'Scorrere',
+    },
+    intro: {
+      ornament: "L'approccio",
+      quote:    'Ancor prima di nascere, il tocco è il nostro primo legame con il mondo.',
+    },
+    services: {
+      ornament: 'Le mie Prestazioni',
+      title:    'Un accompagnamento su misura',
+      sub:      'Ogni seduta è pensata per rispondere alle vostre esigenze specifiche.',
+      all_cta:  'Vedere tutte le prestazioni',
+      s1: { tag: 'Benessere', title: 'Massaggio & Relax', sub: 'Profondo rilassamento e scioglimento delle tensioni.', cta: 'Scopri di più' },
+      s2: { tag: 'Perinatale', title: 'Aptonomia', sub: 'Contatto rassicurante per i futuri genitori e il bebè.', cta: 'Scopri di più' },
+      s3: { tag: 'Terapia', title: 'Terapia Psico-corporea', sub: 'Riconnessione corpo-mente attraverso il tocco premuroso.', cta: 'Scopri di più' },
+      s4: { tag: 'Infanzia', title: 'Bebè & Bambino', sub: 'Massaggio e consapevolezza corporea dalla nascita.', cta: 'Scopri di più' },
+    },
+    newsletter: {
+      label:       'Newsletter',
+      title:       'Consigli sul benessere & novità',
+      sub:         'Ispirazioni e momenti di dolcezza — mai spam.',
+      cta:         'Iscriversi',
+      placeholder: 'tua@email.com',
+      disclaimer:  'Disiscrizione in 1 clic in qualsiasi momento.',
+    },
+    gift: {
+      title: 'Offrire un trattamento',
+      sub:   'Regalate un momento di benessere unico a una persona cara. I buoni regalo sono disponibili per tutte le prestazioni, senza data di scadenza.',
+      cta:   'Richiedere un buono regalo',
+    },
+    pdf: {
+      download: 'Scaricare il listino prezzi (PDF)',
+    },
+    tabs: {
+      book:    'Scegliere un orario',
+      message: 'Inviare un messaggio',
+    },
+    faq: {
+      parking: {
+        q: 'C\'è un parcheggio nelle vicinanze?',
+        a: 'Lo studio è facilmente raggiungibile con i mezzi pubblici (tram 93/94, fermata Trinité) o in auto con il parcheggio Toison d\'Or a 5 minuti a piedi.',
+      },
+      language: {
+        q: 'Lavorate in olandese o inglese?',
+        a: 'Sì, le consultazioni possono svolgersi in francese, olandese e inglese.',
+      },
+      gift: {
+        q: 'Offrite buoni regalo?',
+        a: 'Assolutamente sì. I buoni regalo sono disponibili per tutte le prestazioni, senza data di scadenza.',
+      },
+      outfit: {
+        q: 'Cosa devo indossare per il massaggio?',
+        a: 'Biancheria intima o abbigliamento leggero. Gli asciugamani sono forniti. La riservatezza di ogni persona è pienamente rispettata.',
+      },
+      baby: {
+        q: 'Posso venire con il mio neonato?',
+        a: "Sì, lo spazio è adatto per accogliere i neonati dalla nascita. Il massaggio bebè e l'aptonomia sono proposti in presenza dei genitori.",
+      },
+    },
+    prestations: {
+      hero_title: 'Le mie Prestazioni',
+      hero_sub:   'Scoprite i miei approcci terapeutici',
+      s1_tag:   'Benessere',
+      s1_title: 'Massaggio & Relax',
+      s1_sub:   'Profondo rilassamento per corpo e mente.',
+      s1_cta:   'Prenotare questa prestazione',
+      s2_tag:   'Perinatale',
+      s2_title: 'Aptonomia',
+      s2_sub:   'Un legame unico tra genitori e il bambino che deve nascere.',
+      s2_cta:   'Prenotare questa prestazione',
+      s3_tag:   'Terapia',
+      s3_title: 'Terapia Psico-corporea',
+      s3_sub:   'Connessione corpo-mente attraverso il tocco.',
+      s3_cta:   'Prenotare questa prestazione',
+      s4_tag:   'Infanzia',
+      s4_title: 'Bebè & Bambino',
+      s4_sub:   'Consapevolezza corporea e calmante dalla nascita.',
+      s4_cta:   'Prenotare questa prestazione',
+    },
+    apropos: {
+      hero_title:        'Chi sono',
+      hero_sub:          'Il mio percorso e la mia filosofia',
+      bio_title:         'Il mio percorso',
+      timeline_label:    'Formazione & Certificazioni',
+      philosophy_label:  'La mia filosofia',
+      values_label:      'I miei valori',
+      closing_title:     'Volete saperne di più?',
+      closing_cta:       'Contattarmi',
+    },
+    tarifs: {
+      hero_title:     'Tariffe',
+      hero_sub:       'Investite nel vostro benessere',
+      main_ornament:  'Tariffe & Formule',
+      main_title:     'Listino prezzi',
+      main_sub:       'Formule adattate ad ogni esigenza.',
+      closing_title:  'Pronti a iniziare?',
+      closing_cta:    'Prendere appuntamento',
+    },
+    contact: {
+      hero_title:       'Contatto',
+      hero_sub:         'Mettiamoci in contatto',
+      closing_title:    'Una domanda?',
+      closing_phone:    'Chiamare',
+      closing_whatsapp: 'WhatsApp',
+    },
+  },
 };
 
 /* ══════════════════════════════════════════════════════════════════
@@ -422,7 +556,7 @@ const TRANSLATIONS = {
 ══════════════════════════════════════════════════════════════════ */
 const I18n = {
   current: 'fr',
-  supported: ['fr', 'nl', 'en'],
+  supported: ['fr', 'nl', 'en', 'it'],
 
   /**
    * Résoudre une clé "a.b.c" dans un objet imbriqué
@@ -462,6 +596,11 @@ const I18n = {
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
+
+    // Label du dropdown
+    document.querySelectorAll('.lang-current').forEach(el => {
+      el.textContent = lang.toUpperCase();
+    });
   },
 
   /**
@@ -478,7 +617,25 @@ const I18n = {
 
     // Binding des boutons de langue
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => this.apply(btn.dataset.lang));
+      btn.addEventListener('click', () => {
+        this.apply(btn.dataset.lang);
+        // Fermer le dropdown après sélection
+        btn.closest('.lang-dropdown')?.classList.remove('open');
+      });
+    });
+
+    // Toggle dropdown au clic sur le bouton principal
+    document.querySelectorAll('.lang-dropdown-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        btn.closest('.lang-dropdown').classList.toggle('open');
+      });
+    });
+
+    // Fermer en cliquant ailleurs
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.lang-dropdown.open')
+        .forEach(d => d.classList.remove('open'));
     });
   },
 };

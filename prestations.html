@@ -51,12 +51,14 @@
             <a href="tarifs.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.tarifs">Tarifs</a>
             <a href="contact.html" class="font-display text-2xl text-copper-800 hover:text-copper-500" data-i18n="nav.contact">Contact</a>
         </div>
-        <div class="flex items-center justify-center gap-5 py-4 px-7 border-t border-beige-100">
-            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="fr">FR</button>
-            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
-            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="nl">NL</button>
-            <span class="text-copper-200 text-xs" aria-hidden="true">|</span>
-            <button class="lang-btn font-label text-xs tracking-widest text-copper-500" data-lang="en">EN</button>
+        <div class="flex items-center justify-center gap-4 py-4 px-7 border-t border-beige-100">
+            <button class="lang-btn" data-lang="fr">FR</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">·</span>
+            <button class="lang-btn" data-lang="nl">NL</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">·</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <span class="text-copper-200 text-xs" aria-hidden="true">·</span>
+            <button class="lang-btn" data-lang="it">IT</button>
         </div>
         <div class="px-7 pb-8">
             <a href="#" class="btn-primary w-full text-center calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="cta.book">Prendre rendez-vous</a>
@@ -88,12 +90,19 @@
                 <a href="tarifs.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.tarifs">Tarifs</a>
                 <a href="contact.html" class="header-nav-link hidden md:inline-block" data-i18n="nav.contact">Contact</a>
                 <a href="#" class="header-cta-link hidden md:inline-block calendly-trigger" data-calendly-url="https://calendly.com/NANOU_CALENDLY_URL" data-i18n="nav.reserver">Réserver</a>
-                <div class="lang-switcher hidden md:flex items-center gap-1">
-                    <button class="lang-btn" data-lang="fr">FR</button>
-                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
-                    <button class="lang-btn" data-lang="nl">NL</button>
-                    <span class="opacity-25 text-xs" aria-hidden="true">|</span>
-                    <button class="lang-btn" data-lang="en">EN</button>
+                <!-- Language switcher — dropdown compact -->
+                <div class="lang-dropdown hidden md:block">
+                    <button class="lang-dropdown-btn" aria-label="Changer de langue">
+                        <i class="ph-thin ph-globe" aria-hidden="true"></i>
+                        <span class="lang-current">FR</span>
+                        <i class="ph-thin ph-caret-down lang-caret" aria-hidden="true"></i>
+                    </button>
+                    <div class="lang-dropdown-menu" role="menu">
+                        <button class="lang-btn" data-lang="fr" role="menuitem">FR — Français</button>
+                        <button class="lang-btn" data-lang="nl" role="menuitem">NL — Nederlands</button>
+                        <button class="lang-btn" data-lang="en" role="menuitem">EN — English</button>
+                        <button class="lang-btn" data-lang="it" role="menuitem">IT — Italiano</button>
+                    </div>
                 </div>
                 <button id="mobile-menu-button" class="header-burger md:hidden"
                         aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
