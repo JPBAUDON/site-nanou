@@ -171,24 +171,35 @@ function initPageCurtain() {
   });
 }
 
-// ─── 5. HEADER — transparent sur hero, opaque au scroll ──────────────────────
+// ─── 5. HEADER — Le Cadre : ligne animée + transparent hero / opaque scroll ───
 function initHeader() {
   const header = document.getElementById('header');
   if (!header) return;
 
+  const frameLine = header.querySelector('.header-frame-top');
   const isHomePage = !!document.querySelector('.hero-section');
+
+  // Animation signature : la ligne supérieure s'ouvre du centre vers les bords
+  if (frameLine) {
+    gsap.from(frameLine, {
+      scaleX: 0,
+      duration: 1.5,
+      ease: 'power3.out',
+      delay: 0.4,
+    });
+  }
 
   if (isHomePage) {
     // Page accueil : header transparent sur le hero, opaque au scroll
     gsap.set(header, { backgroundColor: 'rgba(255,255,255,0)', boxShadow: 'none' });
 
     ScrollTrigger.create({
-      start: 'top -72px',
+      start: 'top -80px',
       onEnter: () => {
         gsap.to(header, {
-          backgroundColor: 'rgba(253, 251, 247, 0.97)',
-          boxShadow: '0 1px 30px rgba(74, 58, 36, 0.06)',
-          duration: 0.45,
+          backgroundColor: 'rgba(253, 249, 242, 0.96)',
+          boxShadow: '0 2px 40px rgba(74, 58, 36, 0.14)',
+          duration: 0.5,
           ease: 'power2.out',
         });
         header.classList.add('scrolled');
@@ -204,10 +215,10 @@ function initHeader() {
       },
     });
   } else {
-    // Pages internes : header toujours opaque
+    // Pages internes : header toujours opaque avec ombre plus marquée
     gsap.set(header, {
-      backgroundColor: 'rgba(253, 251, 247, 0.97)',
-      boxShadow: '0 1px 20px rgba(74, 58, 36, 0.06)',
+      backgroundColor: 'rgba(253, 249, 242, 0.97)',
+      boxShadow: '0 2px 35px rgba(74, 58, 36, 0.12)',
     });
     header.classList.add('scrolled');
   }
