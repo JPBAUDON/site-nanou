@@ -72,28 +72,39 @@ function initLenis() {
 function initCursor() {
   if (window.matchMedia('(hover: none)').matches) return;
 
-  const cursor = document.createElement('div');
-  cursor.className = 'cursor-aura';
-  cursor.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(cursor);
+  // Dot — point de précision (suit exactement, aucun lag)
+  const dot = document.createElement('div');
+  dot.className = 'cursor-dot';
+  dot.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(dot);
 
-  let cx = -100, cy = -100, mx = -100, my = -100;
+  // Aura — orbe d'inertie (suit avec lerp)
+  const aura = document.createElement('div');
+  aura.className = 'cursor-aura';
+  aura.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(aura);
+
+  let cx = -100, cy = -100;
+  let mx = -100, my = -100;
   let visible = false;
 
   document.addEventListener('mousemove', e => {
     mx = e.clientX;
     my = e.clientY;
+    // Dot suit EXACTEMENT — centré sur le pixel cliqué
+    dot.style.transform = `translate(${mx - 2.5}px, ${my - 2.5}px)`;
     if (!visible) {
-      cursor.style.opacity = '1';
+      dot.style.opacity = '1';
+      aura.style.opacity = '1';
       visible = true;
     }
   });
 
-  // RAF loop avec lerp — l'orbe suit avec inertie cuivrée
+  // RAF loop avec lerp — l'aura suit avec inertie cuivrée
   const tick = () => {
-    cx += (mx - cx) * 0.12;
-    cy += (my - cy) * 0.12;
-    cursor.style.transform = `translate(${cx - 20}px, ${cy - 20}px)`;
+    cx += (mx - cx) * 0.1;
+    cy += (my - cy) * 0.1;
+    aura.style.transform = `translate(${cx - 18}px, ${cy - 18}px)`;
     requestAnimationFrame(tick);
   };
   tick();
@@ -102,16 +113,21 @@ function initCursor() {
   document.addEventListener('mouseover', e => {
     const t = e.target;
     if (t.tagName === 'IMG' || t.closest('.card-image')) {
-      cursor.className = 'cursor-aura is-hovering-img';
+      dot.className   = 'cursor-dot is-hovering-img';
+      aura.className  = 'cursor-aura is-hovering-img';
     } else if (t.tagName === 'A' || t.tagName === 'BUTTON' || t.closest('a, button')) {
-      cursor.className = 'cursor-aura is-hovering-btn';
+      dot.className   = 'cursor-dot is-hovering-btn';
+      aura.className  = 'cursor-aura is-hovering-btn';
     } else {
-      cursor.className = 'cursor-aura';
+      dot.className   = 'cursor-dot';
+      aura.className  = 'cursor-aura';
     }
   });
 
-  document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; visible = false; });
-  document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; visible = true; });
+  const hide = () => { dot.style.opacity = '0'; aura.style.opacity = '0'; visible = false; };
+  const show = () => { dot.style.opacity = '1'; aura.style.opacity = '1'; visible = true; };
+  document.addEventListener('mouseleave', hide);
+  document.addEventListener('mouseenter', show);
 }
 
 // ─── 4. RIDEAU DE PAGE CUIVRÉ ─────────────────────────────────────────────────
@@ -163,28 +179,37 @@ function initHeader() {
   const isHomePage = !!document.querySelector('.hero-section');
 
   if (isHomePage) {
+    // Page accueil : header transparent sur le hero, opaque au scroll
     gsap.set(header, { backgroundColor: 'rgba(255,255,255,0)', boxShadow: 'none' });
 
     ScrollTrigger.create({
       start: 'top -72px',
-      onEnter: () => gsap.to(header, {
-        backgroundColor: 'rgba(253, 251, 247, 0.97)',
-        boxShadow: '0 2px 30px rgba(74, 58, 36, 0.07)',
-        duration: 0.45,
-        ease: 'power2.out',
-      }),
-      onLeaveBack: () => gsap.to(header, {
-        backgroundColor: 'rgba(255,255,255,0)',
-        boxShadow: 'none',
-        duration: 0.45,
-        ease: 'power2.out',
-      }),
+      onEnter: () => {
+        gsap.to(header, {
+          backgroundColor: 'rgba(253, 251, 247, 0.97)',
+          boxShadow: '0 1px 30px rgba(74, 58, 36, 0.06)',
+          duration: 0.45,
+          ease: 'power2.out',
+        });
+        header.classList.add('scrolled');
+      },
+      onLeaveBack: () => {
+        gsap.to(header, {
+          backgroundColor: 'rgba(255,255,255,0)',
+          boxShadow: 'none',
+          duration: 0.45,
+          ease: 'power2.out',
+        });
+        header.classList.remove('scrolled');
+      },
     });
   } else {
+    // Pages internes : header toujours opaque
     gsap.set(header, {
       backgroundColor: 'rgba(253, 251, 247, 0.97)',
-      boxShadow: '0 2px 20px rgba(74, 58, 36, 0.06)',
+      boxShadow: '0 1px 20px rgba(74, 58, 36, 0.06)',
     });
+    header.classList.add('scrolled');
   }
 }
 

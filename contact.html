@@ -47,27 +47,38 @@
         <div class="px-7 pb-8"><a href="contact.html" class="btn-primary w-full text-center">Prendre rendez-vous</a></div>
     </nav>
 
-    <header id="header" class="site-header">
-        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="logo-link">
-                <div class="logo-mark"><span class="text-copper-500 text-sm font-display font-light">M</span></div>
-                <div class="flex flex-col leading-none gap-0.5">
-                    <span class="text-[0.6rem] font-body font-medium text-copper-400 tracking-[0.18em] uppercase">Massages</span>
-                    <span class="text-base font-display text-copper-800">&amp; Naissance</span>
-                </div>
+    <!-- ═══════════════════════════════════════════════════════
+         HEADER ÉDITORIAL — masthead 3 colonnes
+         ═══════════════════════════════════════════════════════ -->
+    <header id="header" class="header-premium">
+        <div class="header-premium-inner">
+
+            <!-- Navigation gauche (desktop uniquement) -->
+            <nav class="header-nav-left hidden md:flex" aria-label="Navigation principale">
+                <a href="prestations.html" class="header-nav-link">Prestations</a>
+                <a href="a-propos.html" class="header-nav-link">À propos</a>
+            </nav>
+
+            <!-- Logo centré — masthead typographique -->
+            <a href="index.html" class="header-logo-editorial">
+                <span class="header-logo-editorial-title">Massages &amp; Naissance</span>
+                <span class="header-logo-editorial-sub">Nanou Mendels</span>
             </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="prestations.html" class="nav-link">Prestations</a>
-                <a href="a-propos.html" class="nav-link">À propos</a>
-                <a href="tarifs.html" class="nav-link">Tarifs</a>
-                <a href="contact.html" class="nav-link active">Contact</a>
-                <a href="contact.html" class="btn-primary ml-4">Réserver</a>
+
+            <!-- Navigation droite (desktop) + burger (mobile) -->
+            <div class="header-nav-right">
+                <a href="tarifs.html" class="header-nav-link hidden md:inline-block">Tarifs</a>
+                <a href="contact.html" class="header-nav-link active hidden md:inline-block">Contact</a>
+                <a href="contact.html" class="header-cta-link hidden md:inline-block">Réserver</a>
+                <button id="mobile-menu-button" class="header-burger md:hidden"
+                        aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
+                    <i class="ph-thin ph-list" style="font-size: 1.5rem; line-height: 1;"></i>
+                </button>
             </div>
-            <button id="mobile-menu-button" class="md:hidden p-2 text-copper-700" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
-                <i class="ph-thin ph-list" style="font-size: 1.25rem; line-height: 1;"></i>
-            </button>
-        </nav>
+
+        </div>
+        <!-- Ligne décorative cuivrée — apparaît au scroll -->
+        <div class="header-premium-line" aria-hidden="true"></div>
     </header>
 
     <!-- Page Hero -->
