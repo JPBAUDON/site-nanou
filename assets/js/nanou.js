@@ -202,10 +202,9 @@ function initHeader() {
     });
   }
 
-  // État initial — JS gère UNIQUEMENT le transparent (hero)
-  // Les couleurs dorées sont définies en CSS via .scrolled et .compact
+  // État initial — CSS gère tout via classes, GSAP ne touche PAS aux couleurs
   if (isHomePage) {
-    gsap.set(header, { backgroundColor: 'rgba(255,255,255,0)', boxShadow: 'none' });
+    header.classList.add('hero-top');
   } else {
     header.classList.add('scrolled');
   }
@@ -220,25 +219,19 @@ function initHeader() {
     const pastHero = currentY > 80;
 
     if (!pastHero && isHomePage) {
-      // En haut de la page — transparent (JS override CSS)
+      // En haut de la page — transparent via classe CSS
+      header.classList.add('hero-top');
       header.classList.remove('scrolled', 'compact');
-      gsap.to(header, {
-        backgroundColor: 'rgba(255,255,255,0)',
-        boxShadow: 'none',
-        duration: 0.4,
-        ease: 'power2.out',
-      });
     } else if (scrollingDown && pastHero) {
-      // Scroll vers le bas — compact : CSS .compact gère la couleur dorée
+      // Scroll vers le bas — compact glassmorphism
       if (!header.classList.contains('compact')) {
-        gsap.to(header, { clearProps: 'backgroundColor,boxShadow', duration: 0.35 });
+        header.classList.remove('hero-top');
         header.classList.add('scrolled', 'compact');
       }
     } else if (!scrollingDown && pastHero) {
-      // Scroll vers le haut — scrolled : CSS .scrolled gère la couleur dorée
+      // Scroll vers le haut — scrolled glassmorphism
       if (header.classList.contains('compact')) {
-        gsap.to(header, { clearProps: 'backgroundColor,boxShadow', duration: 0.35 });
-        header.classList.remove('compact');
+        header.classList.remove('hero-top', 'compact');
         header.classList.add('scrolled');
       }
     }
