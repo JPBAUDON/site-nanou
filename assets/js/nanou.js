@@ -94,7 +94,7 @@ function initCursor() {
     mx = e.clientX;
     my = e.clientY;
     // Dot suit EXACTEMENT — centré sur le pixel cliqué
-    dot.style.transform = `translate(${mx - 2.5}px, ${my - 2.5}px)`;
+    dot.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
     if (!visible) {
       dot.style.opacity = '1';
       aura.style.opacity = '1';
@@ -104,8 +104,8 @@ function initCursor() {
 
   // RAF loop avec lerp — l'aura suit avec inertie cuivrée
   const tick = () => {
-    cx += (mx - cx) * 0.1;
-    cy += (my - cy) * 0.1;
+    cx += (mx - cx) * 0.18;
+    cy += (my - cy) * 0.18;
     aura.style.transform = `translate(${cx - 18}px, ${cy - 18}px)`;
     requestAnimationFrame(tick);
   };
