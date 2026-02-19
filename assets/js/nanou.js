@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initCalendlyTriggers();
   initStickyBooking();
+  initContactTabs();
 
   // Print button
   const printBtn = document.getElementById('print-btn');
@@ -200,18 +201,7 @@ function initHeader() {
   const header = document.getElementById('header');
   if (!header) return;
 
-  const frameLine = header.querySelector('.header-frame-top');
   const isHomePage = !!document.querySelector('.hero-section');
-
-  // Animation signature : la ligne supérieure s'ouvre du centre vers les bords
-  if (frameLine) {
-    gsap.from(frameLine, {
-      scaleX: 0,
-      duration: 1.5,
-      ease: 'power3.out',
-      delay: 0.4,
-    });
-  }
 
   // Couche glass — z-index:2, entre underlines (z:1) et contenu (z:3)
   const headerGlass = document.createElement('div');
@@ -704,6 +694,58 @@ function initStickyBooking() {
 }
 
 // ─── 14. FAQ ACCORDION — transition fluide ───────────────────────────────────
+// ── Onglets contact + soumission Formspree AJAX ──────────────────────────────
+function initContactTabs() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  if (!tabBtns.length) return;
+
+  // Switch d'onglets
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById('tab-' + btn.dataset.tab);
+      if (!target) return;
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
+      target.classList.remove('hidden');
+    });
+  });
+
+  // Soumission AJAX via Formspree
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const submitBtn  = form.querySelector('[type="submit"]');
+    const successMsg = document.getElementById('success-message');
+    const origText   = submitBtn.textContent.trim();
+
+    submitBtn.disabled    = true;
+    submitBtn.textContent = 'Envoi en cours…';
+
+    try {
+      const res = await fetch(form.action, {
+        method:  'POST',
+        body:    new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        form.reset();
+        if (successMsg) successMsg.classList.remove('hidden');
+        submitBtn.classList.add('hidden');
+      } else {
+        submitBtn.disabled    = false;
+        submitBtn.textContent = origText;
+      }
+    } catch {
+      submitBtn.disabled    = false;
+      submitBtn.textContent = origText;
+    }
+  });
+}
+
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
   if (!faqItems.length) return;
