@@ -33,22 +33,23 @@
   --color-beige-800: #896d4f;
   --color-beige-900: #6f5941;
 
-  /* Terracotta (warm red — accent) */
-  --color-terracotta-50:  #faf6f5;
-  --color-terracotta-100: #f5ebe9;
-  --color-terracotta-200: #ead9d6;
-  --color-terracotta-300: #D4A59A;
-  --color-terracotta-400: #c88b7d;
-  --color-terracotta-500: #b97163;
-  --color-terracotta-600: #a65c4f;
-  --color-terracotta-700: #8a4d43;
-  --color-terracotta-800: #73433b;
-  --color-terracotta-900: #5f3a35;
+  /* Mineral (sage vert — accent naturel) */
+  --color-mineral-50:  #f4f7f4;
+  --color-mineral-100: #e8ede8;
+  --color-mineral-200: #d0dbd0;
+  --color-mineral-300: #b5ccb5;
+  --color-mineral-400: #8aab8a;
+  --color-mineral-500: #6a8f6a;
+  --color-mineral-600: #558055;
+  --color-mineral-700: #426842;
+  --color-mineral-800: #355435;
+  --color-mineral-900: #2a432a;
 
-  /* Fonts */
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body:    'Work Sans', sans-serif;
+  /* Fonts — système luxe 4 familles */
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'DM Sans', sans-serif;
   --font-accent:  'Cormorant Garamond', serif;
+  --font-label:   'Cinzel', serif;
 }
 
 /* ============================================================
@@ -73,13 +74,17 @@
   }
 
   body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background-color: #fdfbf7;
     color: #4a3a24;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1 {
     font-family: 'Cormorant Garamond', serif;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
   }
 
   /* Page entrance animation */
@@ -139,7 +144,7 @@
      ---------------------------------------------------------- */
   .nav-link {
     position: relative;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 500;
     color: var(--color-copper-700);
     padding-bottom: 2px;
@@ -184,7 +189,7 @@
     border: 1.5px solid var(--color-copper-400);
     border-radius: 0.5rem;
     color: var(--color-copper-600);
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
     letter-spacing: 0.05em;
@@ -225,7 +230,7 @@
     border-radius: 0.5rem;
     background-color: white;
     color: var(--color-copper-700);
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
     letter-spacing: 0.05em;
@@ -250,7 +255,7 @@
     border: 1.5px solid rgba(255, 255, 255, 0.5);
     border-radius: 0.5rem;
     color: rgba(255, 255, 255, 0.85);
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 500;
     font-size: 0.875rem;
     letter-spacing: 0.05em;
@@ -283,7 +288,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     font-size: 0.8rem;
     letter-spacing: 0.06em;
@@ -469,7 +474,7 @@
   }
 
   .section-ornament span {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.65rem;
     font-weight: 500;
     letter-spacing: 0.22em;
@@ -595,16 +600,16 @@
     transform: translateY(-4px);
   }
 
-  .info-card-terracotta {
-    border-color: var(--color-terracotta-100);
+  .info-card-mineral {
+    border-color: var(--color-mineral-100);
   }
 
   /* Badge "Économisez" — no emoji, typographic */
   .savings-badge {
     display: inline-block;
-    background-color: var(--color-terracotta-400);
+    background-color: var(--color-mineral-400);
     color: white;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -646,7 +651,7 @@
     border-radius: 0.5rem;
     background-color: white;
     color: var(--color-copper-800);
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.95rem;
     outline: none;
     transition: border-color 0.22s ease, box-shadow 0.22s ease;
