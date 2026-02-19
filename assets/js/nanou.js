@@ -202,14 +202,11 @@ function initHeader() {
     });
   }
 
-  // État initial
+  // État initial — JS gère UNIQUEMENT le transparent (hero)
+  // Les couleurs dorées sont définies en CSS via .scrolled et .compact
   if (isHomePage) {
     gsap.set(header, { backgroundColor: 'rgba(255,255,255,0)', boxShadow: 'none' });
   } else {
-    gsap.set(header, {
-      backgroundColor: 'rgba(243, 222, 168, 0.82)',
-      boxShadow: '0 2px 32px rgba(139, 111, 71, 0.18)',
-    });
     header.classList.add('scrolled');
   }
 
@@ -223,7 +220,7 @@ function initHeader() {
     const pastHero = currentY > 80;
 
     if (!pastHero && isHomePage) {
-      // En haut de la page — transparent
+      // En haut de la page — transparent (JS override CSS)
       header.classList.remove('scrolled', 'compact');
       gsap.to(header, {
         backgroundColor: 'rgba(255,255,255,0)',
@@ -232,27 +229,17 @@ function initHeader() {
         ease: 'power2.out',
       });
     } else if (scrollingDown && pastHero) {
-      // Scroll vers le bas — compact + frosted glass doré fort
+      // Scroll vers le bas — compact : CSS .compact gère la couleur dorée
       if (!header.classList.contains('compact')) {
+        gsap.to(header, { clearProps: 'backgroundColor,boxShadow', duration: 0.35 });
         header.classList.add('scrolled', 'compact');
-        gsap.to(header, {
-          backgroundColor: 'rgba(238, 208, 145, 0.78)',
-          boxShadow: '0 2px 20px rgba(139, 111, 71, 0.20)',
-          duration: 0.35,
-          ease: 'power2.out',
-        });
       }
     } else if (!scrollingDown && pastHero) {
-      // Scroll vers le haut — glassmorphism doré opaque
+      // Scroll vers le haut — scrolled : CSS .scrolled gère la couleur dorée
       if (header.classList.contains('compact')) {
+        gsap.to(header, { clearProps: 'backgroundColor,boxShadow', duration: 0.35 });
         header.classList.remove('compact');
         header.classList.add('scrolled');
-        gsap.to(header, {
-          backgroundColor: 'rgba(243, 222, 168, 0.82)',
-          boxShadow: '0 2px 32px rgba(139, 111, 71, 0.18)',
-          duration: 0.35,
-          ease: 'power2.out',
-        });
       }
     }
 
