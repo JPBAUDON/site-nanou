@@ -622,8 +622,8 @@ function initCalendlyTriggers() {
       if (typeof Calendly !== 'undefined' && url && !url.includes('NANOU_CALENDLY_URL')) {
         Calendly.initPopupWidget({ url });
       } else {
-        // Fallback : naviguer vers la page contact si Calendly n'est pas configuré
-        window.location.href = 'contact.html';
+        // Fallback : naviguer vers le formulaire de contact si Calendly n'est pas configuré
+        window.location.href = 'contact.html#contact-form';
       }
     });
   });
