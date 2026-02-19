@@ -116,10 +116,10 @@
             <div class="absolute inset-0 bg-gradient-to-br from-copper-800/75 via-beige-700/70 to-copper-600/75"></div>
         </div>
         <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 data-reveal="up" class="text-5xl md:text-6xl font-display font-bold text-white mb-4 drop-shadow-lg">
+            <h1 data-reveal="up" class="text-5xl md:text-6xl font-display font-bold text-white mb-4 drop-shadow-lg" data-i18n="contact.hero_title">
                 Contactez-moi
             </h1>
-            <p class="text-xl text-white/95 max-w-2xl mx-auto drop-shadow-md">
+            <p class="text-xl text-white/95 max-w-2xl mx-auto drop-shadow-md" data-i18n="contact.hero_sub">
                 Je serai ravie de vous accompagner dans votre chemin vers le bien-être
             </p>
         </div>
@@ -155,7 +155,7 @@
                             <!-- Nom -->
                             <div>
                                 <label for="name" class="block text-copper-800 font-semibold mb-2">
-                                    Nom complet <span class="text-red-500">*</span>
+                                    <span data-i18n="contact_form_name_label">Nom complet</span> <span class="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
@@ -164,14 +164,15 @@
                                     required
                                     class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
                                     placeholder="Jean Dupont"
+                                    data-i18n-placeholder="contact_form_name_placeholder"
                                 >
-                                <span class="error-message text-red-500 text-sm hidden">Ce champ est requis</span>
+                                <span class="error-message text-red-500 text-sm hidden" data-i18n="contact_form_error_required">Ce champ est requis</span>
                             </div>
 
                             <!-- Email -->
                             <div>
                                 <label for="email" class="block text-copper-800 font-semibold mb-2">
-                                    Email <span class="text-red-500">*</span>
+                                    <span data-i18n="contact_form_email_label">Email</span> <span class="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="email"
@@ -180,13 +181,14 @@
                                     required
                                     class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
                                     placeholder="jean.dupont@email.com"
+                                    data-i18n-placeholder="contact_form_email_placeholder"
                                 >
-                                <span class="error-message text-red-500 text-sm hidden">Email invalide</span>
+                                <span class="error-message text-red-500 text-sm hidden" data-i18n="contact_form_error_email">Email invalide</span>
                             </div>
 
                             <!-- Téléphone -->
                             <div>
-                                <label for="phone" class="block text-copper-800 font-semibold mb-2">
+                                <label for="phone" class="block text-copper-800 font-semibold mb-2" data-i18n="contact_form_phone_label">
                                     Téléphone
                                 </label>
                                 <input
@@ -195,12 +197,13 @@
                                     name="phone"
                                     class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
                                     placeholder="+32 XXX XX XX XX"
+                                    data-i18n-placeholder="contact_form_phone_placeholder"
                                 >
                             </div>
 
                             <!-- Type de prestation -->
                             <div>
-                                <label for="service" class="block text-copper-800 font-semibold mb-2">
+                                <label for="service" class="block text-copper-800 font-semibold mb-2" data-i18n="contact_form_service_label">
                                     Prestation souhaitée
                                 </label>
                                 <select
@@ -208,19 +211,19 @@
                                     name="service"
                                     class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400"
                                 >
-                                    <option value="">Sélectionnez une option</option>
-                                    <option value="massage">Massage & Relaxation</option>
-                                    <option value="haptonomie">Haptonomie</option>
-                                    <option value="therapie">Thérapie psycho-corporelle</option>
-                                    <option value="bebe">Accompagnement Bébé/Enfant</option>
-                                    <option value="autre">Autre / Renseignement</option>
+                                    <option value="" data-i18n="contact_form_service_placeholder">Sélectionnez une option</option>
+                                    <option value="massage" data-i18n="contact_form_service_massage">Massage & Relaxation</option>
+                                    <option value="haptonomie" data-i18n="contact_form_service_haptonomie">Haptonomie</option>
+                                    <option value="therapie" data-i18n="contact_form_service_therapie">Thérapie psycho-corporelle</option>
+                                    <option value="bebe" data-i18n="contact_form_service_bebe">Accompagnement Bébé/Enfant</option>
+                                    <option value="autre" data-i18n="contact_form_service_autre">Autre / Renseignement</option>
                                 </select>
                             </div>
 
                             <!-- Message -->
                             <div>
                                 <label for="message" class="block text-copper-800 font-semibold mb-2">
-                                    Votre message <span class="text-red-500">*</span>
+                                    <span data-i18n="contact_form_message_label">Votre message</span> <span class="text-red-500">*</span>
                                 </label>
                                 <textarea
                                     id="message"
@@ -229,8 +232,9 @@
                                     rows="6"
                                     class="form-field w-full px-4 py-3 border-2 border-copper-200 rounded-xl focus:border-copper-400 resize-none"
                                     placeholder="Décrivez votre demande ou vos questions..."
+                                    data-i18n-placeholder="contact_form_message_placeholder"
                                 ></textarea>
-                                <span class="error-message text-red-500 text-sm hidden">Ce champ est requis</span>
+                                <span class="error-message text-red-500 text-sm hidden" data-i18n="contact_form_error_required">Ce champ est requis</span>
                             </div>
 
                             <!-- Consent RGPD -->
@@ -242,7 +246,7 @@
                                     required
                                     class="mt-1 mr-3 w-5 h-5 text-copper-600 border-copper-300 rounded focus:ring-copper-400"
                                 >
-                                <label for="consent" class="text-sm text-copper-700">
+                                <label for="consent" class="text-sm text-copper-700" data-i18n="contact_form_privacy">
                                     J'accepte que mes données soient utilisées pour me recontacter. <a href="confidentialite.html" class="text-copper-600 underline">En savoir plus</a>
                                 </label>
                             </div>
@@ -254,14 +258,15 @@
                             <button
                                 type="submit"
                                 class="w-full bg-copper-400 text-white py-4 rounded-full font-semibold text-lg hover:bg-copper-500 shadow-lg"
+                                data-i18n="contact_form_submit"
                             >
                                 Envoyer le message
                             </button>
 
                             <!-- Success Message -->
                             <div id="success-message" class="hidden bg-green-50 border-2 border-green-200 text-green-800 px-6 py-4 rounded-xl">
-                                <p class="font-semibold">Message envoyé avec succès !</p>
-                                <p class="text-sm">Je vous répondrai dans les plus brefs délais.</p>
+                                <p class="font-semibold" data-i18n="contact_form_success_title">Message envoyé avec succès !</p>
+                                <p class="text-sm" data-i18n="contact_form_success_sub">Je vous répondrai dans les plus brefs délais.</p>
                             </div>
                         </form>
                     </div>
@@ -269,7 +274,7 @@
 
                 <!-- Informations de Contact -->
                 <div>
-                    <h2 data-reveal="up" class="text-3xl font-display font-bold text-copper-800 mb-6">
+                    <h2 data-reveal="up" class="text-3xl font-display font-bold text-copper-800 mb-6" data-i18n="contact_info_title">
                         Informations pratiques
                     </h2>
 
@@ -280,7 +285,7 @@
                                 <i class="ph-thin ph-map-pin" style="font-size: 1.25rem; line-height: 1;"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-copper-800 mb-1">Adresse</h3>
+                                <h3 class="font-semibold text-copper-800 mb-1" data-i18n="contact_info_address_title">Adresse</h3>
                                 <p class="text-copper-700">Avenue Louise 349 — Espace Mauna</p><p class="text-copper-700">1000 Bruxelles</p>
                                 <p class="text-copper-700">1000 Bruxelles</p>
                             </div>
@@ -292,7 +297,7 @@
                                 <i class="ph-thin ph-envelope" style="font-size: 1.25rem; line-height: 1;"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-copper-800 mb-1">Email</h3>
+                                <h3 class="font-semibold text-copper-800 mb-1" data-i18n="contact_info_email_title">Email</h3>
                                 <a href="mailto:nanoumendels@gmail.com" class="text-copper-600 hover:text-copper-800">
                                     nanoumendels@gmail.com
                                 </a>
@@ -305,7 +310,7 @@
                                 <i class="ph-thin ph-phone" style="font-size: 1.25rem; line-height: 1;"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-copper-800 mb-1">Téléphone</h3>
+                                <h3 class="font-semibold text-copper-800 mb-1" data-i18n="contact_info_phone_title">Téléphone</h3>
                                 <a href="tel:+32498549969" class="text-copper-600 hover:text-copper-800">
                                     +32 498 54 99 69
                                 </a>
@@ -318,9 +323,9 @@
                                 <i class="ph-thin ph-clock" style="font-size: 1.25rem; line-height: 1;"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-copper-800 mb-1">Disponibilités</h3>
-                                <p class="text-copper-700">Lundi - Samedi : Sur rendez-vous</p>
-                                <p class="text-copper-700">Dimanche : Fermé</p>
+                                <h3 class="font-semibold text-copper-800 mb-1" data-i18n="contact_info_hours_title">Disponibilités</h3>
+                                <p class="text-copper-700" data-i18n="contact_info_hours_weekdays">Lundi - Samedi : Sur rendez-vous</p>
+                                <p class="text-copper-700" data-i18n="contact_info_hours_sunday">Dimanche : Fermé</p>
                             </div>
                         </div>
                     </div>
@@ -348,10 +353,10 @@
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
-                    <h2 data-reveal="up" class="text-4xl md:text-5xl font-display font-bold text-copper-800 mb-4">
+                    <h2 data-reveal="up" class="text-4xl md:text-5xl font-display font-bold text-copper-800 mb-4" data-i18n="contact_reviews_title">
                         Ce que disent mes clients
                     </h2>
-                    <p class="text-xl text-copper-600">
+                    <p class="text-xl text-copper-600" data-i18n="contact_reviews_sub">
                         Ils ont fait confiance à mon approche bienveillante
                     </p>
                 </div>
@@ -392,7 +397,7 @@
                                     </div>
                                     <span class="text-3xl font-bold text-copper-800">5.0</span>
                                 </div>
-                                <p class="text-copper-600 font-medium">Basé sur les avis Google</p>
+                                <p class="text-copper-600 font-medium" data-i18n="contact_reviews_based_on">Basé sur les avis Google</p>
                                 <p class="text-sm text-copper-500">Nanou Mendeles - Massages & Naissance</p>
                             </div>
                         </div>
@@ -406,7 +411,7 @@
                                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
                                 <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                             </svg>
-                            Voir tous les avis
+                            <span data-i18n="contact_reviews_cta">Voir tous les avis</span>
                         </a>
                     </div>
                 </div>
@@ -452,16 +457,16 @@
     <!-- CTA Section -->
     <section class="py-20 bg-copper-50" data-section-number="03">
         <div class="container mx-auto px-6 text-center">
-            <h2 data-reveal="up" class="text-4xl font-display font-bold text-copper-800 mb-6">
+            <h2 data-reveal="up" class="text-4xl font-display font-bold text-copper-800 mb-6" data-i18n="contact.closing_title">
                 Vous préférez un contact direct ?
             </h2>
-            <p class="text-xl text-copper-700 mb-10 max-w-2xl mx-auto">
+            <p class="text-xl text-copper-700 mb-10 max-w-2xl mx-auto" data-i18n="contact_closing_sub">
                 N'hésitez pas à m'appeler ou à m'envoyer un WhatsApp pour prendre rendez-vous rapidement.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="tel:+32498549969" class="inline-flex items-center justify-center bg-copper-400 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-copper-500 shadow-lg">
                     <i class="ph-thin ph-phone" style="font-size: 1.25rem; line-height: 1;"></i>
-                    Appelez-moi
+                    <span data-i18n="contact.closing_phone">Appelez-moi</span>
                 </a>
                 <a href="https://wa.me/32498549969" target="_blank" class="inline-flex items-center justify-center bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 shadow-lg">
                     <i class="ph-thin ph-whatsapp-logo" style="font-size: 1.25rem; line-height: 1;"></i>
@@ -491,7 +496,7 @@
                     </div>
                 </div>
                 <div>
-                    <h3 class="font-display text-lg font-semibold mb-5">Navigation</h3>
+                    <h3 class="font-display text-lg font-semibold mb-5" data-i18n="footer.nav_title">Navigation</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm">
                         <li><a href="index.html" class="hover:text-white" data-i18n="nav.accueil">Accueil</a></li>
                         <li><a href="prestations.html" class="hover:text-white" data-i18n="nav.prestations">Prestations</a></li>
@@ -501,7 +506,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-display text-lg font-semibold mb-5">Légal</h3>
+                    <h3 class="font-display text-lg font-semibold mb-5" data-i18n="footer.legal_title">Légal</h3>
                     <ul class="space-y-2.5 text-copper-200 text-sm mb-8">
                         <li><a href="mentions-legales.html" class="hover:text-white" data-i18n="footer.legal">Mentions légales</a></li>
                         <li><a href="confidentialite.html" class="hover:text-white" data-i18n="footer.privacy">Politique de confidentialité</a></li>
