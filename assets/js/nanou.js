@@ -14,6 +14,10 @@
 
 'use strict';
 
+// ─── CONFIGURATION ────────────────────────────────────────────────────────────
+// Remplacer par l'URL Calendly réelle de Nanou dès qu'elle est disponible
+const CALENDLY_URL = 'https://calendly.com/NANOU_CALENDLY_URL';
+
 // ─── GSAP Plugin Registration ─────────────────────────────────────────────────
 gsap.registerPlugin(ScrollTrigger);
 
@@ -113,11 +117,18 @@ function initCursor() {
     }
   });
 
-  // RAF loop avec lerp — l'aura suit avec inertie cuivrée
+  // RAF loop avec lerp — l'aura suit avec inertie cuivrée (dirty flag: pause quand souris immobile)
+  let dirty = false;
+  document.addEventListener('mousemove', () => { dirty = true; }, { passive: true });
+
   const tick = () => {
-    cx += (mx - cx) * 0.18;
-    cy += (my - cy) * 0.18;
-    aura.style.transform = `translate(${cx - 18}px, ${cy - 18}px)`;
+    if (dirty) {
+      cx += (mx - cx) * 0.18;
+      cy += (my - cy) * 0.18;
+      aura.style.transform = `translate(${cx - 18}px, ${cy - 18}px)`;
+      // Marquer comme settled si l'aura est proche de la souris
+      if (Math.abs(cx - mx) < 0.1 && Math.abs(cy - my) < 0.1) dirty = false;
+    }
     requestAnimationFrame(tick);
   };
   tick();
@@ -219,19 +230,16 @@ function initHeader() {
     const pastHero = currentY > 80;
 
     if (!pastHero && isHomePage) {
-      // En haut de la page — transparent via classe CSS
+      // En haut de la homepage — transparent
       header.classList.add('hero-top');
       header.classList.remove('scrolled', 'compact');
-    } else if (scrollingDown && pastHero) {
-      // Scroll vers le bas — compact glassmorphism
-      if (!header.classList.contains('compact')) {
-        header.classList.remove('hero-top');
+    } else if (pastHero) {
+      // Scrollé : toujours glassmorphism, direction détermine compact ou non
+      header.classList.remove('hero-top');
+      if (scrollingDown) {
         header.classList.add('scrolled', 'compact');
-      }
-    } else if (!scrollingDown && pastHero) {
-      // Scroll vers le haut — scrolled glassmorphism
-      if (header.classList.contains('compact')) {
-        header.classList.remove('hero-top', 'compact');
+      } else {
+        header.classList.remove('compact');
         header.classList.add('scrolled');
       }
     }
@@ -246,6 +254,9 @@ function initHeader() {
       ticking = true;
     }
   }, { passive: true });
+
+  // Appel immédiat au chargement — si la page est déjà scrollée, appliquer l'état correct
+  updateHeader();
 }
 
 // ─── 6. MOBILE MENU — panneau slide-in ───────────────────────────────────────
@@ -611,10 +622,14 @@ function initCalendlyTriggers() {
 
 // ─── 16. STICKY BOOKING BUTTON — Apparaît après 400px de scroll ──────────
 function initStickyBooking() {
+  // Ne pas afficher sur les pages légales
+  const legalPages = ['mentions-legales.html', 'confidentialite.html'];
+  if (legalPages.some(p => window.location.pathname.includes(p))) return;
+
   const btn = document.createElement('a');
   btn.className = 'sticky-book-btn btn-primary calendly-trigger';
   btn.setAttribute('href', '#');
-  btn.setAttribute('data-calendly-url', 'https://calendly.com/NANOU_CALENDLY_URL');
+  btn.setAttribute('data-calendly-url', CALENDLY_URL);
   btn.innerHTML = '<i class="ph-thin ph-calendar-blank" style="margin-right:0.4rem; vertical-align:middle;"></i><span data-i18n="cta.book">Réserver</span>';
   btn.setAttribute('aria-label', 'Prendre rendez-vous');
   document.body.appendChild(btn);
@@ -631,12 +646,19 @@ function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
   if (!faqItems.length) return;
 
-  faqItems.forEach(item => {
+  faqItems.forEach((item, i) => {
     const question = item.querySelector('.faq-question');
     const answer   = item.querySelector('.faq-answer');
     const icon     = item.querySelector('.faq-icon');
 
     if (!question || !answer) return;
+
+    // ARIA setup
+    const panelId = `faq-panel-${i}`;
+    answer.setAttribute('id', panelId);
+    answer.setAttribute('role', 'region');
+    question.setAttribute('aria-controls', panelId);
+    question.setAttribute('aria-expanded', 'false');
 
     question.addEventListener('click', () => {
       const isOpen = answer.classList.contains('open');
@@ -644,10 +666,12 @@ function initFaqAccordion() {
       faqItems.forEach(other => {
         const otherAnswer = other.querySelector('.faq-answer');
         const otherIcon   = other.querySelector('.faq-icon');
+        const otherQ      = other.querySelector('.faq-question');
         if (otherAnswer && otherAnswer !== answer) {
           otherAnswer.classList.remove('open');
           otherAnswer.style.maxHeight = '0';
           if (otherIcon) otherIcon.classList.remove('rotate');
+          if (otherQ) otherQ.setAttribute('aria-expanded', 'false');
         }
       });
 
@@ -655,10 +679,12 @@ function initFaqAccordion() {
         answer.classList.remove('open');
         answer.style.maxHeight = '0';
         if (icon) icon.classList.remove('rotate');
+        question.setAttribute('aria-expanded', 'false');
       } else {
         answer.classList.add('open');
         answer.style.maxHeight = answer.scrollHeight + 'px';
         if (icon) icon.classList.add('rotate');
+        question.setAttribute('aria-expanded', 'true');
       }
     });
   });
