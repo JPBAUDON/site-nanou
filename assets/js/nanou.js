@@ -14,10 +14,6 @@
 
 'use strict';
 
-// ─── CONFIGURATION ────────────────────────────────────────────────────────────
-// Remplacer par l'URL Calendly réelle de Nanou dès qu'elle est disponible
-const CALENDLY_URL = 'https://calendly.com/NANOU_CALENDLY_URL';
-
 // ─── GSAP Plugin Registration ─────────────────────────────────────────────────
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   initMarqueeTestimonials();
   initFaqAccordion();
-  initCalendlyTriggers();
   initStickyBooking();
   initContactTabs();
 
@@ -645,46 +640,17 @@ function initMarqueeTestimonials() {
   }
 }
 
-// ─── 15. CALENDLY TRIGGERS — Gestion des CTAs de réservation ──────────────
-function initCalendlyTriggers() {
-  document.querySelectorAll('.calendly-trigger').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const url = btn.dataset.calendlyUrl;
-      if (typeof Calendly !== 'undefined' && url && !url.includes('NANOU_CALENDLY_URL')) {
-        Calendly.initPopupWidget({ url });
-      } else {
-        // Fallback : naviguer vers le formulaire de contact si Calendly n'est pas configuré
-        window.location.href = '/contact#contact-form';
-      }
-    });
-  });
-}
-
-// ─── 16. STICKY BOOKING BUTTON — Apparaît après 400px de scroll ──────────
+// ─── 15. STICKY BOOKING BUTTON — Lien direct vers le formulaire de contact ──
 function initStickyBooking() {
-  // Ne pas afficher sur les pages légales
-  const legalPages = ['mentions-legales.html', 'confidentialite.html'];
-  if (legalPages.some(p => window.location.pathname.includes(p))) return;
+  const legalPaths = ['/mentions-legales', '/confidentialite'];
+  if (legalPaths.some(p => window.location.pathname.includes(p))) return;
 
   const btn = document.createElement('a');
-  btn.className = 'sticky-book-btn btn-primary calendly-trigger';
-  btn.setAttribute('href', '#');
-  btn.setAttribute('data-calendly-url', CALENDLY_URL);
-  btn.innerHTML = '<i class="ph-thin ph-calendar-blank" style="margin-right:0.4rem; vertical-align:middle;"></i><span data-i18n="cta.book">Réserver</span>';
-  btn.setAttribute('aria-label', 'Prendre rendez-vous');
+  btn.className = 'sticky-book-btn btn-primary';
+  btn.setAttribute('href', '/contact');
+  btn.innerHTML = '<i class="ph-thin ph-envelope-simple" style="margin-right:0.4rem; vertical-align:middle;"></i><span data-i18n="cta.contact">Me contacter</span>';
+  btn.setAttribute('aria-label', 'Me contacter');
   document.body.appendChild(btn);
-
-  // Click handler direct — le bouton est créé après initCalendlyTriggers()
-  btn.addEventListener('click', e => {
-    e.preventDefault();
-    const url = btn.dataset.calendlyUrl;
-    if (typeof Calendly !== 'undefined' && url && !url.includes('NANOU_CALENDLY_URL')) {
-      Calendly.initPopupWidget({ url });
-    } else {
-      window.location.href = '/contact#contact-form';
-    }
-  });
 
   ScrollTrigger.create({
     start: 400,

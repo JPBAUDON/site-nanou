@@ -25,7 +25,7 @@ Le **code source** du site est stocké sur GitHub (une plateforme qui garde l'hi
 | Prestations | `/prestations` | Détail des soins proposés |
 | À propos | `/a-propos` | Parcours et philosophie de Nanou |
 | Tarifs | `/tarifs` | Grille tarifaire |
-| Contact | `/contact` | Formulaire de message + prise de RDV Calendly |
+| Contact | `/contact` | Formulaire de message et contact |
 | Mentions légales | `/mentions-legales` | Mentions légales obligatoires |
 | Confidentialité | `/confidentialite` | Politique de confidentialité RGPD |
 
@@ -137,23 +137,11 @@ Ce sont les services tiers connectés au site. Certains sont déjà actifs, d'au
 
 ---
 
-### 4.4 Calendly — Prise de rendez-vous ⚠️ À CONFIGURER
+### 4.4 Calendly — Prise de rendez-vous ✅ Non utilisé (choix délibéré)
 
-| Info | Détail |
-|------|--------|
-| Rôle | Permet aux clients de prendre RDV directement en ligne |
-| Site | calendly.com |
-| Compte | À créer par Nanou |
-| Coût | Gratuit pour 1 type de RDV (plan Basic) |
-| Statut | **Non configuré** — bouton "Réserver" redirige vers le formulaire en attendant |
+Nanou a choisi de ne pas utiliser de calendrier de réservation en ligne. Elle préfère filtrer les demandes manuellement via le formulaire de contact, ce qui lui permet de choisir ses clients avant de confirmer un rendez-vous.
 
-> **Étapes pour activer Calendly :**
-> 1. Créer un compte sur calendly.com avec ton adresse email professionnelle
-> 2. Créer un "event type" (ex : "Consultation 60 min")
-> 3. Copier ton lien Calendly (ex : `calendly.com/nanou-mendels/consultation`)
-> 4. Donner ce lien à ton développeur pour l'intégrer dans les 28 endroits du site où il est attendu
->
-> **Note pour développeurs / Claude Code :** Chercher `NANOU_CALENDLY_URL` dans tous les fichiers HTML — il y a 28 occurrences à remplacer par l'URL réelle. Exemple : `sed -i '' 's|NANOU_CALENDLY_URL|nanou-mendels/consultation|g' *.html`
+Le bouton "Réserver" sur le site redirige directement vers le formulaire de contact. C'est le comportement voulu, permanent.
 
 ---
 
@@ -234,7 +222,6 @@ Le site est configuré pour être bien indexé par les moteurs de recherche :
 
 | Tâche | Priorité | Qui fait quoi |
 |-------|----------|---------------|
-| Créer un compte Calendly et partager le lien | 🔴 Urgent | Nanou crée → développeur intègre |
 | Vérifier la réception des messages Formspree | 🔴 Urgent | Nanou teste en envoyant un message |
 | Créer un compte Brevo pour la newsletter | 🟡 Important | Nanou crée → développeur connecte |
 | Créer un compte Google Business | 🟡 Important | Nanou crée (gratuit) |
