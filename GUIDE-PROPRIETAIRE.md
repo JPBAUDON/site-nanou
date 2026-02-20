@@ -96,7 +96,22 @@ Ce sont les services tiers connectés au site. Certains sont déjà actifs, d'au
 
 ---
 
-### 4.2 GitHub — Hébergement du code ✅ Actif
+### 4.2 OVH — Nom de domaine ✅ Actif (renouvellement annuel)
+
+| Info | Détail |
+|------|--------|
+| Rôle | Propriétaire du nom de domaine massages-et-naissance.com |
+| Site web | ovhcloud.com |
+| Compte | Samuel Baudon (à transférer à Nanou si souhaité) |
+| Coût | ~10-15€/an |
+| Renouvellement | Annuel — activer le renouvellement automatique pour éviter une coupure |
+| Lien avec Vercel | Le domaine pointe vers Vercel via les DNS configurés dans OVH |
+
+> ⚠️ **Important** : Si l'abonnement OVH n'est pas renouvelé, le site devient inaccessible. Activer le renouvellement automatique dans le compte OVH.
+
+---
+
+### 4.3 GitHub — Hébergement du code ✅ Actif
 
 | Info | Détail |
 |------|--------|
