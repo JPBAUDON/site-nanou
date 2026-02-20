@@ -546,6 +546,34 @@
      FLOATING WHATSAPP BUTTON — pulse ring
      ---------------------------------------------------------- */
 
+  .whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9990;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: #25d366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+  }
+
+  .whatsapp-float.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
   .whatsapp-float:hover {
     transform: scale(1.08);
     box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
@@ -1297,32 +1325,6 @@
   overflow: hidden;
 }
 
-/* ─── STICKY BOOKING BUTTON ─────────────────────────────────────────────────── */
-.sticky-book-btn {
-  position: fixed;
-  bottom: 5.5rem;
-  right: 1.5rem;
-  z-index: 9990;
-  opacity: 0;
-  transform: translateY(0.75rem);
-  pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  box-shadow: 0 8px 32px rgba(74, 58, 36, 0.28);
-  white-space: nowrap;
-}
-.sticky-book-btn.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-@media (max-width: 767px) {
-  .sticky-book-btn {
-    bottom: 9rem;
-    right: 1rem;
-    font-size: 0.75rem;
-    padding: 0.55rem 1.1rem;
-  }
-}
 
 /* ─── NEWSLETTER INPUT ──────────────────────────────────────────────────────── */
 .newsletter-input {

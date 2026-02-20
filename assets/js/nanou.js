@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   initMarqueeTestimonials();
   initFaqAccordion();
-  initStickyBooking();
+  initWhatsApp();
   initContactTabs();
 
   // Print button
@@ -640,16 +640,18 @@ function initMarqueeTestimonials() {
   }
 }
 
-// ─── 15. STICKY BOOKING BUTTON — Lien direct vers le formulaire de contact ──
-function initStickyBooking() {
+// ─── 15. WHATSAPP FLOATING BUTTON ────────────────────────────────────────────
+function initWhatsApp() {
   const legalPaths = ['/mentions-legales', '/confidentialite'];
   if (legalPaths.some(p => window.location.pathname.includes(p))) return;
 
   const btn = document.createElement('a');
-  btn.className = 'sticky-book-btn btn-primary';
-  btn.setAttribute('href', '/contact');
-  btn.innerHTML = '<i class="ph-thin ph-envelope-simple" style="margin-right:0.4rem; vertical-align:middle;"></i><span data-i18n="cta.contact">Me contacter</span>';
-  btn.setAttribute('aria-label', 'Me contacter');
+  btn.className = 'whatsapp-float';
+  btn.setAttribute('href', 'https://wa.me/32498549969?text=Bonjour%20Nanou%2C%20je%20souhaite%20prendre%20rendez-vous.');
+  btn.setAttribute('target', '_blank');
+  btn.setAttribute('rel', 'noopener noreferrer');
+  btn.setAttribute('aria-label', 'Contacter Nanou sur WhatsApp');
+  btn.innerHTML = '<i class="ph-thin ph-whatsapp-logo"></i>';
   document.body.appendChild(btn);
 
   ScrollTrigger.create({
