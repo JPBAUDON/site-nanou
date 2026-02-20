@@ -102,7 +102,7 @@ Ce sont les services tiers connectés au site. Certains sont déjà actifs, d'au
 |------|--------|
 | Rôle | Propriétaire du nom de domaine massages-et-naissance.com |
 | Site web | ovhcloud.com |
-| Compte | Samuel Baudon (à transférer à Nanou si souhaité) |
+| Compte | Nanou Mendels — nanoumendels@gmail.com |
 | Coût | ~10-15€/an |
 | Renouvellement | Annuel — activer le renouvellement automatique pour éviter une coupure |
 | Lien avec Vercel | Le domaine pointe vers Vercel via les DNS configurés dans OVH |
