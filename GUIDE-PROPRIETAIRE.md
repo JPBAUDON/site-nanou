@@ -137,11 +137,19 @@ Ce sont les services tiers connectés au site. Certains sont déjà actifs, d'au
 
 ---
 
-### 4.4 Calendly — Prise de rendez-vous ✅ Non utilisé (choix délibéré)
+### 4.4 Bouton WhatsApp — Contact direct ✅ Actif
 
-Nanou a choisi de ne pas utiliser de calendrier de réservation en ligne. Elle préfère filtrer les demandes manuellement via le formulaire de contact, ce qui lui permet de choisir ses clients avant de confirmer un rendez-vous.
+| Info | Détail |
+|------|--------|
+| Rôle | Bouton flottant vert en bas à droite — ouvre WhatsApp directement |
+| Numéro configuré | +32 498 54 99 69 (numéro de Nanou) |
+| Comportement | Apparaît après que le visiteur a scrollé 400px, disparaît en haut de page |
+| Message pré-rempli | "Bonjour Nanou, je souhaite prendre rendez-vous." |
+| Coût | Gratuit — aucun service tiers |
 
-Le bouton "Réserver" sur le site redirige directement vers le formulaire de contact. C'est le comportement voulu, permanent.
+> **Pourquoi WhatsApp ?** C'est le canal le plus direct et le plus naturel pour les premiers échanges. Le visiteur clique, WhatsApp s'ouvre avec un message pré-rempli, et Nanou répond depuis son téléphone. Simple, humain, immédiat.
+
+> **Calendly** : Non utilisé — Nanou préfère filtrer les demandes manuellement et choisir ses clients avant de confirmer un rendez-vous. Le bouton "Réserver" dans le header renvoie vers le formulaire de contact.
 
 ---
 
@@ -253,11 +261,11 @@ Contacter **Samuel Baudon** — le développeur du site.
 | Vercel (hébergement) | vercel.com | Compte Samuel Baudon (JPBAUDON) |
 | GitHub (code) | github.com/JPBAUDON/site-nanou | Compte Samuel Baudon (JPBAUDON) |
 | Formspree (formulaire) | formspree.io | À vérifier avec Samuel |
-| Calendly (RDV) | calendly.com | À créer par Nanou |
+| WhatsApp (bouton contact) | wa.me/32498549969 | Numéro de Nanou — déjà configuré |
 | Brevo (newsletter) | brevo.com | À créer par Nanou |
 | Google Business | business.google.com | À créer par Nanou |
 | Google Search Console | search.google.com/search-console | À créer par Nanou |
 
 ---
 
-*Document rédigé le 19 février 2026 — à mettre à jour à chaque évolution importante du site.*
+*Document rédigé le 19 février 2026 — mis à jour le 19 février 2026 (ajout bouton WhatsApp, audit complet).*
