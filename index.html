@@ -2,6 +2,33 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Sentry Error Monitoring -->
+    <script
+        src="https://browser.sentry-cdn.com/8.49.0/bundle.tracing.min.js"
+        integrity="sha384-SENTRY_SRI_HASH"
+        crossorigin="anonymous"
+        defer
+    ></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            if (typeof Sentry !== "undefined") {
+                Sentry.init({
+                    dsn: "YOUR_SENTRY_DSN_HERE",
+                    integrations: [Sentry.browserTracingIntegration()],
+                    tracesSampleRate: 0.2
+                });
+            }
+        });
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-zAsaY8z2huEqjMUzdS1BJ.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
+
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.ico" sizes="32x32">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -32,21 +59,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="assets/images/hero/hero-silhouette-nanou.jpg" fetchpriority="high">
-    <!-- Hero video preconnect for faster first-byte -->
-    <link rel="preload" as="video" href="assets/videos/hero-massage.mp4" fetchpriority="high">
+    <link rel="preload" as="image" type="image/webp" href="assets/images/hero/hero-silhouette-nanou.webp" fetchpriority="high">
 
     <!-- Stylesheet (Tailwind build) -->
-    <link rel="stylesheet" href="assets/css/nanou.css?v=20260219w">
+    <link rel="stylesheet" href="assets/css/nanou.css?v=20260227a">
 
     <!-- GSAP + ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js" integrity="sha384-Ij66tWIEasctUl2SOYsvptZxi68o/ru5F3Y1fE6RZFoHP3KsEr7aEUbRm5H4k1Oz" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js" integrity="sha384-yOKT8fxPUMK1yuKEsdNCpOlGsPczZ6a7M9nSEYjjrRQ8EyOne3FLb4dNIUgqrOOq" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js" integrity="sha384-Ij66tWIEasctUl2SOYsvptZxi68o/ru5F3Y1fE6RZFoHP3KsEr7aEUbRm5H4k1Oz" crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/split-type@0.3.4/umd/index.min.js" integrity="sha384-yOKT8fxPUMK1yuKEsdNCpOlGsPczZ6a7M9nSEYjjrRQ8EyOne3FLb4dNIUgqrOOq" crossorigin="anonymous"></script>
     <!-- Calendly -->
     <!-- i18n FR/NL/EN -->
-    <script src="assets/js/i18n.min.js?v=20260219w" defer></script>
+    <script src="assets/js/i18n.min.js?v=20260227a" defer></script>
 
     <!-- Schema.org JSON-LD for Local Business SEO -->
     <script type="application/ld+json">
@@ -113,7 +138,7 @@
          ═══════════════════════════════════════════════════════ -->
     <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true"></div>
 
-    <nav id="mobile-panel" class="mobile-panel" aria-label="Menu principal mobile" role="dialog">
+    <nav id="mobile-panel" class="mobile-panel" aria-label="Menu principal mobile" role="dialog" aria-modal="true">
         <div class="flex items-center justify-between px-7 py-6 border-b border-beige-200">
             <a href="/" class="header-logo-editorial" style="gap:0.35rem; text-align:left; text-decoration:none;">
                 <span class="header-logo-editorial-title" style="font-size:0.8rem;" data-i18n="nav.brand">Massages &amp; Naissance</span>
@@ -197,6 +222,7 @@
         <div class="header-premium-line" aria-hidden="true"></div>
     </header>
 
+    <main id="main-content">
     <!-- ═══════════════════════════════════════════════════════
          HERO SECTION
          ═══════════════════════════════════════════════════════ -->
@@ -265,7 +291,7 @@
     <!-- ═══════════════════════════════════════════════════════
          INTRODUCTION SECTION
          ═══════════════════════════════════════════════════════ -->
-    <section id="main-content" class="py-24 bg-white scroll-mt-header" data-section-number="01">
+    <section class="py-24 bg-white scroll-mt-header" data-section-number="01">
         <div class="container mx-auto px-6">
 
             <!-- Section ornament -->
@@ -334,9 +360,12 @@
                 <!-- Card 1: Massage & Relaxation -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/images/massage-adulte/massage-dos-huile.jpg"
-                             alt="Massage relaxant et thérapeutique — détente profonde"
-                             loading="lazy" width="1400" height="933">
+                        <picture>
+                            <source srcset="assets/images/massage-adulte/massage-dos-huile.webp" type="image/webp">
+                            <img src="assets/images/massage-adulte/massage-dos-huile.jpg"
+                                 alt="Massage relaxant et thérapeutique — détente profonde"
+                                 loading="lazy" width="1400" height="933">
+                        </picture>
                     </div>
                     <div class="p-7">
                         <h3 class="font-display font-semibold text-copper-800 text-center mb-3"
@@ -348,7 +377,7 @@
                             Détente profonde et libération des tensions. Pour retrouver équilibre et sérénité.
                         </p>
                         <div class="text-center">
-                            <a href="/prestations#massage" class="card-link text-copper-500 hover:text-copper-700">
+                            <a href="/prestations#massage" class="card-link text-copper-600 hover:text-copper-700">
                                 <span data-i18n="index_services_s1_cta">En savoir plus</span>
                                 <i class="ph-thin ph-caret-right" style="font-size: 1.25rem; line-height: 1;"></i>
                             </a>
@@ -359,9 +388,12 @@
                 <!-- Card 2: Haptonomie — featured, elevated -->
                 <div class="service-card md:-mt-6 border-t-2 border-copper-400">
                     <div class="card-image" style="aspect-ratio: 3/4">
-                        <img src="assets/images/prenatal/prenatal-01-massage-ventre.jpg"
-                             alt="Massage prénatal et haptonomie — accompagnement de la naissance"
-                             loading="lazy" width="1400" height="933">
+                        <picture>
+                            <source srcset="assets/images/prenatal/prenatal-01-massage-ventre.webp" type="image/webp">
+                            <img src="assets/images/prenatal/prenatal-01-massage-ventre.jpg"
+                                 alt="Massage prénatal et haptonomie — accompagnement de la naissance"
+                                 loading="lazy" width="1400" height="933">
+                        </picture>
                     </div>
                     <div class="p-7">
                         <h3 class="font-display font-semibold text-copper-800 text-center mb-3"
@@ -373,7 +405,7 @@
                             Préparation affective à la naissance. Créer le lien avec bébé et vivre une grossesse en conscience.
                         </p>
                         <div class="text-center">
-                            <a href="/prestations#haptonomie" class="card-link text-mineral-500 hover:text-mineral-700">
+                            <a href="/prestations#haptonomie" class="card-link text-mineral-600 hover:text-mineral-700">
                                 <span data-i18n="index_services_s2_cta">En savoir plus</span>
                                 <i class="ph-thin ph-caret-right" style="font-size: 1.25rem; line-height: 1;"></i>
                             </a>
@@ -384,9 +416,12 @@
                 <!-- Card 3: Thérapie Psycho-corporelle -->
                 <div class="service-card">
                     <div class="card-image">
-                        <img src="assets/images/therapie/massage-tete-delicat.jpg"
-                             alt="Thérapie psycho-corporelle — réconcilier corps et esprit"
-                             loading="lazy" width="1400" height="933">
+                        <picture>
+                            <source srcset="assets/images/therapie/massage-tete-delicat.webp" type="image/webp">
+                            <img src="assets/images/therapie/massage-tete-delicat.jpg"
+                                 alt="Thérapie psycho-corporelle — réconcilier corps et esprit"
+                                 loading="lazy" width="1400" height="933">
+                        </picture>
                     </div>
                     <div class="p-7">
                         <h3 class="font-display font-semibold text-copper-800 text-center mb-3"
@@ -437,7 +472,7 @@
                 <!-- Stat 1 -->
                 <div class="text-center">
                     <span class="stat-number mb-1" data-target="15">0</span>
-                    <span class="block font-body font-medium text-xs text-copper-400 mb-3"
+                    <span class="block font-body font-medium text-xs text-copper-600 mb-3"
                           data-i18n="index_why_s1_label"
                           style="letter-spacing: 0.2em; text-transform: uppercase">
                         Ans d'expérience
@@ -621,7 +656,7 @@
                                 <span class="font-display font-bold text-4xl text-copper-800 leading-none">5,0</span>
                                 <span class="text-yellow-400 text-2xl leading-none" aria-label="5 étoiles">★★★★★</span>
                             </div>
-                            <p class="font-body text-xs text-copper-500" data-i18n="index_reviews_badge_sub">Basé sur les avis Google</p>
+                            <p class="font-body text-xs text-copper-600" data-i18n="index_reviews_badge_sub">Basé sur les avis Google</p>
                         </div>
                     </div>
                 </div>
@@ -639,7 +674,7 @@
                                 <div>
                                     <p class="font-body font-semibold text-copper-800 text-sm">Sophie L.</p>
                                     <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
-                                    <span class="font-body text-xs text-copper-400 ml-1" data-i18n="index_reviews_t1_date">· Il y a 2 mois</span>
+                                    <span class="font-body text-xs text-copper-600 ml-1" data-i18n="index_reviews_t1_date">· Il y a 2 mois</span>
                                 </div>
                             </div>
                         </div>
@@ -653,7 +688,7 @@
                                 <div>
                                     <p class="font-body font-semibold text-copper-800 text-sm">Claire M.</p>
                                     <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
-                                    <span class="font-body text-xs text-copper-400 ml-1" data-i18n="index_reviews_t2_date">· Il y a 1 mois</span>
+                                    <span class="font-body text-xs text-copper-600 ml-1" data-i18n="index_reviews_t2_date">· Il y a 1 mois</span>
                                 </div>
                             </div>
                         </div>
@@ -667,7 +702,7 @@
                                 <div>
                                     <p class="font-body font-semibold text-copper-800 text-sm">Marie D.</p>
                                     <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
-                                    <span class="font-body text-xs text-copper-400 ml-1" data-i18n="index_reviews_t3_date">· Il y a 3 semaines</span>
+                                    <span class="font-body text-xs text-copper-600 ml-1" data-i18n="index_reviews_t3_date">· Il y a 3 semaines</span>
                                 </div>
                             </div>
                         </div>
@@ -681,7 +716,7 @@
                                 <div>
                                     <p class="font-body font-semibold text-copper-800 text-sm">Laura P.</p>
                                     <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
-                                    <span class="font-body text-xs text-copper-400 ml-1" data-i18n="index_reviews_t4_date">· Il y a 1 semaine</span>
+                                    <span class="font-body text-xs text-copper-600 ml-1" data-i18n="index_reviews_t4_date">· Il y a 1 semaine</span>
                                 </div>
                             </div>
                         </div>
@@ -695,7 +730,7 @@
                                 <div>
                                     <p class="font-body font-semibold text-copper-800 text-sm">Anne V.</p>
                                     <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
-                                    <span class="font-body text-xs text-copper-400 ml-1" data-i18n="index_reviews_t5_date">· Il y a 3 mois</span>
+                                    <span class="font-body text-xs text-copper-600 ml-1" data-i18n="index_reviews_t5_date">· Il y a 3 mois</span>
                                 </div>
                             </div>
                         </div>
@@ -709,7 +744,7 @@
                                 <div>
                                     <p class="font-body font-semibold text-copper-800 text-sm">Julie &amp; Tom</p>
                                     <span class="text-yellow-400 text-xs" aria-label="5 étoiles">★★★★★</span>
-                                    <span class="font-body text-xs text-copper-400 ml-1" data-i18n="index_reviews_t6_date">· Il y a 2 mois</span>
+                                    <span class="font-body text-xs text-copper-600 ml-1" data-i18n="index_reviews_t6_date">· Il y a 2 mois</span>
                                 </div>
                             </div>
                         </div>
@@ -734,7 +769,7 @@
                         <span data-i18n="index_reviews_cta">Voir tous les avis sur Google</span>
                         <i class="ph-thin ph-arrow-square-out" style="font-size: 1.25rem; line-height: 1;"></i>
                     </a>
-                    <p class="font-body text-xs text-copper-500 mt-3" data-i18n="index_reviews_cta_sub">
+                    <p class="font-body text-xs text-copper-600 mt-3" data-i18n="index_reviews_cta_sub">
                         Vous avez déjà consulté Nanou ? Partagez votre expérience sur Google !
                     </p>
                 </div>
@@ -747,11 +782,14 @@
          CTA SECTION — image background with overlay
          ═══════════════════════════════════════════════════════ -->
     <section class="parallax-section py-32 text-center" data-parallax style="min-height: 28rem; display: flex; align-items: center; justify-content: center;">
-        <img src="assets/images/ambiance/detail-textile-ethnique.jpg"
-             alt=""
-             class="parallax-img"
-             aria-hidden="true"
-             loading="lazy" width="1400" height="933">
+        <picture>
+            <source srcset="assets/images/ambiance/detail-textile-ethnique.webp" type="image/webp">
+            <img src="assets/images/ambiance/detail-textile-ethnique.jpg"
+                 alt=""
+                 class="parallax-img"
+                 aria-hidden="true"
+                 loading="lazy" width="1400" height="933">
+        </picture>
         <div class="absolute inset-0 bg-copper-900/65"></div>
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="font-display font-bold text-white mb-6"
@@ -774,9 +812,9 @@
          ═══════════════════════════════════════════════════════ -->
     <section class="py-16 bg-beige-100 border-t border-beige-200">
         <div class="container mx-auto px-6 max-w-lg text-center">
-            <p class="font-label text-xs tracking-[0.2em] text-copper-400 uppercase mb-3" data-i18n="newsletter.label">Newsletter</p>
+            <p class="font-label text-xs tracking-[0.2em] text-copper-600 uppercase mb-3" data-i18n="newsletter.label">Newsletter</p>
             <h3 class="font-display text-2xl text-copper-800 mb-2" data-i18n="newsletter.title">Conseils bien-être & actualités</h3>
-            <p class="font-body text-copper-500 text-sm mb-6" data-i18n="newsletter.sub">Inspirations, conseils et moments de douceur — jamais de spam.</p>
+            <p class="font-body text-copper-600 text-sm mb-6" data-i18n="newsletter.sub">Inspirations, conseils et moments de douceur — jamais de spam.</p>
             <form class="flex flex-col sm:flex-row gap-3" onsubmit="return false;">
                 <input type="email" class="newsletter-input flex-1" placeholder="votre@email.com" data-i18n-placeholder="newsletter.placeholder" required>
                 <button type="submit" class="btn-primary" data-i18n="newsletter.cta">S'inscrire</button>
@@ -784,6 +822,8 @@
             <p class="font-body text-xs text-copper-300 mt-3" data-i18n="newsletter.disclaimer">Désabonnement en 1 clic à tout moment.</p>
         </div>
     </section>
+
+    </main>
 
     <!-- ═══════════════════════════════════════════════════════
          FOOTER
@@ -848,15 +888,23 @@
 
             </div>
 
-            <div class="border-t border-copper-700 pt-6 text-center text-copper-400 text-sm">
-                <p data-i18n="footer.copyright">&copy; 2025 Massages &amp; Naissance — Tous droits réservés</p>
-                <p class="mt-2 text-copper-500 text-xs">Site réalisé par <a href="https://sqwr.be" target="_blank" rel="noopener noreferrer" class="text-copper-400 hover:text-white transition-colors">SQWR Studio</a></p>
+            <div class="border-t border-copper-700 pt-6 text-center text-copper-600 text-sm">
+                <p data-i18n="footer.copyright">&copy; 2026 Massages &amp; Naissance — Tous droits réservés</p>
+                <p class="mt-2 text-copper-600 text-xs">Site réalisé par <a href="https://sqwr.be" target="_blank" rel="noopener noreferrer" class="text-copper-600 hover:text-white transition-colors">SQWR Studio</a></p>
             </div>
         </div>
     </footer>
 
 
+    <!-- Cookie Info Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 inset-x-0 z-50 bg-copper-800/95 backdrop-blur-sm text-copper-100 py-4 px-6 hidden" role="alert">
+      <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+        <p data-i18n="cookie_banner_text">Ce site utilise des polices Google Fonts, impliquant un transfert de données vers les serveurs de Google. <a href="/confidentialite" class="underline hover:text-white">En savoir plus</a></p>
+        <button id="cookie-accept" class="shrink-0 px-6 py-2 border border-copper-300 rounded-md text-copper-100 hover:bg-copper-700 transition-colors font-medium" data-i18n="cookie_banner_accept">Compris</button>
+      </div>
+    </div>
+
     <!-- Animations JS -->
-    <script src="assets/js/nanou.min.js?v=20260219w" defer></script>
+    <script src="assets/js/nanou.min.js?v=20260227a" defer></script>
 </body>
 </html>
